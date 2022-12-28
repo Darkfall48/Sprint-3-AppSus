@@ -1,3 +1,15 @@
+* {
+    box-sizing: border-box;
+    text-align: center;
+}
+
+html {
+    font-family: Lato, sans-serif;
+    color: var(--font-color);
+    letter-spacing: 0.48px;
+    line-height: 1.13;
+}
+
 body {
     margin: 0;
 }
@@ -20,4 +32,23 @@ img {
     height: 100%;
     width: 100%;
     object-fit: cover;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+
+@media (min-width:780px){
+    html {
+        font-size: 0.8rem;
+    }
+}
+
+@media (min-width:1060px){
+    html {
+        font-size: 1rem;
+    }
 }

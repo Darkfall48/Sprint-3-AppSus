@@ -1,3 +1,9 @@
 :root {
+    /* main */
     --main-bg-color: lightblue;
+    --font-color: black;
+    /* nav */
+    --nav-bg-color: red;
+    /* mail */
+    /* note */
 }

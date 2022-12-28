@@ -60,3 +60,4 @@ function getMonthName(date) {
     ]
     return monthNames[date.getMonth()]
 }
+
