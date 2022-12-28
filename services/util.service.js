@@ -4,11 +4,12 @@ export const utilService = {
   getRandomIntInclusive,
   getRandomColor,
   padNum,
+  getDate,
   getDayName,
   getMonthName,
   getAmount,
   saveToStorage,
-  loadFromStorage
+  loadFromStorage,
 }
 
 function makeId(length = 6) {
@@ -108,6 +109,32 @@ function getMonthName(date) {
   return monthNames[date.getMonth()]
 }
 
+function getDate(timeInStamp) {
+  var a = new Date(+timeInStamp * 1000)
+  var months = [
+    'Jan',
+    'Feb',
+    'Mar',
+    'Apr',
+    'May',
+    'Jun',
+    'Jul',
+    'Aug',
+    'Sep',
+    'Oct',
+    'Nov',
+    'Dec',
+  ]
+  var year = a.getFullYear()
+  var month = months[a.getMonth()]
+  var date = a.getDate()
+  //   var hour = a.getHours()
+  //   var min = a.getMinutes()
+  //   var sec = a.getSeconds()
+  var time = date + ' ' + month + ' ' + year
+  return time
+}
+
 function getAmount(amount, currency) {
   switch (currency) {
     case 'USD':
@@ -127,5 +154,5 @@ function saveToStorage(key, value) {
 
 function loadFromStorage(key) {
   const data = localStorage.getItem(key)
-  return (data) ? JSON.parse(data) : undefined
+  return data ? JSON.parse(data) : undefined
 }

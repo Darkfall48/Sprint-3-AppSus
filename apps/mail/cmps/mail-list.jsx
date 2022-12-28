@@ -15,7 +15,7 @@ export function MailList({ mails }) {
       </table>
     )
   return (
-    <table border="1">
+    <table className="mail-list" border="1">
       <thead>
         <tr>
           <th>Starred</th>

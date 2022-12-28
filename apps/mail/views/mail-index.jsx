@@ -38,10 +38,8 @@ export function MailIndex() {
 
   return (
     <section>
-      <div>Hello from Mail Index</div>
       <Log />
       <MailCompose />
-      <MailDetails />
       <MailFilter />
       <MailFolderList />
       <MailList mails={mails} />

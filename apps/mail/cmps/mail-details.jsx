@@ -3,6 +3,16 @@
 // TODO: • Allow deleting an email (using the service)
 // TODO: • Allow navigating back to list
 
-export function MailDetails() {
-  return <h1>Mail Details</h1>
+const { Fragment } = React
+
+export function MailDetails({ mail }) {
+  return (
+    <Fragment>
+      <img
+        src={`https://robohash.org/${mail.id}`}
+        style={{ maxWidth: '50px' }}
+      />
+      <p>{mail.body}</p>
+    </Fragment>
+  )
 }
