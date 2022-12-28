@@ -1,3 +1,19 @@
 .fa-solid.fa-login::before {
     content: '\f2f6';
 }
+
+.fa-solid.fa-trash::before{
+    content: '\f1f8';
+}
+
+.fa-solid.fa-thumbtack::before{
+    content: '\f08d';
+}
+
+.fa-solid.fa-pen-to-square::before{
+    content: '\f044';
+}
+.fa-solid.fa-palette::before{
+    content: '\f53f';
+}
+

@@ -13,7 +13,8 @@ export const noteService = {
     getDefaultFilter,
     saveNote,
     getDefaultNote,
-    save
+    save,
+    remove,
     // getDefaultReview,
     // saveReview,
     // removeReview
@@ -32,7 +33,9 @@ function save(note) {
     }
 }
 
-
+function remove(noteId){
+    return storageService.remove(STORAGE_KEY, noteId)
+}
 
 function saveNote(noteToSave) {
     const notes = _loadNotesFromStorage()

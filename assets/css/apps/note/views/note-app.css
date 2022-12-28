@@ -5,4 +5,11 @@
     border:none;
     background-color: var(--input-bg);
     border-radius: 10px;
+    width:40vw;
+    height: 50px;
+}
+
+.note-index{
+    background-color: rgba(223, 222, 222, 0.832);
+    padding: 20px 0 ;
 }

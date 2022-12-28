@@ -22,9 +22,32 @@ export function NoteIndex() {
         noteService.save(noteToAdd).then(()=>loadNotes())
     }
 
-    return <div>
+    function onRemoveNote(noteId){
+        noteService.remove(noteId).then(() => {
+            const updatedNotes = notes.filter(note => note.id !== noteId)
+            setNotes(updatedNotes)
+            // showSuccessMsg('Book removed')
+        })
+        .catch((err) =>{
+            console.log('error', err)
+            // showErrorMsg('Could not remove note')
+        })
+    }
+
+    function onPinNote(noteId){
+
+    }
+
+    function onEditBackground(noteId){
+
+    }
+
+    return <div className="note-index-container">
         <AddNote onSaveNote={onSaveNote} />
-        <NoteList notes={notes} />
+        <NoteList notes={notes} 
+        onRemoveNote={onRemoveNote} 
+        onPinNote={onPinNote}
+        />
         {/* <NoteTxt/> */}
     </div>
 

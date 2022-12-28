@@ -1,0 +1,28 @@
+.color-palette-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5px;
+}
+
+.color-select {
+
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+}
+
+.purple-bg {
+    background-color: #d7aefb;
+}
+
+.pink-bg {
+    background-color: #fdcfe8;
+}
+
+.blue-bg {
+    background-color: #cbf0f8;
+}
+
+.green-bg {
+    background-color: #ccff90;
+}
