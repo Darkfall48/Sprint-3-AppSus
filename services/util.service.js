@@ -7,6 +7,8 @@ export const utilService = {
   getDayName,
   getMonthName,
   getAmount,
+  saveToStorage,
+  loadFromStorage
 }
 
 function makeId(length = 6) {
@@ -117,4 +119,13 @@ function getAmount(amount, currency) {
     default:
       return `${amount}`
   }
+}
+
+function saveToStorage(key, value) {
+  localStorage.setItem(key, JSON.stringify(value))
+}
+
+function loadFromStorage(key) {
+  const data = localStorage.getItem(key)
+  return (data) ? JSON.parse(data) : undefined
 }
