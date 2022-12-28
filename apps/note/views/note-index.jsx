@@ -11,19 +11,15 @@ export function NoteIndex() {
 
     useEffect(() => {
         loadNotes()
-    }, [notes])
+    }, [])
 
     function loadNotes() {
         noteService.query()
-            .then(notes => setNotes(notes))
+            .then(notes => setNotes((prevNotes)=>prevNotes=notes))
     }
 
     function onSaveNote(noteToAdd) {
-        noteService.save(noteToAdd)
-            .then(()=>{
-                const updatedNotes = query()
-                setNotes(updatedNotes)
-            })
+        noteService.save(noteToAdd).then(()=>loadNotes())
     }
 
     return <div>

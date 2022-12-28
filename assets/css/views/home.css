@@ -1,4 +1,53 @@
-.home-links{
-    width: 20vw;
-    margin: 10px;
+.app {
+    background-image: url("../../img/home/Background/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+.home {
+    background-color: rgba(255, 255, 255, 0.355);
+    /* height: 100%; */
+}
+
+.home-intro {
+    /* background-color: chartreuse; */
+    display: grid;
+    margin-bottom: 50px;
+}
+
+.home-app {
+    /* background-color:darkred; */
+
+    display: grid;
+    justify-items: center;
+    margin-bottom: 50px;
+}
+
+
+.home-links {
+    /* background-color:darkorchid; */
+
+    display: grid;
+    width: fit-content;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    gap: 50px;
+    padding: 10px;
+
+
+}
+
+.home-links a {
+    width: 100px;
+}
+
+.home-links img {
+    width: 100%;
+}
+
+.home-about {
+    /* background-color: mediumvioletred; */
+
+
 }

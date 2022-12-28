@@ -4,7 +4,8 @@
 }
 
 html {
-    font-family: Lato, sans-serif;
+    
+    font-family: roboto-regular, sans-serif;
     color: var(--font-color);
     letter-spacing: 0.48px;
     line-height: 1.13;
@@ -23,21 +24,24 @@ h6 {
     margin: 0;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
+h1 {
+    font-size: 1.8em;
 }
+h2 {
+    font-size: 1.6em;
+}
+h3 {
+    font-size: 1.4em;
+}
+h4 {
+    font-size: 1.2em;
+}
+
 
 img {
     height: 100%;
     width: 100%;
     object-fit: cover;
-}
-
-button {
-    font-family: inherit;
-    cursor: pointer;
-    font-size: 1em;
 }
 
 

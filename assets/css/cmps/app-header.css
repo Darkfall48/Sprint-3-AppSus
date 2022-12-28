@@ -1,6 +1,7 @@
 header {
-    background: lightcyan;
+    background: pink;
     border-bottom: 2px solid white;
+    margin-bottom: 50px;
 }
 
 .app-header {

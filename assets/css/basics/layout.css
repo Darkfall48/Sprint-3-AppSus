@@ -5,7 +5,7 @@
     margin-right: auto;
 }
 
-@media (min-width: 780px) {
+/* @media (min-width: 780px) {
     .main-layout>*:not(.full) {
         max-width: var(--m);
     }
@@ -15,4 +15,4 @@
     .main-layout>*:not(.full) {
         max-width: var(--l);
     }
-}
+} */
