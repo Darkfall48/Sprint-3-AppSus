@@ -6,9 +6,9 @@ export function Home() {
     return <section className="home main-layout">
 
         <article className="home-intro">
-            <h1>APPSUS! (logo)</h1>
-            <h2>Intro Machu</h2>
-            <h2>Intro Machu 2</h2>
+            <h1 className="logo">APPSUS</h1>
+            <h2>Smart app for busy people</h2>
+            <h2>You just focus on being a unicorn</h2>
         </article>
 
         <article className="home-app">

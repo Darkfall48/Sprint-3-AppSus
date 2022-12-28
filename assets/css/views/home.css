@@ -7,9 +7,16 @@
 
 .home {
     background-color: rgba(255, 255, 255, 0.355);
+    font-family: 'Quicksand';
     /* height: 100%; */
 }
-
+.logo{
+    font-family: 'Gruppo';
+    font-size: 7em;
+}
+.logo-body{
+    font-size: 20em;
+}
 .home-intro {
     /* background-color: chartreuse; */
     display: grid;

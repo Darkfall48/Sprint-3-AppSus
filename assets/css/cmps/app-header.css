@@ -2,6 +2,8 @@ header {
     background: pink;
     border-bottom: 2px solid white;
     margin-bottom: 50px;
+    font-family: 'Quicksand';
+    font-size: 1.2em;
 }
 
 .app-header {
@@ -12,7 +14,13 @@ header {
 
 nav a {
     margin: .5em;
+    text-decoration: none;
 }
+
+.logo-header{
+    font-family: 'Gruppo';
+}
+
 
 nav a:active {
     color: purple;
