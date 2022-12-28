@@ -1,8 +1,9 @@
 const { useState, useEffect } = React
 const {Link} = ReactRouterDOM
 
-import {NoteList} from '../cmps/note-list.jsx'
 import {noteService} from '../services/note.service.js'
+import {NoteList} from '../cmps/note-list.jsx'
+import {AddNote} from '../cmps/add-note.jsx'
 
 export function NoteIndex() {
     const [notes, setNotes] = useState([])
@@ -17,8 +18,13 @@ export function NoteIndex() {
         .then(notes => setNotes(notes))
     }
 
+    function onSaveNote(noteToAdd){
+        noteService.saveNote(noteToAdd.id, noteToAdd)
+        .then(console.log)
+    }
+
     return <div> 
-        {/* <AddNote onAddNote={onAddNote}/> */}
+        <AddNote onSaveNote={onSaveNote}/>
         <NoteList notes={notes}/>
         {/* <NoteTxt/> */}
     </div>
