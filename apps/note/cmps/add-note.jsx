@@ -5,12 +5,21 @@ import { noteService } from '../services/note.service.js'
 export function AddNote({ onSaveNote }) {
     const [note, setNote] = useState(noteService.getDefaultNote())
 
-    function handleChange({ target }) {
+    // function handleChange({ target }) {
+    //     console.log('target', target)
+    //     let { value, name: field, type } = target
+    //     value = type === "range" ? +value : value
+    //     setNote((prevNote => {
+    //         return { ...prevNote, [field]: value }
+    //     }))
+    // }
+
+    function handleChangeTxt({ target }) {
         console.log('target', target)
-        let { value, name: field, type } = target
-        value = type === "range" ? +value : value
+
+        let { value } = target
         setNote((prevNote => {
-            return { ...prevNote, [field]: value }
+            return { ...prevNote, info:{txt: value }}
         }))
     }
 
@@ -25,8 +34,8 @@ export function AddNote({ onSaveNote }) {
                 id="note-txt"
                 name="note-txt"
                 placeholder="Write your note here..."
-                value={note.txt}
-                onChange={handleChange} />
+                value={note.info.txt}
+                onChange={handleChangeTxt} />
 
             <button>Submit</button>
         </form>

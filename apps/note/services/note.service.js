@@ -12,7 +12,8 @@ export const noteService = {
     // getEmptyBook,
     getDefaultFilter,
     saveNote,
-    getDefaultNote
+    getDefaultNote,
+    save
     // getDefaultReview,
     // saveReview,
     // removeReview
@@ -23,6 +24,16 @@ function query() {
         .then(books => { return books })
 }
 
+function save(note) {
+    if (note.id) {
+        return storageService.put(STORAGE_KEY, note)
+    } else {
+        return storageService.post(STORAGE_KEY, note)
+    }
+}
+
+
+
 function saveNote(noteToSave) {
     const notes = _loadNotesFromStorage()
     console.log('notes', notes)
@@ -30,7 +41,7 @@ function saveNote(noteToSave) {
     notes.unshift(newNote)
     console.log('notes', notes)
     _saveNotesToStorage(notes)
-    // return Promise.resolve(newNote)
+    return Promise.resolve(newNote)
 }
 
 function getDefaultNote() {
@@ -38,8 +49,8 @@ function getDefaultNote() {
         id: '',
         type: 'note-txt',
         isPinned: false,
-        txt: '' ,
-        // info: { txt: '' },
+        // txt: '' ,
+        info: { txt: '' },
     }
 }
 function _createNote(noteToSave) {
