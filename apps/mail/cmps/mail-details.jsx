@@ -4,5 +4,5 @@
 // TODO: • Allow navigating back to list
 
 export function MailDetails() {
-  return <h1>Hello from Mail Details</h1>
+  return <h1>Mail Details</h1>
 }

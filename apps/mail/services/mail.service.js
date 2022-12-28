@@ -25,19 +25,19 @@ export const mailService = {
   remove,
   save,
   getDefaultFilter,
-  getEmptyBook: getEmptyMail,
+  getEmptyMail,
 }
 
 function query(filterBy = getDefaultFilter()) {
   return storageService.query(STORAGE_MAIL_KEY).then((mails) => {
     // TODO: Adapt to mail service
-    if (filterBy.txt) {
-      const regex = new RegExp(filterBy.txt, 'i')
-      mails = mails.filter((mail) => regex.test(mail.title))
-    }
-    if (filterBy.maxPrice) {
-      mails = mails.filter((mail) => mail.listPrice.amount <= filterBy.maxPrice)
-    }
+    // if (filterBy.txt) {
+    //   const regex = new RegExp(filterBy.txt, 'i')
+    //   mails = mails.filter((mail) => regex.test(mail.title))
+    // }
+    // if (filterBy.maxPrice) {
+    //   mails = mails.filter((mail) => mail.listPrice.amount <= filterBy.maxPrice)
+    // }
 
     return mails
   })
@@ -91,6 +91,29 @@ function _createMails() {
         status: 'inbox',
         isRead: true,
         isStared: true,
+        labels: ['important', 'romantic'],
+      },
+      {
+        id: 'e102',
+        subject: 'Miss you too!',
+        body: 'Would love to catch up sometimes',
+        isRead: false,
+        sentAt: 1551133930594,
+        to: 'momo@momo.com',
+        status: 'inbox',
+        isRead: true,
+        labels: ['important', 'romantic'],
+      },
+      {
+        id: 'e103',
+        subject: 'Miss you loulou!',
+        body: 'Would love to catch up sometimes',
+        isRead: false,
+        sentAt: 1551133930594,
+        to: 'momo@momo.com',
+        status: 'inbox',
+        isRead: true,
+        isStared: false,
         labels: ['important', 'romantic'],
       },
     ]
