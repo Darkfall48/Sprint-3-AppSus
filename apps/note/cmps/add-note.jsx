@@ -29,15 +29,14 @@ export function AddNote({ onSaveNote }) {
     }
     return <div className="add-note-container">
         <form onSubmit={onSubmitNote}>
-            <label htmlFor="note-txt">Add Note:</label>
+            <label htmlFor="note-txt"></label>
             <input type="text"
                 id="note-txt"
                 name="note-txt"
                 placeholder="Write your note here..."
                 value={note.info.txt}
                 onChange={handleChangeTxt} />
-
-            <button>Submit</button>
+            {/* <button>Submit</button> */}
         </form>
     </div>
 

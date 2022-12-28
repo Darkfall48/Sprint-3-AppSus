@@ -3,10 +3,9 @@
     list-style: none;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 15px;
-    background-color: var(--clr3bg-light);
-    margin: 0;
-    padding: 16px;
+    gap: 5px;
+    margin: 0 20px;
+    /* padding: 16px; */
 }
 
 .note-list li {
@@ -14,5 +13,12 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    background-color: var(--clr3bg);
+    background-color: var (--list-bg);
+    border: 1px solid transparent;
+    border-color: #e0e0e0;
+    border-radius: 8px;
+    border-width: 1px 1px 1px 6px;
+    min-height: 150px;
+    /* padding: 100px 0 0; */
+    box-shadow: inset 1px 1px 0 rgb(0 0 0 / 1%), inset 0 -1px 0 rgb(0 0 0 / 2%);
 }
