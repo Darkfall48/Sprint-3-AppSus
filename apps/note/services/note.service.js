@@ -24,12 +24,17 @@ export const noteService = {
 
 function query() {
     return storageService.query(STORAGE_KEY)
-    // .then(notes => { 
-    //     notes = notes.filter(note => note.isPinned === true)
-    //     // const unPinnedNotes = notes.filter(note => note.isPinned === false)
-    //     // notes.push(unPinnedNotes)
-    //     return notes })
-        // return updatedNotes })
+        .then((notes) => {
+            let pinnedNotes = notes.filter(note => note.isPinned === true)
+            if (!pinnedNotes) return notes
+            const unPinnedNotes = notes.filter(note => note.isPinned === false)
+            const updatedNotes = pinnedNotes.concat(unPinnedNotes)
+            return updatedNotes
+        })
+        .then((updatedNotes)=>{
+            utilService.saveToStorage(STORAGE_KEY, updatedNotes)
+        return new Promise(resolve => setTimeout(() => resolve(updatedNotes)))
+    })
 }
 
 function save(note) {
@@ -40,7 +45,7 @@ function save(note) {
     }
 }
 
-function get(noteId){
+function get(noteId) {
     return storageService.get(STORAGE_KEY, noteId)
 }
 
@@ -63,16 +68,15 @@ function getDefaultNote() {
         id: '',
         type: 'note-txt',
         isPinned: false,
-        // txt: '' ,
         info: { txt: '' },
-        bgColor:'default'
+        bgColor: 'default'
     }
 }
 
-function changeNoteBackground(chosenColor, selectedNote){
+function changeNoteBackground(chosenColor, selectedNote) {
     selectedNote.bgColor = chosenColor
     console.log('selectedNote', selectedNote)
-    return storageService.put(STORAGE_KEY,selectedNote) 
+    return storageService.put(STORAGE_KEY, selectedNote)
 
 }
 
@@ -94,7 +98,7 @@ function pinNote(noteToPin) {
     // })
 }
 
-function postToStart(note){
+function postToStart(note) {
     return storageService.postToStart(STORAGE_KEY, note)
 }
 
