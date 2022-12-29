@@ -7,3 +7,9 @@
 .note-pinned{
     color:rgb(185, 185, 55)
 }
+
+#pin-btn{
+position:relative;
+left: 5px;
+top: 5px
+}
