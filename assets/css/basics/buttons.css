@@ -10,22 +10,24 @@ a {
 
 .a-btn {
 
-font-size: 1em;
-text-decoration: none;
-width: fit-content;
-background-color: blueviolet;
-color: whitesmoke;
-padding: 10px;
-border-radius: 8px;
-transition: 0.3s;
+    font-size: 1.5em;
+    text-decoration: none;
+    width: fit-content;
+    background-color: var(--main-purple);
+    color: whitesmoke;
+    padding: 20px;
+    border-radius: 8px;
+    transition: 0.3s;
+    max-height: 3em;
 }
 
 .a-btn:hover {
-background-color: blue;
-color: whitesmoke;
+    background-color: var(--main-purple-hvr);
+    color: whitesmoke;
 }
 
 .a-btn:active {
-    color: gold;
-font-size: 0.9em;
+    color: rgba(255, 217, 0, 0.63);
+    font-size: 0.99em;
 }
+

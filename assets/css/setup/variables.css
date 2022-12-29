@@ -1,9 +1,11 @@
 :root {
     /* main */
-    --main-bg-color: lightblue;
+    --main-bg-color: #f7f7f7;
     --font-color: black;
     --input-bg: #eaf1fb;
     --list-bg: rgba(245, 242, 242, 0.805);
+    --main-purple: blueviolet;
+    --main-purple-hvr: rgb(96, 35, 152);
     /* nav */
     --nav-bg-color: red;
     /* mail */

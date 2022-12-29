@@ -17,3 +17,17 @@
     content: '\f53f';
 }
 
+.fa-solid.fa-horse::before{
+    content: '\f6f0';
+}
+
+.fa-solid.fa-envelope-open-text::before{
+    content: '\f658';
+}
+.fa-solid.fa-clip-board::before{
+    content: '\f328';
+}
+.fa-solid.fa-book::before{
+    content: '\f02d';
+}
+
