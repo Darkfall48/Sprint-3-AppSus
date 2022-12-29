@@ -2,36 +2,62 @@
 // TODO: • Start with Search and Read / Unread
 
 const { useState, useEffect } = React
+const { useLocation, useNavigate } = ReactRouterDOM
 
 import { mailService } from '../services/mail.service.js'
 
 export function MailFilter({ onSetFilter }) {
-  const [filterByToEdit, setFilterByToEdit] = useState(
-    mailService.getDefaultFilter()
-  )
+  const [filterBy, setFilterBy] = useState(mailService.getDefaultFilter())
   const [selectedOption, setSelectedOption] = useState('')
 
+  const location = useLocation()
+  const navigate = useNavigate()
+  const searchParams = new URLSearchParams(location.search)
+  console.log('Search Params:', searchParams)
+  console.log('Location:', location)
+  console.log('Navigate:', navigate)
+
   useEffect(() => {
-    onSetFilter({ ...filterByToEdit, readStatus: selectedOption })
-  }, [filterByToEdit, selectedOption])
+    onSetFilter({ ...filterBy, readStatus: selectedOption })
+  }, [filterBy, selectedOption])
+
+  useEffect(() => {
+    const readStatus = searchParams.get('readStatus') || ''
+    const subject = searchParams.get('subject') || ''
+    setFilterBy({ subject, readStatus })
+    !readStatus ? setSelectedOption('all') : setSelectedOption(readStatus)
+  }, [navigate])
+
+  useEffect(() => {
+    const searchParams = new URLSearchParams()
+    searchParams.set('readStatus', filterBy.readStatus)
+    searchParams.set('subject', filterBy.subject)
+    navigate(`${location.pathname + '?' + searchParams.toString()}`)
+  }, [filterBy, selectedOption, navigate])
 
   function handleChange({ target }) {
     let { value, name: field, type } = target
     value = type === 'number' ? +value : value
-    setFilterByToEdit((prevFilter) => {
+    setFilterBy((prevFilter) => {
       return { ...prevFilter, [field]: value }
     })
+    // navigate(
+    //   `/mail?subject=${filterByToEdit.subject}&readStatus=${selectedOption}`
+    // )
   }
 
   function handleSelectChange({ target }) {
     console.log(target)
     setSelectedOption(target.value)
-    onSetFilter({ ...filterByToEdit, readStatus: target.value })
+    onSetFilter({ ...filterBy, readStatus: target.value })
+    // navigate(
+    //   `/mail?subject=${filterByToEdit.subject}&readStatus=${target.value}`
+    // )
   }
 
   function onSubmitFilter(ev) {
     ev.preventDefault()
-    onSetFilter({ ...filterByToEdit, readStatus: selectedOption })
+    onSetFilter({ ...filterBy, readStatus: selectedOption })
   }
 
   return (
@@ -52,7 +78,7 @@ export function MailFilter({ onSetFilter }) {
           id="subject-filter"
           name="subject"
           placeholder="Search By Subject"
-          value={filterByToEdit.subject}
+          value={filterBy.subject}
           onChange={handleChange}
         />
         <label htmlFor="text-filter" className="search-icon">

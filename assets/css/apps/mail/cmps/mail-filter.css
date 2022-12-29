@@ -9,10 +9,14 @@
 }
 
 #subject-filter {
-  border: none;
+  padding-inline-start: 20px;
+  padding-inline-end: 20px;
+  text-align: start;
   background-color: transparent;
   color: black;
-  -webkit-text-fill-color: grey;
+}
+#subject-filter::placeholder {
+  color: grey;
 }
 
 .search-icon {

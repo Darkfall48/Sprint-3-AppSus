@@ -1,5 +1,6 @@
 /** Setup **/
 
+@import './setup/normalize.css';
 @import './setup/variables.css';
 @import './setup/typography.css';
 /* @import './setup/fonts.css'; */

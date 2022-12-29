@@ -46,7 +46,7 @@ export function MailIndex() {
       <Log />
       <MailCompose />
       <MailFilter onSetFilter={onSetFilter} />
-      <MailFolderList />
+      <MailFolderList onSetFilter={onSetFilter} />
       <MailList mails={mails} />
     </section>
   )

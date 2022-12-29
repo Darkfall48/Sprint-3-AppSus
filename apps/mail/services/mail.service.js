@@ -28,21 +28,43 @@ export const mailService = {
   getEmptyMail,
 }
 
-function query(filterBy = getDefaultFilter()) {
+function query(queryParams = {}) {
   return storageService.query(STORAGE_MAIL_KEY).then((mails) => {
     // TODO: Adapt to mail service
-    if (filterBy.subject) {
-      const regex = new RegExp(filterBy.subject, 'i')
+    // if (filterBy.subject) {
+    //   const regex = new RegExp(filterBy.subject, 'i')
+    //   mails = mails.filter((mail) => regex.test(mail.subject))
+    // }
+
+    // if (filterBy.readStatus) {
+    //   if (filterBy.readStatus === 'unread') {
+    //     mails = mails.filter((mail) => !mail.isRead)
+    //   } else if (filterBy.readStatus === 'read') {
+    //     mails = mails.filter((mail) => mail.isRead)
+    //   }
+    // }
+
+    if (queryParams.subject) {
+      const regex = new RegExp(queryParams.subject, 'i')
       mails = mails.filter((mail) => regex.test(mail.subject))
     }
 
-    if (filterBy.readStatus) {
-      if (filterBy.readStatus === 'unread') {
+    if (queryParams.readStatus) {
+      if (queryParams.readStatus === 'unread') {
         mails = mails.filter((mail) => !mail.isRead)
-      } else if (filterBy.readStatus === 'read') {
+      } else if (queryParams.readStatus === 'read') {
         mails = mails.filter((mail) => mail.isRead)
       }
     }
+
+    // if (queryParams.isStared !== undefined) {
+    //   if (queryParams.isStared === 'true') {
+    //     mails = mails.filter((mail) => mail.isStared)
+    //   } else if (queryParams.isStared === 'false') {
+    //     mails = mails.filter((mail) => !mail.isStared)
+    //   }
+    // }
+
     // if (filterBy.maxPrice) {
     //   mails = mails.filter((mail) => mail.listPrice.amount <= filterBy.maxPrice)
     // }
@@ -76,6 +98,7 @@ function getDefaultFilter() {
   // TODO: Adapt to mail service
   return {
     subject: '',
+    readStatus: 'all',
   }
 }
 

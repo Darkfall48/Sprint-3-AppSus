@@ -1,5 +1,7 @@
 // TODO: • Allow filtering by different folders: inbox / sent / trash/ draft
 
-export function MailFolderList() {
-  return <h1>Mail Folder List</h1>
+const { useState, useEffect } = React
+
+export function MailFolderList({ onSetFilter }) {
+  return <section className="mail-folder-list"></section>
 }
