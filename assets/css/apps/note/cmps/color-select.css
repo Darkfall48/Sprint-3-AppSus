@@ -2,7 +2,7 @@
     position: relative;
     bottom: -34px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 5px;
     border:1px solid #706b6b44;
     border-top: none;
@@ -17,6 +17,10 @@
     border-radius: 50%;
 }
 
+.default-bg {
+    background-color: var(var(--list-bg));
+    border: 1px solid grey
+}
 .purple-bg {
     background-color: var(--purple);
 }

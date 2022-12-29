@@ -1,19 +1,31 @@
-#note-txt{
+#note-txt {
     font-family: roboto-light;
     font-size: 1.2em;
-    padding:10px;
-    border:none;
+    padding: 10px;
+    border: none;
+    height: 50px;
+    width: 80%;
+}
+
+.add-note-container {
     background-color: var(--input-bg);
     border-radius: 10px;
-    width:60vw;
-    height: 50px;
+    padding: 0 30px;
+    margin: 0 auto;
+    width: 70vw;
 }
 
-.note-index{
+.note-index {
     background-color: rgba(223, 222, 222, 0.832);
-    padding: 20px 0 ;
+    padding: 20px 0;
 }
 
-.note-index-container{
+.note-index-container {
     margin-top: 20px;
+}
+
+.type-note {
+    font-size: 1.2em;
+    color: grey;
+    margin-right:15px;
 }
