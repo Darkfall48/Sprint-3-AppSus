@@ -1,3 +1,9 @@
 export function Loader() {
-  return <h2>Loading...</h2>
+  return (
+    <img
+      className="loader"
+      src="assets/animation/loader/Loader-1.svg"
+      alt="Loader"
+    />
+  )
 }

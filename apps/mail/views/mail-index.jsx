@@ -15,19 +15,24 @@ import { Loader } from '../../../cmps/loader.jsx'
 
 export function MailIndex() {
   const [mails, setMails] = useState(null)
+  const [filterBy, setFilterBy] = useState(mailService.getDefaultFilter())
 
   useEffect(() => {
     loadMails()
-  }, [])
+  }, [filterBy])
 
   function loadMails() {
     mailService
-      .query()
+      .query(filterBy)
       .then((mails) => {
         console.log('Mails loaded:', mails)
         setMails((lastMails) => (lastMails = mails))
       })
       .catch((err) => console.log('Error with Mail List:', err))
+  }
+
+  function onSetFilter(filterByFromFilter) {
+    setFilterBy(filterByFromFilter)
   }
 
   function Log() {
@@ -37,10 +42,10 @@ export function MailIndex() {
   if (!mails) return <Loader />
 
   return (
-    <section>
+    <section className="mail-index">
       <Log />
       <MailCompose />
-      <MailFilter />
+      <MailFilter onSetFilter={onSetFilter} />
       <MailFolderList />
       <MailList mails={mails} />
     </section>

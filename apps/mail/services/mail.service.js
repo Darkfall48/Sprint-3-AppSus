@@ -31,10 +31,18 @@ export const mailService = {
 function query(filterBy = getDefaultFilter()) {
   return storageService.query(STORAGE_MAIL_KEY).then((mails) => {
     // TODO: Adapt to mail service
-    // if (filterBy.txt) {
-    //   const regex = new RegExp(filterBy.txt, 'i')
-    //   mails = mails.filter((mail) => regex.test(mail.title))
-    // }
+    if (filterBy.subject) {
+      const regex = new RegExp(filterBy.subject, 'i')
+      mails = mails.filter((mail) => regex.test(mail.subject))
+    }
+
+    if (filterBy.readStatus) {
+      if (filterBy.readStatus === 'unread') {
+        mails = mails.filter((mail) => !mail.isRead)
+      } else if (filterBy.readStatus === 'read') {
+        mails = mails.filter((mail) => mail.isRead)
+      }
+    }
     // if (filterBy.maxPrice) {
     //   mails = mails.filter((mail) => mail.listPrice.amount <= filterBy.maxPrice)
     // }
@@ -67,13 +75,7 @@ function getEmptyMail(title = '', amount = '') {
 function getDefaultFilter() {
   // TODO: Adapt to mail service
   return {
-    txt: '',
-    maxPrice: '',
-    lang: '',
-    author: '',
-    date: '',
-    page: '',
-    categories: '',
+    subject: '',
   }
 }
 
@@ -107,6 +109,18 @@ function _createMails() {
         id: 'e103',
         subject: 'Miss you loulou!',
         body: 'Would love to catch up sometimes',
+        isRead: false,
+        sentAt: 1524062263,
+        to: 'momo@momo.com',
+        status: 'inbox',
+        isRead: false,
+        isStared: false,
+        labels: ['important', 'romantic'],
+      },
+      {
+        id: 'e104',
+        subject: 'Popi',
+        body: 'Koki',
         isRead: false,
         sentAt: 1524062263,
         to: 'momo@momo.com',

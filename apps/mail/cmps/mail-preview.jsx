@@ -11,11 +11,11 @@ import { Loader } from '../../../cmps/loader.jsx'
 // TODO: • Support hover state
 
 export function MailPreview({ mail }) {
-  console.log('Mail from Mail List', mail)
+  // console.log('Mail from Mail List', mail)
   const [isExpanded, setIsExpanded] = useState(false)
 
   function setReadStatus() {
-    console.log(mail.isRead)
+    // console.log(mail.isRead)
     if (mail.isRead) return 'read'
 
     return ''

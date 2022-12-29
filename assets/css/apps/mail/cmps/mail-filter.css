@@ -1,0 +1,19 @@
+.mail-filter {
+  display: flex;
+  background-color: white;
+  border-radius: 25px;
+  width: fit-content;
+  padding: 10px;
+  justify-self: center;
+  place-items: center;
+}
+
+#subject-filter {
+  border: none;
+  background-color: transparent;
+  color: black;
+  -webkit-text-fill-color: grey;
+}
+
+.search-icon {
+}
