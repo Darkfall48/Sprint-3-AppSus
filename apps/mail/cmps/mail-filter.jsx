@@ -14,8 +14,8 @@ export function MailFilter({ onSetFilter }) {
   const navigate = useNavigate()
   const searchParams = new URLSearchParams(location.search)
   console.log('Search Params:', searchParams)
-  console.log('Location:', location)
-  console.log('Navigate:', navigate)
+  // console.log('Location:', location)
+  // console.log('Navigate:', navigate)
 
   useEffect(() => {
     onSetFilter({ ...filterBy, readStatus: selectedOption })
@@ -30,7 +30,7 @@ export function MailFilter({ onSetFilter }) {
 
   useEffect(() => {
     const searchParams = new URLSearchParams()
-    searchParams.set('readStatus', filterBy.readStatus)
+    searchParams.set('readStatus', selectedOption)
     searchParams.set('subject', filterBy.subject)
     navigate(`${location.pathname + '?' + searchParams.toString()}`)
   }, [filterBy, selectedOption, navigate])
