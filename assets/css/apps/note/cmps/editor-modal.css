@@ -1,10 +1,20 @@
 .edit-container {
     display: block;
-    position: absolute;
-    top: 10vh;
-    left: 10vw;
-    background-color:var(--list-bg);
+    position: fixed;
+    top: 40vh;
+    left: 30vw;
+    background-color:var(--modal-bg);
     width: 50vw;
-    height: 100px;
+    height: 200px;
+    font-family: roboto-light;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.edit-note-txt{
     font-family: inherit;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    width:90%;
 }

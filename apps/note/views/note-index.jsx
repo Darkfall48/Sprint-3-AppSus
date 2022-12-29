@@ -57,7 +57,7 @@ export function NoteIndex() {
     
     function onChangeBackgroundColor(selectedNote, chosenColor) {
         noteService.changeNoteBackground(chosenColor, selectedNote)
-        .then(noteService.query).then((updatedNotes)=>{setNotes((prevNotes)=>prevNotes=updatedNotes)})
+        .then(()=>noteService.query()).then((updatedNotes)=>{setNotes((prevNotes)=>prevNotes=updatedNotes)})
     }
 
     function onEditNote(note){

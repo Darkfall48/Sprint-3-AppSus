@@ -4,7 +4,7 @@ export function NoteEdit() {
         <form action="edit-note-form">
 
             <textarea type="text" className="edit-note-txt" />
-            <button>Close</button>
+            <button className="btn btn-close-editor">Close</button>
         </form>
 
     </div>
