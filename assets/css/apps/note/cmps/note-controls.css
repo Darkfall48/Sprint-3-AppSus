@@ -1,7 +1,9 @@
 .ctrl-btn {
     border: none;
     background-color: rgba(255, 255, 255, 0);
+    color: var(--main-purple-hvr);
+    font-size: 1.2em;
 }
 .note-pinned{
-    color:yellow
+    color:rgb(185, 185, 55)
 }

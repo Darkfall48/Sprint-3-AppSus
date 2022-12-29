@@ -2,7 +2,7 @@
     /* main */
     --main-bg-color: #f7f7f7;
     --font-color: black;
-    --input-bg: #eaf1fb;
+    --input-bg: rgba(137, 43, 226, 0.123);
     --list-bg: rgba(245, 242, 242, 0.805);
     --main-purple: blueviolet;
     --main-purple-hvr: rgb(96, 35, 152);
@@ -15,5 +15,7 @@
     --pink: #fdcfe8;
     --blue: #cbf0f8;
     --green: #ccff90;
+    --modal-bg: rgba(209, 183, 234, 0.956);
     --s : 80vw
+
 }
