@@ -8,7 +8,7 @@ export function NoteEdit() {
     const navigate = useNavigate()
     let { noteId } = useParams()
     noteId= noteId.substring(1)
-    console.log('noteId', noteId)
+    // console.log('noteId', noteId)
 
 
     useEffect(() => {
@@ -32,9 +32,8 @@ export function NoteEdit() {
     function handleChange({target}){
         let {value} = target
         console.log('value', value)
-        setNote((prevNote => {
-            return { ...prevNote, info:{txt: value }}
-        }))
+        console.log('noteToEdit', noteToEdit)
+        setNote((prevNote) =>( {...prevNote, info:{txt: value} } ))
     }
 
     return <div onSubmit={onSaveNote} className="edit-container">

@@ -2,9 +2,12 @@ const { useState, useEffect } = React
 const { Link, useNavigate } = ReactRouterDOM
 
 import { noteService } from '../services/note.service.js'
+import { showSuccessMsg } from '../../../services/event-bus.service.js'
 import { NoteList } from '../cmps/note-list.jsx'
 import { AddNote } from '../cmps/add-note.jsx'
 import { NoteEdit } from "../views/note-edit.jsx";
+import { Loader } from '../../../cmps/loader.jsx'
+
 
 export function NoteIndex() {
     const [notes, setNotes] = useState([])
@@ -26,7 +29,9 @@ export function NoteIndex() {
     }
 
     function onSaveNote(noteToAdd) {
-        noteService.save(noteToAdd).then(() => loadNotes())
+        noteService.save(noteToAdd).then(() => {
+            showSuccessMsg('Note added')
+            loadNotes()})
     }
 
     function onRemoveNote(noteId) {
@@ -35,7 +40,7 @@ export function NoteIndex() {
             .then(() => {
                 const updatedNotes = notes.filter(note => note.id !== noteId)
                 setNotes(updatedNotes)
-                // showSuccessMsg('Book removed')
+                showSuccessMsg('Note removed')
             })
             // .then(notes => setNotes((prevNotes) => prevNotes = notes))
             .catch((err) => {
@@ -70,6 +75,9 @@ export function NoteIndex() {
         console.log('note.id', note.id)
         navigate(`/note/edit/:${note.id}`)
     }
+
+    if (!notes) return <Loader />
+
 
     return <div className="note-index-container">
         <AddNote onSaveNote={onSaveNote} />
