@@ -1,12 +1,14 @@
 .note-preview {
-    text-align: center;
-    padding: 1em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* background-color: rgb(177, 201, 201); */
+  text-align: center;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  /* place-items: center;
+  place-content: center; */
+  align-items: center;
+  /* background-color: rgb(177, 201, 201); */
 }
 
-.edit-note-input{
-    background-color: #fff;
+.edit-note-input {
+  background-color: #fff;
 }

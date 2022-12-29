@@ -1,10 +1,8 @@
 export function BgColorSelection({ note, onChangeBackgroundColor }) {
-  const ref = useRef(null)
   return (
     <div className="color-palette-container">
       <div
         className="color-select purple-bg"
-        ref={ref}
         onClick={() => {
           onChangeBackgroundColor(note, 'purple')
         }}
@@ -13,7 +11,6 @@ export function BgColorSelection({ note, onChangeBackgroundColor }) {
 
       <div
         className="color-select pink-bg"
-        ref={ref}
         onClick={() => {
           onChangeBackgroundColor(note, 'pink')
         }}
@@ -22,7 +19,6 @@ export function BgColorSelection({ note, onChangeBackgroundColor }) {
 
       <div
         className="color-select blue-bg"
-        ref={ref}
         onClick={() => {
           onChangeBackgroundColor(note, 'blue')
         }}
@@ -31,7 +27,6 @@ export function BgColorSelection({ note, onChangeBackgroundColor }) {
 
       <div
         className="color-select green-bg"
-        ref={ref}
         onClick={() => {
           onChangeBackgroundColor(note, 'green')
         }}

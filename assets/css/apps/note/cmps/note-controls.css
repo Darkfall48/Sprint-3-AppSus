@@ -1,15 +1,20 @@
-.ctrl-btn {
-    border: none;
-    background-color: rgba(255, 255, 255, 0);
-    color: var(--main-purple-hvr);
-    font-size: 1.2em;
-}
-.note-pinned{
-    color:rgb(185, 185, 55)
+.note-controls-container {
+  display: flex;
+  gap: 20px;
 }
 
-#pin-btn{
-position:relative;
-left: 5px;
-top: 5px
+.ctrl-btn {
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+  color: var(--main-purple-hvr);
+  font-size: 1.2em;
+}
+.note-pinned {
+  color: rgb(185, 185, 55);
+}
+
+#pin-btn {
+  position: relative;
+  left: 5px;
+  top: 5px;
 }

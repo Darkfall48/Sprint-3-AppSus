@@ -1,38 +1,37 @@
 .color-palette-container {
-    position: relative;
-    bottom: -34px;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 5px;
-    border:1px solid #706b6b44;
-    border-top: none;
-    border-radius: 8px;
-    padding: 5px
+  position: relative;
+  bottom: -34px;
+  display: flex;
+  gap: 5px;
+  border: 1px solid #706b6b44;
+  border-top: none;
+  border-radius: 8px;
+  padding: 5px;
 }
 
 .color-select {
-
-    height: 20px;
-    width: 20px;
-    border-radius: 50%;
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
 }
 
 .default-bg {
-    background-color: var(var(--list-bg));
-    border: 1px solid grey
+  background-color: var(var(--list-bg));
+  border: 1px solid grey;
 }
 .purple-bg {
-    background-color: var(--purple);
+  background-color: var(--purple);
 }
 
 .pink-bg {
-    background-color: var(--pink);
+  background-color: var(--pink);
 }
 
 .blue-bg {
-    background-color: var(--blue);
+  background-color: var(--blue);
 }
 
 .green-bg {
-    background-color: var(--green);
+  background-color: var(--green);
 }
