@@ -4,11 +4,12 @@ import { utilService } from '../../../services/util.service.js'
 import { mailService } from '../services/mail.service.js'
 
 import { MailDetails } from './mail-details.jsx'
+import { MailLongTxt } from './mail-longtext.jsx'
 import { Loader } from '../../../cmps/loader.jsx'
 
 // TODO: • Present an email preview
 // TODO: • Renders the subject (with text size limit)
-// TODO: • Gives visual indication for read/unread
+//? DONE: • Gives visual indication for read/unread
 // TODO: • Support hover state
 
 export function MailPreview({ mail }) {
@@ -27,7 +28,7 @@ export function MailPreview({ mail }) {
     if (!mail.isRead)
       setTimeout(() => {
         mail.isRead = true
-        mailService.save(mail)
+        mailService.save(mail).catch(console.log)
       }, 500)
   }
 
@@ -40,7 +41,7 @@ export function MailPreview({ mail }) {
   function toggleStar(ev) {
     ev.stopPropagation() //! Not Working
     mail.isStared ? (mail.isStared = false) : (mail.isStared = true)
-    mailService.save(mail)
+    mailService.save(mail).catch(console.log)
   }
 
   function SetName() {
@@ -52,7 +53,8 @@ export function MailPreview({ mail }) {
       return (
         <p className="sub-body-container">
           <span className="subject"> {mail.subject}</span>
-          <span className="body">{mail.body}</span>
+          <MailLongTxt txt={mail.body} length={50} />
+          {/* <span className="body">{mail.body}</span> */}
         </p>
       )
 
@@ -61,6 +63,13 @@ export function MailPreview({ mail }) {
 
   function SetDate() {
     return <p className="date">{utilService.getDate(mail.sentAt)}</p>
+  }
+
+  function onRemove() {
+    mailService
+      .remove(mail.id)
+      .then(console.log('Mail removed'))
+      .catch(console.log)
   }
 
   if (!mail)
@@ -93,9 +102,12 @@ export function MailPreview({ mail }) {
         <td>
           <SetDate />
         </td>
+        <td>
+          <button onClick={onRemove}>Remove</button>
+        </td>
       </tr>
       <tr hidden={!isExpanded}>
-        <td colSpan="4">
+        <td colSpan="5">
           <MailDetails mail={mail} />
         </td>
       </tr>

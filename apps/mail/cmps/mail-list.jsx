@@ -22,6 +22,7 @@ export function MailList({ mails }) {
           <th>Name</th>
           <th>Subject</th>
           <th>Date</th>
+          <th>Actions</th>
         </tr>
       </thead>
       <tbody>

@@ -112,7 +112,8 @@ function _createMails() {
         body: 'Would love to catch up sometimes',
         isRead: false,
         sentAt: 1672238263,
-        to: 'momo@momo.com',
+        to: 'user@appsus.com',
+        from: 'momo@momo.com',
         status: 'inbox',
         isRead: true,
         isStared: true,
@@ -121,10 +122,15 @@ function _createMails() {
       {
         id: 'e102',
         subject: 'Miss you too!',
-        body: 'Would love to catch up sometimes',
+        body: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae at animi vitae! Non consectetur, labore, vero architecto aperiam enim nostrum deleniti consequuntur exercitationem nam tenetur sed animi nemo ratione et.
+        Maiores aspernatur modi molestias quam similique sit, laudantium, dolor repellendus, ratione autem deserunt? Possimus inventore voluptas beatae praesentium officia facere quibusdam quia soluta voluptates sapiente aliquam excepturi, ratione, aut rem!
+        Recusandae officiis ullam vel possimus quam qui quisquam corrupti, laborum delectus deleniti repudiandae doloribus laudantium ratione aut beatae excepturi error hic inventore dicta tempora rerum quo voluptatibus quod. Impedit, ab!
+        Quidem suscipit quis hic, dolore tenetur ipsum soluta odio animi ex laboriosam reprehenderit inventore esse sit similique tempora ducimus repellat doloribus impedit facilis repellendus officiis. Rerum fugit perferendis qui consequatur.
+        Error in tenetur rem, autem laborum incidunt aspernatur, quos harum ea magnam quod labore dolorem. Doloribus perspiciatis, facilis vitae enim expedita, reprehenderit officia libero architecto, maiores tempore ullam accusamus blanditiis.`,
         isRead: false,
         sentAt: 1546007863,
-        to: 'momo@momo.com',
+        to: 'user@appsus.com',
+        from: 'momo@momo.com',
         status: 'inbox',
         labels: ['important', 'romantic'],
       },
@@ -134,7 +140,8 @@ function _createMails() {
         body: 'Would love to catch up sometimes',
         isRead: false,
         sentAt: 1524062263,
-        to: 'momo@momo.com',
+        to: 'user@appsus.com',
+        from: 'momo@momo.com',
         status: 'inbox',
         isRead: false,
         isStared: false,
@@ -146,7 +153,8 @@ function _createMails() {
         body: 'Koki',
         isRead: false,
         sentAt: 1524062263,
-        to: 'momo@momo.com',
+        to: 'user@appsus.com',
+        from: 'momo@momo.com',
         status: 'inbox',
         isRead: false,
         isStared: false,

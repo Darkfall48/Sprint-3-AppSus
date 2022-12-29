@@ -10,7 +10,7 @@ import { MailList } from '../cmps/mail-list.jsx'
 import { MailPreview } from '../cmps/mail-preview.jsx'
 import { Loader } from '../../../cmps/loader.jsx'
 
-// TODO: • Gets the right emails from service (async)
+//? DONE: • Gets the right emails from service (async)
 // TODO: • Renders the list and the filters (both top filter with search, and side filter for different folders)
 
 export function MailIndex() {
@@ -47,7 +47,7 @@ export function MailIndex() {
       <MailCompose />
       <MailFilter onSetFilter={onSetFilter} />
       <MailFolderList onSetFilter={onSetFilter} />
-      <MailList mails={mails} />
+      <MailList mails={mails} loadMails={loadMails} />
     </section>
   )
 }
