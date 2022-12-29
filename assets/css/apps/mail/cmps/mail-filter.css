@@ -6,6 +6,11 @@
   padding: 10px;
   justify-self: center;
   place-items: center;
+
+  border: 1px rgba(127, 125, 125, 0.644) solid;
+  box-shadow: 0px 0px 5px -1px rgba(181, 178, 178, 0.71);
+  -webkit-box-shadow: 0px 0px 5px -1px rgba(181, 178, 178, 0.71);
+  -moz-box-shadow: 0px 0px 5px -1px rgba(181, 178, 178, 0.71);
 }
 
 #subject-filter {

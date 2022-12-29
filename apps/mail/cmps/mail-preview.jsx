@@ -13,7 +13,7 @@ import { Loader } from '../../../cmps/loader.jsx'
 //? DONE: • Gives visual indication for read/unread
 // TODO: • Support hover state
 
-export function MailPreview({ mail }) {
+export function MailPreview({ mail, loadMails, onRemoveMail }) {
   // console.log('Mail from Mail List', mail)
   const [isExpanded, setIsExpanded] = useState(false)
 
@@ -57,6 +57,7 @@ export function MailPreview({ mail }) {
       showSuccessMsg('Mail Starred!')
     }
     mailService.save(mail).catch(console.log)
+    loadMails()
   }
 
   function SetName() {
@@ -80,12 +81,12 @@ export function MailPreview({ mail }) {
     return <p className="date">{utilService.getDate(mail.sentAt)}</p>
   }
 
-  function onRemove() {
-    mailService
-      .remove(mail.id)
-      .then(showSuccessMsg('Mail Removed!'))
-      .catch(console.log)
-  }
+  // function onRemove() {
+  //   mailService
+  //     .remove(mail.id)
+  //     .then(showSuccessMsg('Mail Removed!'))
+  //     .catch(console.log)
+  // }
 
   if (!mail)
     return (
@@ -118,7 +119,7 @@ export function MailPreview({ mail }) {
         </td>
         <td>
           <button onClick={setStatusToUnread}>Unread</button>
-          <button onClick={onRemove}>Remove</button>
+          <button onClick={() => onRemoveMail(mail.id)}>Remove</button>
         </td>
       </tr>
       <tr hidden={!isExpanded}>

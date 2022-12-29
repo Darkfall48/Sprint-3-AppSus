@@ -5,8 +5,7 @@ import { mailService } from '../services/mail.service.js'
 import { MailPreview } from './mail-preview.jsx'
 import { Loader } from '../../../cmps/loader.jsx'
 
-export function MailList({ mails, loadMails }) {
-  console.log('Mails from mail-index', mails)
+export function MailList({ mails, loadMails, onRemoveMail }) {
   if (!mails)
     return (
       <table>
@@ -26,7 +25,12 @@ export function MailList({ mails, loadMails }) {
       </thead>
       <tbody>
         {mails.map((mail) => (
-          <MailPreview key={mail.id} mail={mail} />
+          <MailPreview
+            key={mail.id}
+            mail={mail}
+            loadMails={loadMails}
+            onRemoveMail={onRemoveMail}
+          />
         ))}
       </tbody>
     </table>

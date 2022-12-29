@@ -1,38 +1,38 @@
 .btn {
-    font-family: inherit;
-    cursor: pointer;
-    font-size: 1em;
-    background-color: var(--main-purple);
-    color: whitesmoke;
-    border-radius: 8px;
-    border: none;
-    padding: 5px;
+  font-family: inherit;
+  cursor: pointer;
+  font-size: 1em;
+  background-color: var(--main-purple);
+  color: whitesmoke;
+  border-radius: 8px;
+  border: none;
+  padding: 5px;
 }
 
 a {
-    color: inherit;
+  margin: 0.5em;
+  color: inherit;
+  text-decoration: none;
 }
 
 .a-btn {
-
-    font-size: 1.5em;
-    text-decoration: none;
-    width: fit-content;
-    background-color: var(--main-purple);
-    color: whitesmoke;
-    padding: 20px;
-    border-radius: 8px;
-    transition: 0.3s;
-    max-height: 3em;
+  font-size: 1.5em;
+  text-decoration: none;
+  width: fit-content;
+  background-color: var(--main-purple);
+  color: whitesmoke;
+  padding: 20px;
+  border-radius: 8px;
+  transition: 0.3s;
+  max-height: 3em;
 }
 
 .a-btn:hover {
-    background-color: var(--main-purple-hvr);
-    color: whitesmoke;
+  background-color: var(--main-purple-hvr);
+  color: whitesmoke;
 }
 
 .a-btn:active {
-    color: rgba(255, 217, 0, 0.63);
-    font-size: 0.99em;
+  color: rgba(255, 217, 0, 0.63);
+  font-size: 0.99em;
 }
-

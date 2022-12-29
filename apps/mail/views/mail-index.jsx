@@ -1,6 +1,7 @@
 const { useState, useEffect } = React
 
 import { mailService } from '../services/mail.service.js'
+import { showSuccessMsg } from '../../../services/event-bus.service.js'
 
 import { MailCompose } from '../cmps/mail-compose.jsx'
 import { MailDetails } from '../cmps/mail-details.jsx'
@@ -31,23 +32,30 @@ export function MailIndex() {
       .catch((err) => console.log('Error with Mail List:', err))
   }
 
-  function onSetFilter(filterByFromFilter) {
-    setFilterBy(filterByFromFilter)
+  function onRemoveMail(mailId) {
+    mailService.remove(mailId).then(() => {
+      const updatedMails = mails.filter((mail) => mail.id !== mailId)
+      setMails(updatedMails)
+      showSuccessMsg('Mail Removed!')
+    })
   }
 
-  function Log() {
-    console.log('New mails', mails)
+  function onSetFilter(filterByFromFilter) {
+    setFilterBy(filterByFromFilter)
   }
 
   if (!mails) return <Loader />
 
   return (
     <section className="mail-index">
-      <Log />
       <MailCompose />
       <MailFilter onSetFilter={onSetFilter} />
       <MailFolderList onSetFilter={onSetFilter} />
-      <MailList mails={mails} loadMails={loadMails} />
+      <MailList
+        mails={mails}
+        loadMails={loadMails}
+        onRemoveMail={onRemoveMail}
+      />
     </section>
   )
 }
