@@ -1,8 +1,9 @@
 const { useState, useEffect, Fragment } = React
 
 import { utilService } from '../../../services/util.service.js'
-import { mailService } from '../services/mail.service.js'
+import { showSuccessMsg } from '../../../services/event-bus.service.js'
 
+import { mailService } from '../services/mail.service.js'
 import { MailDetails } from './mail-details.jsx'
 import { MailLongTxt } from './mail-longtext.jsx'
 import { Loader } from '../../../cmps/loader.jsx'
@@ -25,11 +26,19 @@ export function MailPreview({ mail }) {
   }
 
   function setStatusToRead() {
-    if (!mail.isRead)
-      setTimeout(() => {
-        mail.isRead = true
-        mailService.save(mail).catch(console.log)
-      }, 500)
+    if (!mail.isRead && isExpanded) {
+      mail.isRead = true
+      mailService.save(mail).catch(console.log)
+      showSuccessMsg('Mail Status set to Read!')
+    }
+  }
+
+  function setStatusToUnread() {
+    if (mail.isRead) {
+      mail.isRead = false
+      mailService.save(mail).catch(console.log)
+      showSuccessMsg('Mail Status set to Unread!')
+    }
   }
 
   function SetStar() {
@@ -40,7 +49,13 @@ export function MailPreview({ mail }) {
 
   function toggleStar(ev) {
     ev.stopPropagation() //! Not Working
-    mail.isStared ? (mail.isStared = false) : (mail.isStared = true)
+    if (mail.isStared) {
+      mail.isStared = false
+      showSuccessMsg('Mail Un-Starred!')
+    } else {
+      mail.isStared = true
+      showSuccessMsg('Mail Starred!')
+    }
     mailService.save(mail).catch(console.log)
   }
 
@@ -68,7 +83,7 @@ export function MailPreview({ mail }) {
   function onRemove() {
     mailService
       .remove(mail.id)
-      .then(console.log('Mail removed'))
+      .then(showSuccessMsg('Mail Removed!'))
       .catch(console.log)
   }
 
@@ -83,26 +98,26 @@ export function MailPreview({ mail }) {
 
   return (
     <Fragment>
-      <tr
-        className={setReadStatus()}
-        onClick={() => {
-          setIsExpanded(!isExpanded)
-          setStatusToRead()
-        }}
-      >
+      <tr className={setReadStatus()}>
         <td>
           <SetStar />
         </td>
         <td>
           <SetName />
         </td>
-        <td>
+        <td
+          onClick={() => {
+            setIsExpanded(!isExpanded)
+            setStatusToRead()
+          }}
+        >
           <SetSubject />
         </td>
         <td>
           <SetDate />
         </td>
         <td>
+          <button onClick={setStatusToUnread}>Unread</button>
           <button onClick={onRemove}>Remove</button>
         </td>
       </tr>

@@ -5,9 +5,8 @@ import { mailService } from '../services/mail.service.js'
 import { MailPreview } from './mail-preview.jsx'
 import { Loader } from '../../../cmps/loader.jsx'
 
-export function MailList({ mails }) {
+export function MailList({ mails, loadMails }) {
   console.log('Mails from mail-index', mails)
-
   if (!mails)
     return (
       <table>
