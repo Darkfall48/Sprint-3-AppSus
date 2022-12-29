@@ -29,13 +29,17 @@ export function NoteEdit() {
         navigate('/note')
     }
 
-    function onEditNote(ev){
-        console.log(ev)
+    function handleChange({target}){
+        let {value} = target
+        console.log('value', value)
+        setNote((prevNote => {
+            return { ...prevNote, info:{txt: value }}
+        }))
     }
+
     return <div onSubmit={onSaveNote} className="edit-container">
-        <h3>Edit your note</h3>
         <form action="edit-note-form">
-            <textarea type="text" className="edit-note-txt" value={`${noteToEdit.info.txt}`} onchange={onEditNote} />
+            <textarea type="text" className="edit-note-txt" value={noteToEdit.info.txt} onChange={handleChange} />
             <button className="btn btn-close-editor">Close</button>
         </form>
 
