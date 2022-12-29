@@ -13,15 +13,14 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    
     background-color: var(--list-bg);
     border: 1px solid transparent;
     border-color: #e0e0e0;
     border-radius: 8px;
-    border-width: 1px 1px 1px 6px;
+    border-width: 0.5px 0.5px 0.5px 2px;
     min-height: 150px;
     /* padding: 100px 0 0; */
-    box-shadow: inset 1px 1px 0 rgb(0 0 0 / 1%), inset 0 -1px 0 rgb(0 0 0 / 2%);
+    box-shadow: inset 1px 2px 0 rgb(0 0 0 / 1%), inset 0 -1px 0 rgb(0 0 0 / 2%);
 }
 
 .note-list li.default{

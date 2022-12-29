@@ -25,6 +25,7 @@ export function AddNote({ onSaveNote }) {
     function onSubmitNote(ev) {
         ev.preventDefault()
         onSaveNote(note)
+        setNote(noteService.getDefaultNote())
     }
     return <div className="add-note-container">
         <form onSubmit={onSubmitNote}>

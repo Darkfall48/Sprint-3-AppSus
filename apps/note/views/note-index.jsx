@@ -1,5 +1,5 @@
 const { useState, useEffect } = React
-const { Link } = ReactRouterDOM
+const { Link, useNavigate } = ReactRouterDOM
 
 import { noteService } from '../services/note.service.js'
 import { NoteList } from '../cmps/note-list.jsx'
@@ -8,9 +8,12 @@ import { NoteEdit } from "../views/note-edit.jsx";
 
 export function NoteIndex() {
     const [notes, setNotes] = useState([])
+    const [noteToEdit, setNoteToEdit] = useState(null)
     const [editMode, setEditMode] = useState(false)
+    const navigate = useNavigate()
 
     // const [filterBy , setFilterBy] = useState(noteService.getDefaultFilter())
+
 
     useEffect(() => {
         loadNotes()
@@ -63,7 +66,9 @@ export function NoteIndex() {
     function onEditNote(note){
         const noteTxt = note.info.txt
         console.log('noteTxt', noteTxt)
-        setEditMode(true)
+        // setEditMode(true)
+        console.log('note.id', note.id)
+        navigate(`/note/edit/:${note.id}`)
     }
 
     return <div className="note-index-container">
@@ -74,7 +79,9 @@ export function NoteIndex() {
             onPinNote={onPinNote}
             onEditNote={onEditNote}
         />
-        {editMode && <NoteEdit/>}
+        {/* {editMode && <NoteEdit/>} */}
+        {/* {editMode && <Link to={`/note/edit/${noteId}`}/> } */}
+
         {/* <NoteTxt/> */}
     </div>
 
