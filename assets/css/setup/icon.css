@@ -31,6 +31,7 @@
   content: '\f02d';
 }
 
+<<<<<<< Updated upstream
 /** Mail App **/
 
 /* Folder List */
@@ -53,3 +54,13 @@
 .fa-solid.fa-trash::before {
   content: '\f1f8';
 } */
+=======
+.fa-solid.fa-image::before{
+    content: '\f03e';
+}
+.fa-solid.fa-font::before{
+    content: '\f031';
+}
+
+
+>>>>>>> Stashed changes

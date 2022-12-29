@@ -37,6 +37,8 @@ export function AddNote({ onSaveNote }) {
                 value={note.info.txt}
                 onChange={handleChangeTxt} />
             {/* <button>Submit</button> */}
+            <i className="fa-solid fa-font type-note"></i>
+            <i className="fa-solid fa-image type-note"></i>
         </form>
     </div>
 
