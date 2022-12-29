@@ -69,7 +69,8 @@ export function MailPreview({ mail, loadMails, onRemoveMail }) {
       return (
         <p className="sub-body-container">
           <span className="subject"> {mail.subject}</span>
-          <MailLongTxt txt={mail.body} length={50} />
+          <span>{' - '}</span>
+          <MailLongTxt txt={mail.body} length={20} />
           {/* <span className="body">{mail.body}</span> */}
         </p>
       )
@@ -80,13 +81,6 @@ export function MailPreview({ mail, loadMails, onRemoveMail }) {
   function SetDate() {
     return <p className="date">{utilService.getDate(mail.sentAt)}</p>
   }
-
-  // function onRemove() {
-  //   mailService
-  //     .remove(mail.id)
-  //     .then(showSuccessMsg('Mail Removed!'))
-  //     .catch(console.log)
-  // }
 
   if (!mail)
     return (
@@ -123,7 +117,7 @@ export function MailPreview({ mail, loadMails, onRemoveMail }) {
         </td>
       </tr>
       <tr hidden={!isExpanded}>
-        <td colSpan="5">
+        <td className="details" colSpan="5">
           <MailDetails mail={mail} />
         </td>
       </tr>

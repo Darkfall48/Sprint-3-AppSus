@@ -17,7 +17,7 @@
 @import './views/about.css';
 
 /* Mail */
-@import './apps/mail/views/mail-app.css';
+@import './apps/mail/views/mail-index.css';
 
 /* Note */
 @import './apps/note/views/note-app.css';
@@ -29,11 +29,11 @@
 @import './cmps/app-header.css';
 
 /* Mail */
-@import './apps/mail/cmps/mail-folder-list.css';
-@import './apps/mail/cmps/mail-filter.css';
 @import './apps/mail/cmps/mail-list.css';
 @import './apps/mail/cmps/mail-preview.css';
 @import './apps/mail/cmps/mail-details.css';
+@import './apps/mail/cmps/mail-filter.css';
+@import './apps/mail/cmps/mail-folder-list.css';
 @import './apps/mail/cmps/mail-compose.css';
 
 /* Note */

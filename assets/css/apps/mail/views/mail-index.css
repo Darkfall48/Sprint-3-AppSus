@@ -1,0 +1,27 @@
+.mail-index {
+  background-color: rgba(255, 255, 255, 0.557);
+  display: grid;
+  grid-template-areas:
+    'compose filter'
+    'side-filter inbox';
+  gap: 10px;
+  padding: 20px;
+  box-shadow: 0px 0px 8px 1px #b7b7b8;
+  border-radius: 25px;
+}
+
+.mail-compose {
+  grid-template: compose;
+}
+
+.mail-filter {
+  grid-template: filter;
+}
+
+.mail-folder-list {
+  grid-template: side-filter;
+}
+
+.mail-list {
+  grid-template: inbox;
+}

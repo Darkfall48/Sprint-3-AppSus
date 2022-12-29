@@ -1,21 +1,23 @@
 :root {
-    /* main */
-    --main-bg-color: #f7f7f7;
-    --font-color: black;
-    --input-bg: rgba(137, 43, 226, 0.123);
-    --list-bg: #e0e0e029;
-    --main-purple: blueviolet;
-    --main-purple-hvr: rgb(96, 35, 152);
-    /* nav */
-    --nav-bg-color: red;
-    /* mail */
-    /* note */
+  /* main */
+  --main-bg-color: #f7f7f7;
+  --font-color: black;
+  --input-bg: rgba(137, 43, 226, 0.123);
+  --list-bg: #e0e0e029;
+  --main-purple: blueviolet;
+  --main-purple-hvr: rgb(96, 35, 152);
 
-    --purple: #d7aefb;
-    --pink: #fdcfe8;
-    --blue: #cbf0f8;
-    --green: #ccff90;
-    --modal-bg: rgba(209, 183, 234, 0.956);
-    --s : 80vw
+  /* nav */
+  --nav-bg-color: red;
 
+  /* mail */
+  --table-head-bg: rgb(159, 82, 231);
+
+  /* note */
+  --purple: #d7aefb;
+  --pink: #fdcfe8;
+  --blue: #cbf0f8;
+  --green: #ccff90;
+  --modal-bg: rgba(209, 183, 234, 0.956);
+  --s: 80vw;
 }

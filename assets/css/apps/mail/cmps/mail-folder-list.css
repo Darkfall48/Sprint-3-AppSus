@@ -1,0 +1,8 @@
+.mail-folder-list {
+  display: flex;
+  flex-direction: column;
+  place-content: start;
+}
+
+.mail-folder-list button {
+}

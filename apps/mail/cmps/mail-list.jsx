@@ -13,26 +13,28 @@ export function MailList({ mails, loadMails, onRemoveMail }) {
       </table>
     )
   return (
-    <table className="mail-list" border="1">
-      <thead>
-        <tr>
-          <th>Starred</th>
-          <th>Name</th>
-          <th>Subject</th>
-          <th>Date</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        {mails.map((mail) => (
-          <MailPreview
-            key={mail.id}
-            mail={mail}
-            loadMails={loadMails}
-            onRemoveMail={onRemoveMail}
-          />
-        ))}
-      </tbody>
-    </table>
+    <section className="mail-list">
+      <table className="mail-table">
+        <thead className="table-head">
+          <tr>
+            <th>Starred</th>
+            <th>Name</th>
+            <th>Subject</th>
+            <th>Date</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody className="table-body">
+          {mails.map((mail) => (
+            <MailPreview
+              key={mail.id}
+              mail={mail}
+              loadMails={loadMails}
+              onRemoveMail={onRemoveMail}
+            />
+          ))}
+        </tbody>
+      </table>
+    </section>
   )
 }
