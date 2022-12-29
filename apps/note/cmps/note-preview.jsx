@@ -1,5 +1,5 @@
 export function NotePreview({ note }) {
-
+console.log(note)
     return <article className="note-preview">
         {/* <h2>Book title: {book.title}</h2> */}
         {/* <h3>Price: {book.price}</h3> */}

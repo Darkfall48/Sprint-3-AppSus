@@ -6,3 +6,7 @@
     align-items: center;
     /* background-color: rgb(177, 201, 201); */
 }
+
+.edit-note-input{
+    background-color: #fff;
+}

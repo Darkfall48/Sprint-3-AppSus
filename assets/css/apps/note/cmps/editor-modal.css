@@ -1,0 +1,10 @@
+.edit-container {
+    display: block;
+    position: absolute;
+    top: 10vh;
+    left: 10vw;
+    background-color:var(--list-bg);
+    width: 50vw;
+    height: 100px;
+    font-family: inherit;
+}

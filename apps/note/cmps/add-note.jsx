@@ -15,8 +15,7 @@ export function AddNote({ onSaveNote }) {
     // }
 
     function handleChangeTxt({ target }) {
-        console.log('target', target)
-
+        // console.log('target', target)
         let { value } = target
         setNote((prevNote => {
             return { ...prevNote, info:{txt: value }}

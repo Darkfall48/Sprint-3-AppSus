@@ -8,5 +8,10 @@
     --nav-bg-color: red;
     /* mail */
     /* note */
+
+    --purple: #d7aefb;
+    --pink: #fdcfe8;
+    --blue: #cbf0f8;
+    --green: #ccff90;
     --s : 80vw
 }

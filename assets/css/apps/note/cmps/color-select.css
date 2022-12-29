@@ -12,17 +12,17 @@
 }
 
 .purple-bg {
-    background-color: #d7aefb;
+    background-color: var(--purple);
 }
 
 .pink-bg {
-    background-color: #fdcfe8;
+    background-color: var(--pink);
 }
 
 .blue-bg {
-    background-color: #cbf0f8;
+    background-color: var(--blue);
 }
 
 .green-bg {
-    background-color: #ccff90;
+    background-color: var(--green);
 }
