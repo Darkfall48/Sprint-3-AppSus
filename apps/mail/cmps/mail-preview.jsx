@@ -25,6 +25,18 @@ export function MailPreview({ mail, loadMails, onRemoveMail }) {
     return ''
   }
 
+  function toggleReadStatus() {
+    if (!mail.isRead) {
+      mail.isRead = true
+      mailService.save(mail).catch(console.log)
+      showSuccessMsg('Mail Status set to Read!')
+    } else {
+      mail.isRead = false
+      mailService.save(mail).catch(console.log)
+      showSuccessMsg('Mail Status set to Unread!')
+    }
+  }
+
   function setStatusToRead() {
     if (!mail.isRead && isExpanded) {
       mail.isRead = true
@@ -33,18 +45,19 @@ export function MailPreview({ mail, loadMails, onRemoveMail }) {
     }
   }
 
-  function setStatusToUnread() {
-    if (mail.isRead) {
-      mail.isRead = false
-      mailService.save(mail).catch(console.log)
-      showSuccessMsg('Mail Status set to Unread!')
-    }
-  }
-
   function SetStar() {
-    if (mail.isStared) return <p onClick={() => toggleStar(event)}>❤️</p>
+    if (mail.isStared)
+      return (
+        <a className="star" onClick={() => toggleStar(event)}>
+          ❤️
+        </a>
+      )
 
-    return <p onClick={() => toggleStar(event)}>🖤</p>
+    return (
+      <a className="star" onClick={() => toggleStar(event)}>
+        🖤
+      </a>
+    )
   }
 
   function toggleStar(ev) {
@@ -111,9 +124,18 @@ export function MailPreview({ mail, loadMails, onRemoveMail }) {
         <td>
           <SetDate />
         </td>
-        <td>
-          <button onClick={setStatusToUnread}>Unread</button>
-          <button onClick={() => onRemoveMail(mail.id)}>Remove</button>
+        <td className="action-btn">
+          <a
+            className="fa-solid fa-check"
+            onClick={toggleReadStatus}
+            title="Toggle Mail Read Status"
+          ></a>
+          <a
+            className="fa-solid fa-xmark"
+            onClick={() => onRemoveMail(mail.id)}
+            title="Remove Mail"
+          ></a>
+          <a className="fa-solid fa-reply" title="Reply to the Mail"></a>
         </td>
       </tr>
       <tr hidden={!isExpanded}>

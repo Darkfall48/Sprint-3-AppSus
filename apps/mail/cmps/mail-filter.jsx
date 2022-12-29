@@ -75,9 +75,10 @@ export function MailFilter({ onSetFilter }) {
           value={filterBy.subject}
           onChange={handleChange}
         />
-        <label htmlFor="text-filter" className="search-icon">
-          Search
-        </label>
+        <label
+          htmlFor="text-filter"
+          className="fa-solid fa-magnifying-glass search-icon"
+        ></label>
       </form>
     </section>
   )

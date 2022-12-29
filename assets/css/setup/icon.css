@@ -1,33 +1,55 @@
 .fa-solid.fa-login::before {
-    content: '\f2f6';
+  content: '\f2f6';
 }
 
-.fa-solid.fa-trash::before{
-    content: '\f1f8';
+.fa-solid.fa-trash::before {
+  content: '\f1f8';
 }
 
-.fa-solid.fa-thumbtack::before{
-    content: '\f08d';
+.fa-solid.fa-thumbtack::before {
+  content: '\f08d';
 }
 
-.fa-solid.fa-pen-to-square::before{
-    content: '\f044';
+.fa-solid.fa-pen-to-square::before {
+  content: '\f044';
 }
-.fa-solid.fa-palette::before{
-    content: '\f53f';
-}
-
-.fa-solid.fa-horse::before{
-    content: '\f6f0';
+.fa-solid.fa-palette::before {
+  content: '\f53f';
 }
 
-.fa-solid.fa-envelope-open-text::before{
-    content: '\f658';
-}
-.fa-solid.fa-clip-board::before{
-    content: '\f328';
-}
-.fa-solid.fa-book::before{
-    content: '\f02d';
+.fa-solid.fa-horse::before {
+  content: '\f6f0';
 }
 
+.fa-solid.fa-envelope-open-text::before {
+  content: '\f658';
+}
+.fa-solid.fa-clip-board::before {
+  content: '\f328';
+}
+.fa-solid.fa-book::before {
+  content: '\f02d';
+}
+
+/** Mail App **/
+
+/* Folder List */
+/* .fa-solid.fa-inbox::before {
+  content: '\f02d';
+}
+
+.fa-solid.fa-star::before {
+  content: '\f02d';
+}
+
+.fa-solid.fa-sent::before {
+  content: '\f02d';
+}
+
+.fa-solid.fa-draft::before {
+  content: '\f02d';
+}
+
+.fa-solid.fa-trash::before {
+  content: '\f1f8';
+} */

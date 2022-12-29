@@ -1,8 +1,38 @@
 .mail-folder-list {
   display: flex;
   flex-direction: column;
-  place-content: start;
+  place-content: center;
+  place-items: center;
+  gap: 20px;
 }
 
-.mail-folder-list button {
+.mail-folder-list a {
+  cursor: pointer;
+
+  display: flex;
+  place-content: center;
+  place-items: center;
+
+  width: 25px;
+  height: 25px;
+  padding: 20px;
+  border-radius: 50%;
+  border: 1px solid lightgray;
+
+  box-shadow: 1px 1px 1px 0px #27222b6b;
+  transition: color 0.3s;
+
+  font-size: 1.5em;
+  text-shadow: 1px 1px 1px rgb(0 0 0 / 70%);
+
+  color: var(--filter-side-color);
+  background-color: var(--filter-side-bg);
+}
+
+.mail-folder-list a:active {
+  box-shadow: inset 1px 1px 1px 0px #27222b6b;
+}
+
+.mail-folder-list a:hover {
+  color: var(--filter-side-hover-color);
 }

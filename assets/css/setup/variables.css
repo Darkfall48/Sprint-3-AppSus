@@ -1,4 +1,9 @@
 :root {
+  /* header */
+  --header-links-hover-color: palevioletred;
+  --header-links-active-color: lightcoral;
+  --header-links-active-status-color: pink;
+
   /* main */
   --main-bg-color: #f7f7f7;
   --font-color: black;
@@ -10,8 +15,15 @@
   /* nav */
   --nav-bg-color: red;
 
-  /* mail */
+  /** mail **/
+
+  /* table */
   --table-head-bg: rgb(159, 82, 231);
+
+  /* side filter */
+  --filter-side-color: rgb(214, 200, 42);
+  --filter-side-hover-color: goldenrod;
+  --filter-side-bg: rgba(254, 254, 255, 0.858);
 
   /* note */
   --purple: #d7aefb;

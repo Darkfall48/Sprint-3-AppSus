@@ -4,7 +4,7 @@
 export function MailCompose() {
   return (
     <section className="mail-compose">
-      <h1>Mail Compose</h1>
+      <h1>Inbox</h1>
     </section>
   )
 }

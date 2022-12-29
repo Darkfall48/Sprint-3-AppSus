@@ -7,7 +7,7 @@ export function AppHeader() {
         <Link to="/">
           <div className="fa-solid fa-horse logo-header"></div>
         </Link>
-        <div>
+        <div className="links-header">
           <NavLink to="/">Home</NavLink>
           <NavLink to="/note">Note</NavLink>
           <NavLink to="/mail">Mail</NavLink>

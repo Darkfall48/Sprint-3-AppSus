@@ -19,20 +19,24 @@
   font-size: 1.5em;
 }
 
+.logo-header:hover {
+  color: pink;
+}
+
 nav a {
   transition: 0.3s;
 }
 
-nav a:hover {
-  color: palevioletred;
+.links-header a:hover {
+  color: var(--header-links-hover-color);
 }
 
 nav a:active {
-  color: lightcoral;
+  color: var(--header-links-active-color);
 }
 
 nav a.active {
-  color: pink;
+  color: var(--header-links-active-status-color);
   font-weight: bold;
   text-decoration: overline;
 }
