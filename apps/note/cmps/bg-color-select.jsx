@@ -1,7 +1,4 @@
-const { useState, useEffect, useRef } = React
-
 export function BgColorSelection({ note, onChangeBackgroundColor }) {
-  const [color, setColor] = useState('default')
   const ref = useRef(null)
   return (
     <div className="color-palette-container">
