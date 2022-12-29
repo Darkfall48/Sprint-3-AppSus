@@ -1,6 +1,7 @@
 const { useState, useEffect, Fragment } = React
 
 import { utilService } from '../../../services/util.service.js'
+import { mailService } from '../services/mail.service.js'
 
 import { MailDetails } from './mail-details.jsx'
 import { Loader } from '../../../cmps/loader.jsx'
@@ -16,15 +17,30 @@ export function MailPreview({ mail }) {
 
   function setReadStatus() {
     // console.log(mail.isRead)
+
     if (mail.isRead) return 'read'
 
     return ''
   }
 
-  function SetStar() {
-    if (mail.isStared) return <p>❤️</p>
+  function setStatusToRead() {
+    if (!mail.isRead)
+      setTimeout(() => {
+        mail.isRead = true
+        mailService.save(mail)
+      }, 500)
+  }
 
-    return <p>🖤</p>
+  function SetStar() {
+    if (mail.isStared) return <p onClick={() => toggleStar(event)}>❤️</p>
+
+    return <p onClick={() => toggleStar(event)}>🖤</p>
+  }
+
+  function toggleStar(ev) {
+    ev.stopPropagation() //! Not Working
+    mail.isStared ? (mail.isStared = false) : (mail.isStared = true)
+    mailService.save(mail)
   }
 
   function SetName() {
@@ -62,6 +78,7 @@ export function MailPreview({ mail }) {
         className={setReadStatus()}
         onClick={() => {
           setIsExpanded(!isExpanded)
+          setStatusToRead()
         }}
       >
         <td>

@@ -13,7 +13,7 @@ export function MailFilter({ onSetFilter }) {
   const location = useLocation()
   const navigate = useNavigate()
   const searchParams = new URLSearchParams(location.search)
-  console.log('Search Params:', searchParams)
+  // console.log('Search Params:', searchParams)
   // console.log('Location:', location)
   // console.log('Navigate:', navigate)
 
@@ -41,18 +41,12 @@ export function MailFilter({ onSetFilter }) {
     setFilterBy((prevFilter) => {
       return { ...prevFilter, [field]: value }
     })
-    // navigate(
-    //   `/mail?subject=${filterByToEdit.subject}&readStatus=${selectedOption}`
-    // )
   }
 
   function handleSelectChange({ target }) {
     console.log(target)
     setSelectedOption(target.value)
     onSetFilter({ ...filterBy, readStatus: target.value })
-    // navigate(
-    //   `/mail?subject=${filterByToEdit.subject}&readStatus=${target.value}`
-    // )
   }
 
   function onSubmitFilter(ev) {
