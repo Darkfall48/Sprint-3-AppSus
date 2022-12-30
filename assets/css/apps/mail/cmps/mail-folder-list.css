@@ -1,7 +1,7 @@
 .mail-folder-list {
   display: flex;
   flex-direction: column;
-  place-content: center;
+  place-content: start;
   place-items: center;
   gap: 20px;
 }

@@ -11,16 +11,18 @@ export function MailDetails({ mail }) {
   return (
     <article className="mail-details">
       <h3 className="to">
-        To: {mail.to}{' '}
+        To: <span>{mail.to}</span>
         <img
           src={`https://robohash.org/user}`}
+          alt={'Avatar - ' + mail.to}
           style={{ maxWidth: '25px', borderRadius: '25px' }}
         />
       </h3>
       <h3 className="from">
-        From: {mail.from}{' '}
+        From: <span>{mail.from}</span>
         <img
           src={`https://robohash.org/${mail.id}`}
+          alt={'Avatar - ' + mail.from}
           style={{ maxWidth: '25px', borderRadius: '25px' }}
         />
       </h3>

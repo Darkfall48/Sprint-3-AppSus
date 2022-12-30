@@ -138,7 +138,7 @@ export function MailPreview({ mail, loadMails, onRemoveMail }) {
           <a className="fa-solid fa-reply" title="Reply to the Mail"></a>
         </td>
       </tr>
-      <tr hidden={!isExpanded}>
+      <tr className="details-tr" hidden={!isExpanded}>
         <td className="details" colSpan="5">
           <MailDetails mail={mail} />
         </td>

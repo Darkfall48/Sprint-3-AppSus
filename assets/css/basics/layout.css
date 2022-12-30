@@ -11,6 +11,34 @@
   margin-right: auto;
 }
 
+/** Home Page **/
+
+/* Intro Section */
+
+/* Links Section */
+/* .home-hero-container {
+  max-width: var(--s);
+}
+
+.home-links-container {
+  max-width: var(--s);
+} */
+.home-links {
+  max-width: var(--s);
+}
+
+/* About Section */
+.about-title-container {
+  max-width: var(--s);
+}
+
+.team-member-container {
+  max-width: var(--s);
+
+  display: flex;
+  flex-direction: row;
+}
+
 /* @media (min-width: 780px) {
     .main-layout>*:not(.full) {
         max-width: var(--m);

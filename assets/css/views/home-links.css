@@ -1,0 +1,57 @@
+.home-links-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Sections */
+
+.home-hero-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.home-links-container {
+  display: flex;
+  flex-direction: row;
+  place-content: center;
+  place-items: center;
+  justify-content: space-evenly;
+
+  font-size: 10em;
+  color: var(--main-purple);
+}
+
+/* Hero */
+
+.home-links-title {
+  font-size: 1.8em;
+}
+
+.home-links-hero {
+  font-size: 1.4em;
+}
+
+/* Links */
+
+.home-links-email {
+  cursor: pointer;
+  width: 100%;
+}
+
+.home-links-notes {
+  cursor: pointer;
+  width: 100%;
+}
+
+.home-links-books {
+  cursor: pointer;
+  width: 100%;
+}

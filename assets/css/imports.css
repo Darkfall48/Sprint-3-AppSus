@@ -13,8 +13,12 @@
 @import './basics/layout.css';
 
 /** Views **/
+
+/* Home Page */
 @import './views/home.css';
-@import './views/about.css';
+@import './views/home-intro.css';
+@import './views/home-links.css';
+@import './views/home-about.css';
 
 /* Mail */
 @import './apps/mail/views/mail-index.css';

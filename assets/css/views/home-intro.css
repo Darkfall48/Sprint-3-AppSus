@@ -1,0 +1,37 @@
+.home-intro {
+  /* background-color: chartreuse; */
+  background-image: url('../../img/home/Background/background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: grid;
+  height: 80vh;
+  justify-items: center;
+}
+
+.home-intro-logo {
+  font-family: 'Comfortaa';
+  font-size: 7em;
+  align-self: center;
+}
+
+.home-intro-hero {
+}
+
+.home-intro-link {
+  background-color: var(--main-purple);
+  width: fit-content;
+  height: fit-content;
+  padding: 20px;
+  border-radius: 25px;
+  color: white;
+  font-size: 1.4em;
+  transition: 0.1s;
+}
+
+.home-intro-link:hover {
+  background-color: var(--main-purple-hvr);
+}
+
+.home-intro-link:active {
+  font-size: 1.2em;
+}

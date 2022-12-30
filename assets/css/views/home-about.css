@@ -1,0 +1,39 @@
+/* Home Section */
+.home-about-section {
+}
+
+.home-about {
+  display: flex;
+  flex-direction: column;
+  background-color: #5f9fca13;
+  padding: 30px;
+  place-items: center;
+}
+
+.about-title-container {
+}
+
+.team-member-container {
+  display: flex;
+  flex-direction: row;
+}
+
+/* Title Section */
+.about-title {
+}
+
+/* Member Article */
+.team-member {
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.general-info {
+}
+
+.avatar-team-member {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}

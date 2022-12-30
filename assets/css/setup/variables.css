@@ -1,4 +1,5 @@
 :root {
+  /** Colors **/
   /* header */
   --header-links-hover-color: palevioletred;
   --header-links-active-color: lightcoral;
@@ -20,6 +21,11 @@
   /* table */
   --table-head-bg: rgb(159, 82, 231);
 
+  --details-from-color: blue;
+  --details-to-color: blue;
+  --details-subject-color: rgb(240, 103, 126);
+  --details-body-color: rgb(216, 140, 216);
+
   /* side filter */
   --filter-side-color: rgb(214, 200, 42);
   --filter-side-hover-color: goldenrod;
@@ -31,5 +37,8 @@
   --blue: #cbf0f8;
   --green: #ccff90;
   --modal-bg: rgba(209, 183, 234, 0.956);
+
+  /** Page Size **/
+  /* Mobile */
   --s: 80vw;
 }

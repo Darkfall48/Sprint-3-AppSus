@@ -35,6 +35,7 @@
 
 .table-body tr {
   width: 100%;
+  transition: 0.8s;
 }
 
 .table-body tr td {
@@ -43,7 +44,7 @@
   background-color: rgba(212, 194, 220, 0.1);
 }
 
-.table-body tr:hover:not(.read) {
+.table-body tr:hover:not(.details-tr) {
   background-color: rgba(176, 138, 229, 0.3);
 }
 

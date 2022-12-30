@@ -15,22 +15,37 @@
 .mail-details .from {
   text-align: start;
   grid-area: from;
-  color: blue;
+
+  font-size: 1em;
 }
+
+.mail-details .from span {
+  color: var(--details-from-color);
+}
+
 .mail-details .to {
   text-align: start;
-
   grid-area: to;
 
-  color: blue;
+  font-size: 1em;
   margin-bottom: 10px;
 }
+
+.mail-details .to span {
+  color: var(--details-to-color);
+}
+
 .mail-details .subject {
   grid-area: subject;
-  color: rgba(72, 0, 255, 0.619);
+  color: var(--details-subject-color);
+
+  font-size: 1.6em;
   margin-bottom: 20px;
 }
+
 .mail-details .body {
   grid-area: body;
-  color: rgb(0, 0, 0);
+  color: var(--details-body-color);
+
+  font-size: 1.2em;
 }
