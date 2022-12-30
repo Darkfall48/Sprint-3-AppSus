@@ -12,6 +12,7 @@ import { NoteFilter } from '../cmps/note-filter.jsx'
 
 export function NoteIndex() {
     const [notes, setNotes] = useState([])
+    const [filterBy, setFilterBy] = useState(noteService.getDefaultFilter())
     const [noteToEdit, setNoteToEdit] = useState(null)
     const [editMode, setEditMode] = useState(false)
     const navigate = useNavigate()
@@ -78,11 +79,15 @@ export function NoteIndex() {
         // loadNotes()
     }
 
+    function onSetFilter(filterByFromFilter) {
+        setFilterBy(filterByFromFilter)
+      }
+
     if (!notes) return <Loader />
 
 
     return <div className="note-index-container">
-        <NoteFilter/>
+        <NoteFilter onSetFilter={onSetFilter} />
         <AddNote onSaveNote={onSaveNote} />
         <NoteList notes={notes}
             onRemoveNote={onRemoveNote}

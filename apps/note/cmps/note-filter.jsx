@@ -5,7 +5,14 @@ import { noteService } from '../services/note.service.js'
 
 export function NoteFilter({ onSetFilter }) {
     const [filterBy, setFilterBy] = useState(noteService.getDefaultFilter())
+
+    const location = useLocation()
+    const navigate = useNavigate()
+    const searchParams = new URLSearchParams(location.search)
+
     function onSubmitFilter() {
+        ev.preventDefault()
+        onSetFilter({ ...filterBy, readStatus: selectedOption })
         return console.log('submit')
     }
 
@@ -13,15 +20,15 @@ export function NoteFilter({ onSetFilter }) {
         let { value, name: field, type } = target
         // value = type === 'number' ? +value : value
         setFilterBy((prevFilter) => {
-          return { ...prevFilter, [field]: value }
+            return { ...prevFilter, [field]: value }
         })
-      }
+    }
 
     function handleSelectChange({ target }) {
         console.log(target)
         // setSelectedOption(target.value)
         // onSetFilter({ ...filterBy, readStatus: target.value })
-      }
+    }
 
     return (
         <section className="note-filter filter">
@@ -46,7 +53,7 @@ export function NoteFilter({ onSetFilter }) {
                 />
                 <label
                     htmlFor="text-filter"
-                    className="fa-solid fa-magnifying-glass search-icon"
+                    className="fa-solid fa-magnifying-glass search-icon-note search-icon"
                 ></label>
             </form>
         </section>

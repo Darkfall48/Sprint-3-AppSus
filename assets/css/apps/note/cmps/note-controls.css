@@ -6,7 +6,7 @@
 .ctrl-btn {
   border: none;
   background-color: rgba(255, 255, 255, 0);
-  color: var(--main-purple-hvr);
+  color: rgba(49, 48, 48, 0.746);
   font-size: 1.2em;
 }
 .note-pinned {
@@ -15,4 +15,6 @@
 
 #pin-btn {
   align-self: start;
+  margin-left: 5px;
+  margin-top: 5px;
 }

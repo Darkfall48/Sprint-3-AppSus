@@ -12,7 +12,7 @@
     border-radius: 10px;
     padding: 0 30px;
     margin: 0 auto;
-    width: 70vw;
+    width: 50vw;
 }
 
 .note-index {
@@ -28,4 +28,13 @@
     font-size: 1.2em;
     color: grey;
     margin-right:15px;
+}
+
+.note-filter{
+    margin: 0 auto;
+    margin-bottom: 20px;
+    width: 50vw;
+    justify-content: center;
+}
+.search-icon-note{
 }

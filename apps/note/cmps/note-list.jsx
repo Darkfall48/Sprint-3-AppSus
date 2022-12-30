@@ -29,6 +29,7 @@ export function NoteList({
     setNoteIdToSetBg(noteId)
   }
 
+
   function handleMouseOver({ target }) {
     setNoteIdHovering(target.id)
     setIsHovering(true)
@@ -64,6 +65,7 @@ export function NoteList({
           {!hidden && noteIdToSetBg === note.id && (
             <BgColorSelection
               note={note}
+              onEditBackground={onEditBackground}
               onChangeBackgroundColor={onChangeBackgroundColor}
             />
           )}

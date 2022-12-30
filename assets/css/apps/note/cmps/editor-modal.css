@@ -1,8 +1,6 @@
 .edit-container {
   display: block;
-  position: fixed;
-  top: 40vh;
-  left: 30vw;
+  position: sticky;
   background-color: var(--modal-bg);
   width: 50vw;
   height: 200px;
