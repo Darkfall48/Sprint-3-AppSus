@@ -7,6 +7,7 @@ import { NoteList } from '../cmps/note-list.jsx'
 import { AddNote } from '../cmps/add-note.jsx'
 import { NoteEdit } from "../views/note-edit.jsx";
 import { Loader } from '../../../cmps/loader.jsx'
+import { NoteFilter } from '../cmps/note-filter.jsx'
 
 
 export function NoteIndex() {
@@ -81,6 +82,7 @@ export function NoteIndex() {
 
 
     return <div className="note-index-container">
+        <NoteFilter/>
         <AddNote onSaveNote={onSaveNote} />
         <NoteList notes={notes}
             onRemoveNote={onRemoveNote}
