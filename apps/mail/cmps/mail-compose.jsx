@@ -5,6 +5,7 @@ export function MailCompose() {
   return (
     <section className="mail-compose">
       <h1>Inbox</h1>
+      <button>New Mail</button>
     </section>
   )
 }

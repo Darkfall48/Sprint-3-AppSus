@@ -55,7 +55,7 @@ export function MailFilter({ onSetFilter }) {
   }
 
   return (
-    <section className="mail-filter">
+    <section className="filter">
       <select
         name="read-status"
         id="read-status"
