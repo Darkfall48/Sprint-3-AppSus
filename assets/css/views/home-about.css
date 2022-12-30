@@ -30,9 +30,11 @@
 }
 
 .avatar-team-member {
-  width: 50px;
-  height: 50px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
+  margin-bottom: 10px;
+  border: #9f31b8a5 5px solid;
 }
 
 .name-title {

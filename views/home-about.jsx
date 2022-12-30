@@ -11,7 +11,7 @@ export function HomeAbout() {
             <a href="https://www.linkedin.com/in/sidneysebban/" target="_blank">
               <img
                 className="avatar-team-member"
-                src="https://robohash.org/Sidney"
+                src="assets/img/home/Team/sidney.jpg"
                 alt="Sidney Sebban"
               />
             </a>
