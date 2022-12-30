@@ -11,19 +11,29 @@ export function HomeLinks() {
       </section>
 
       <section className="home-links-container">
+        <Link className="home-links-notes" to="/note">
+          {/* <div className="fa-solid fa-clipboard apps-links"></div> */}
+          <img
+            className="note-logo home-links"
+            src="./assets/img/home/icons/note-icon.png"
+          />
+        </Link>
+
         <Link className="home-links-email" to="/mail">
           {/* <label htmlFor="mail">Mail</label> */}
-          <div className="fa-solid fa-envelope-open-text apps-links"></div>
-          {/* <img className="mail-logo home-links" src="./assets/img/home/icons/mail-icon.png" /> */}
+          {/* <div className="fa-solid fa-envelope-open-text apps-links"></div> */}
+          <img
+            className="mail-logo home-links"
+            src="./assets/img/home/icons/mail-icon.png"
+          />
         </Link>
-        <Link className="home-links-notes" to="/note">
-          {/* <label htmlFor="mail">Notes</label> */}
-          <div className="fa-solid fa-clipboard apps-links"></div>
-          {/* <img className="note-logo home-links" src="./assets/img/home/icons/note-icon.png" /> */}
-        </Link>
-        {/* <label htmlFor="mail">Books</label> */}
+
         <Link className="home-links-books" to="/book">
-          <div className="fa-solid fa-book apps-links"></div>
+          {/* <div className="fa-solid fa-book apps-links"></div> */}
+          <img
+            className="book-logo home-links"
+            src="./assets/img/home/icons/book-icon.png"
+          />
         </Link>
       </section>
     </article>
