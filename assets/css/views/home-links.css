@@ -1,9 +1,4 @@
-.home-links-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
+/* Links Section */
 .home-links {
   display: flex;
   flex-direction: column;

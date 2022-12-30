@@ -8,3 +8,17 @@
   font-family: 'Quicksand';
   /* height: 100%; */
 }
+
+.home-intro-section {
+  margin-bottom: 40px;
+}
+
+.home-links-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.home-about-section {
+}
