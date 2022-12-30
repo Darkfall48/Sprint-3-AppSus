@@ -22,10 +22,10 @@ export function NoteIndex() {
 
     useEffect(() => {
         loadNotes()
-    }, [])
+    }, [filterBy])
 
     function loadNotes() {
-        noteService.query()
+        noteService.query(filterBy)
             // .then(notes => setNotes((prevNotes) => prevNotes = notes))
             .then(setNotes)
     }
@@ -103,6 +103,7 @@ export function NoteIndex() {
 
 }
 
+{/* <iframe src="https://www.youtube.com/embed/uXWycyeTeCs" width={1000} height={500} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture full"></iframe> */}
 
 //pin note trys
         // .then(() => { noteService.query() })

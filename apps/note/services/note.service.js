@@ -19,7 +19,7 @@ export const noteService = {
   changeNoteBackground,
 }
 
-function query() {
+function query(queryParams = {}) {
   return storageService
     .query(STORAGE_KEY)
     .then((notes) => {
@@ -33,6 +33,15 @@ function query() {
       utilService.saveToStorage(STORAGE_KEY, updatedNotes)
       return new Promise((resolve) => setTimeout(() => resolve(updatedNotes)))
     })
+    .then((notes)=>{
+      if (queryParams.text) {
+        const regex = new RegExp(queryParams.text, 'i')
+        notes = notes.filter((note) => regex.test(note.info.txt))
+      }
+      console.log(notes)
+      return notes
+    }
+    )
 }
 
 function save(note) {
@@ -132,14 +141,14 @@ function _createNotes() {
         id: 'n102',
         type: 'note-txt',
         isPinned: false,
-        info: { txt: 'Need to work on my react skill!' },        
+        info: { txt: 'Need to work on my react skill! Finish sprint 3 with new skills and keep practicing util I master it.' },        
         bgColor: 'default',
       },
       {
         id: 'n103',
         type: 'note-txt',
         isPinned: false,
-        info: { txt: 'Practice promises' },
+        info: { txt: 'Practice. Become a fullstack MASTER!' },
         bgColor: 'default',
       },
       // {

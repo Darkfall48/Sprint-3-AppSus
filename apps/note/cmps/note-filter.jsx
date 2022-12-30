@@ -8,40 +8,35 @@ export function NoteFilter({ onSetFilter }) {
 
     const location = useLocation()
     const navigate = useNavigate()
-    const searchParams = new URLSearchParams(location.search)
 
-    function onSubmitFilter() {
-        ev.preventDefault()
-        onSetFilter({ ...filterBy, readStatus: selectedOption })
+    useEffect(() => {
+        onSetFilter(filterBy)
+      }, [filterBy])
+
+      useEffect(() => {
+        const searchParams = new URLSearchParams()
+        searchParams.set('text', filterBy.text)
+        navigate(`${location.pathname + '?' + searchParams.toString()}`)
+      }, [filterBy, navigate])
+
+    function onSubmitFilter(ev) {
+        console.log(filterBy)
+        console.log(ev)
+        onSetFilter(filterBy)
         return console.log('submit')
     }
 
     function handleChange({ target }) {
         let { value, name: field, type } = target
-        // value = type === 'number' ? +value : value
+        value = type === 'number' ? +value : value
+        console.log('value', value)
         setFilterBy((prevFilter) => {
             return { ...prevFilter, [field]: value }
         })
     }
 
-    function handleSelectChange({ target }) {
-        console.log(target)
-        // setSelectedOption(target.value)
-        // onSetFilter({ ...filterBy, readStatus: target.value })
-    }
-
     return (
         <section className="note-filter filter">
-            {/* <select
-            name="note-type"
-            id="note-type"
-            onChange={handleSelectChange}
-            value={selectedOption}
-          >
-            <option value="all">All</option>
-            <option value="text">Text</option>
-            <option value="image">Image</option>
-          </select> */}
             <form onSubmit={onSubmitFilter}>
                 <input
                     type="text"
