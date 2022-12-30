@@ -17,9 +17,6 @@ export const noteService = {
   remove,
   pinNote,
   changeNoteBackground,
-  // getDefaultReview,
-  // saveReview,
-  // removeReview
 }
 
 function query() {
@@ -129,7 +126,7 @@ function _createNotes() {
         type: 'note-txt',
         isPinned: false,
         info: { txt: 'Fullstack Me Baby!' },
-        bgColor: 'pink',
+        bgColor: 'default',
       },
       {
         id: 'n102',
@@ -143,7 +140,7 @@ function _createNotes() {
         type: 'note-txt',
         isPinned: false,
         info: { txt: 'Practice promises' },
-        bgColor: 'blue',
+        bgColor: 'default',
       },
       // {
       //     "id": "n104",

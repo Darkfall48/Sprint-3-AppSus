@@ -18,7 +18,7 @@ export function NoteEdit() {
 
     function loadNote() {
         noteService.get(noteId)
-            .then((note) => setNoteToEdit(note))
+            .then((note) => setNoteToEdit(noteToEdit))
             // .catch((err) => {
             //     console.log('Had issues in note details', err)
             //     navigate('/note')
@@ -26,14 +26,19 @@ export function NoteEdit() {
     }
 
     function onSaveNote(ev) {
+        // noteService.save(noteToAdd)
+        // .then(() => {
+        //     showSuccessMsg('Note added')
+        //     loadNotes()})
         navigate('/note')
     }
 
-    function handleChange({target}){
-        let {value} = target
+    function handleChange(ev){
+        ev.preventDefault()
+        let {value} = ev.target
         console.log('value', value)
         console.log('noteToEdit', noteToEdit)
-        setNote((prevNote) =>( {...prevNote, info:{txt: value} } ))
+        setNoteToEdit((prevNote) =>( {...prevNote, info:{txt: value} } ))
     }
 
     return <div onSubmit={onSaveNote} className="edit-container">

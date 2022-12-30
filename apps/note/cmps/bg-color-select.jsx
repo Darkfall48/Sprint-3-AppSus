@@ -2,6 +2,13 @@ export function BgColorSelection({ note, onChangeBackgroundColor }) {
   return (
     <div className="color-palette-container">
       <div
+        className="color-select default-bg"
+        onClick={() => {
+          onChangeBackgroundColor(note, 'default')
+        }}
+        title="default"
+      ></div>
+      <div
         className="color-select purple-bg"
         onClick={() => {
           onChangeBackgroundColor(note, 'purple')
