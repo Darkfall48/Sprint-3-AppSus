@@ -15,6 +15,9 @@ export function NoteIndex() {
     const [filterBy, setFilterBy] = useState(noteService.getDefaultFilter())
     const [noteToEdit, setNoteToEdit] = useState(null)
     const [editMode, setEditMode] = useState(false)
+    const [noteType, setNoteType] = useState('note-txt')
+
+    
     const navigate = useNavigate()
 
     // const [filterBy , setFilterBy] = useState(noteService.getDefaultFilter())
@@ -85,17 +88,22 @@ export function NoteIndex() {
         .then((updatedNotes) => {setNotes(updatedNotes)})
       }
 
+      function onSetNoteType(noteType){
+        setNoteType(noteType)
+      }
+
     if (!notes) return <Loader />
 
 
     return <div className="note-index-container">
-        <AddNote onSaveNote={onSaveNote} />
+        <AddNote onSaveNote={onSaveNote} onSetNoteType={onSetNoteType} />
         <NoteFilter onSetFilter={onSetFilter} />
         <NoteList notes={notes}
             onRemoveNote={onRemoveNote}
             onChangeBackgroundColor={onChangeBackgroundColor}
             onPinNote={onPinNote}
             onEditNote={onEditNote}
+            noteType={noteType}
         />
         {editMode && <NoteEdit noteToEdit={noteToEdit} onSaveEditedNote={onSaveEditedNote}/>}
 
@@ -104,7 +112,6 @@ export function NoteIndex() {
 
 }
 
-{/* <iframe src="https://www.youtube.com/embed/uXWycyeTeCs" width={1000} height={500} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture full"></iframe> */}
 
 //pin note trys
         // .then(() => { noteService.query() })

@@ -2,7 +2,7 @@ const { useState } = React
 import { noteService } from '../services/note.service.js'
 
 
-export function AddNote({ onSaveNote }) {
+export function AddNote({ onSaveNote, onSetNoteType }) {
     const [note, setNote] = useState(noteService.getDefaultNote())
 
     // function handleChange({ target }) {
@@ -18,7 +18,7 @@ export function AddNote({ onSaveNote }) {
         // console.log('target', target)
         let { value } = target
         setNote((prevNote => {
-            return { ...prevNote, info:{txt: value }}
+            return { ...prevNote, info: { txt: value } }
         }))
     }
 
@@ -37,8 +37,14 @@ export function AddNote({ onSaveNote }) {
                 value={note.info.txt}
                 onChange={handleChangeTxt} />
             {/* <button>Submit</button> */}
-            <i className="fa-solid fa-font type-note"></i>
-            <i className="fa-solid fa-image type-note"></i>
+            <select className="type-note-container" multiple onChange={ev => onSetNoteType(ev.target.value)}>
+                <option className="fa-solid fa-font type-note" value="note-text"></option>
+                <option className="fa-solid fa-image type-note" value="note-image"></option>
+                <option className="fa-solid fa-play type-note" value="note-video"></option>
+            </select>
+
+            {/* <i className="fa-solid fa-font type-note"></i>
+            <i className="fa-solid fa-image type-note"></i> */}
         </form>
     </div>
 

@@ -33,7 +33,7 @@ function query(queryParams = {}) {
       utilService.saveToStorage(STORAGE_KEY, updatedNotes)
       return new Promise((resolve) => setTimeout(() => resolve(updatedNotes)))
     })
-    .then((notes)=>{
+    .then((notes) => {
       if (queryParams.text) {
         const regex = new RegExp(queryParams.text, 'i')
         notes = notes.filter((note) => regex.test(note.info.txt))
@@ -134,24 +134,40 @@ function _createNotes() {
         id: 'n101',
         type: 'note-txt',
         isPinned: false,
-        info: { txt: 'Return books to the library and pick up the book Emma asked for - Good night moon. Then rememeber to call mom at 18:00.' },
+        info: { txt: 'Return books to the library and pick up the book Emma asked for - Good night moon. Then remember to call mom at 18:00.' },
         bgColor: 'default',
       },
       {
         id: 'n102',
         type: 'note-txt',
         isPinned: false,
-        info: { txt: 'Need to work on my react skill! Finish sprint 3 with new skills and keep practicing util I master it.' },        
+        info: { txt: 'Need to work on my react skill! Finish sprint 3 with new skills and keep practicing util I master it.' },
         bgColor: 'purple',
-      },
+      }, {
+        id: 'n104',
+        type: 'note-video',
+        isPinned: false,
+        info: {
+          url: "https://www.youtube.com/embed/ncZmUKanfpU" ,
+        style: { backgroundColor: '#00d' }
+      }
+    },
       {
         id: 'n103',
         type: 'note-txt',
         isPinned: false,
         info: { txt: 'Practice. Become a fullstack MASTER!' },
         bgColor: 'pink',
-      },
-      // {
+      }, {
+        id: 'n105',
+        type: 'note-video',
+        isPinned: false,
+        info: {
+          url: "https://www.youtube.com/embed/C6UUJ47HCBQ" ,
+        style: { backgroundColor: '#00d' }
+      }
+    }
+      // ,{
       //     "id": "n104",
       //     "type": "note-todos",
       //     "info": {

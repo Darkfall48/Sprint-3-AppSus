@@ -12,6 +12,7 @@ export function NoteList({
   onPinNote,
   onEditNote,
   onChangeBackgroundColor,
+  noteType
 }) {
   const [hidden, setHidden] = useState(true)
   const [isHovering, setIsHovering] = useState(false)
@@ -50,7 +51,7 @@ export function NoteList({
         >
           <Pin note={note} onPinNote={onPinNote} />
           <label htmlFor={`edit-btn-${note.id}`}>
-            <NotePreview note={note} />
+            <NotePreview note={note} txt={note.info.txt} noteType={noteType} length={100} />
           </label>
           {/* {isHovering && (noteIdHovering===note.id) &&  */}
           <NoteControls
