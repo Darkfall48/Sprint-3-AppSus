@@ -89,9 +89,14 @@ function save(mail) {
   }
 }
 
-function getEmptyMail(title = '', amount = '') {
-  // TODO: Adapt to mail service
-  return { title, listPrice: { amount } }
+function getEmptyMail() {
+  return{
+    to: '',
+    subject: '',
+    body: '',
+    sentAt: Date.now(),
+    isSent: true,
+  }
 }
 
 function getDefaultFilter() {

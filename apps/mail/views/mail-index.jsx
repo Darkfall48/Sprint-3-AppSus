@@ -17,10 +17,15 @@ import { Loader } from '../../../cmps/loader.jsx'
 export function MailIndex() {
   const [mails, setMails] = useState(null)
   const [filterBy, setFilterBy] = useState(mailService.getDefaultFilter())
+  const [isExpanded, setIsExpanded] = useState(false)
 
   useEffect(() => {
     loadMails()
-  }, [filterBy])
+  }, [filterBy, isExpanded])
+
+  useEffect(() => {
+    console.log('Changed visibility', isExpanded)
+  }, [isExpanded])
 
   function loadMails() {
     mailService
@@ -48,14 +53,28 @@ export function MailIndex() {
 
   return (
     <section className="mail-index">
-      <MailCompose />
+      <button
+        onClick={() => {
+          setIsExpanded(!isExpanded)
+        }}
+      >
+        Add Mail
+      </button>
       <MailFilter onSetFilter={onSetFilter} />
       <MailFolderList onSetFilter={onSetFilter} />
-      <MailList
-        mails={mails}
-        loadMails={loadMails}
-        onRemoveMail={onRemoveMail}
-      />
+
+      <section>
+        <article hidden={!isExpanded}>
+          <MailCompose setIsExpanded={setIsExpanded} />
+        </article>
+        <article hidden={isExpanded}>
+          <MailList
+            mails={mails}
+            loadMails={loadMails}
+            onRemoveMail={onRemoveMail}
+          />
+        </article>
+      </section>
     </section>
   )
 }
