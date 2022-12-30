@@ -60,9 +60,7 @@ export function NoteIndex() {
             const updatedNotes = pinnedNotes.concat(unPinnedNotes)
             return updatedNotes
         })
-        .then((updatedNotes) => {setNotes(updatedNotes)
-            // showSuccessMsg('Book removed')
-        })
+        .then((updatedNotes) => {setNotes(updatedNotes)})
     }
     
     function onChangeBackgroundColor(selectedNote, chosenColor) {
@@ -72,15 +70,19 @@ export function NoteIndex() {
 
     function onEditNote(note){
         const noteTxt = note.info.txt
-        console.log('noteTxt', noteTxt)
-        // setEditMode(true)
-        console.log('note.id', note.id)
-        navigate(`/note/edit/:${note.id}`)
-        // loadNotes()
+        setNoteToEdit(note)
+        setEditMode(true)
     }
 
     function onSetFilter(filterByFromFilter) {
         setFilterBy(filterByFromFilter)
+      }
+
+    function onSaveEditedNote(noteToEdit){
+        setEditMode(false)
+        noteService.save(noteToEdit)
+        .then(noteService.query)
+        .then((updatedNotes) => {setNotes(updatedNotes)})
       }
 
     if (!notes) return <Loader />
@@ -95,8 +97,7 @@ export function NoteIndex() {
             onPinNote={onPinNote}
             onEditNote={onEditNote}
         />
-        {/* {editMode && <NoteEdit/>} */}
-        {/* {editMode && <Link to={`/note/edit/${noteToEdit.id}`}/> } */}
+        {editMode && <NoteEdit noteToEdit={noteToEdit} onSaveEditedNote={onSaveEditedNote}/>}
 
         {/* <NoteTxt/> */}
     </div>

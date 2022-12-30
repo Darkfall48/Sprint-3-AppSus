@@ -18,7 +18,7 @@ export function NoteControls({
       <button
         title="Edit Note"
         className="fa-solid fa-pen-to-square  ctrl-btn"
-        id="edit-btn"
+        id={`edit-btn-${noteId}`}
         onClick={() => onEditNote(note)}
       ></button>
       <button

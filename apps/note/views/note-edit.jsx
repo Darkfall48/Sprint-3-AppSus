@@ -3,11 +3,12 @@ const { useNavigate, useParams, Link } = ReactRouterDOM
 
 import { noteService } from "../services/note.service.js"
 
-export function NoteEdit() {
-    const [noteToEdit, setNoteToEdit] = useState(noteService.getDefaultNote())
-    const navigate = useNavigate()
-    let { noteId } = useParams()
-    noteId = noteId.substring(1)
+export function NoteEdit({ noteToEdit, onSaveEditedNote }) {
+    const [noteInEditing, setNoteInEditing] = useState(noteService.getDefaultNote())
+    // const navigate = useNavigate()
+    // let { noteId } = useParams()
+    let noteId = noteToEdit.id
+    // noteId = noteId.substring(1)
     // console.log('noteId', noteId)
 
 
@@ -17,37 +18,40 @@ export function NoteEdit() {
     }, [])
 
     function loadNote() {
-        noteService.get(noteId)
-            .then((noteToEdit) => setNoteToEdit(noteToEdit))
+        setNoteInEditing(noteToEdit)
+        // noteService.get(noteId)
+        //     .then((noteToEdit) => setNoteToEdit(noteToEdit))
         // .catch((err) => {
         //     console.log('Had issues in note details', err)
         //     navigate('/note')
         // })
     }
 
-    function onSaveNote(ev) {
-        console.log('noteToEdit', noteToEdit)
-        noteService.save(noteToEdit)
+    function saveNote(ev) {
+        console.log('noteToEdit', noteInEditing)
+        ev.preventDefault()
+        onSaveEditedNote(noteInEditing)
+
         // .then(() => {
         //     showSuccessMsg('Note added')
         //     loadNotes()})
-        navigate('/note')
+        // navigate('/note')
     }
 
     function handleChange(ev) {
         ev.preventDefault()
         let { value } = ev.target
         console.log('value', value)
-        console.log('noteToEdit', noteToEdit)
-        setNoteToEdit((prevNote) => {
+        console.log('noteInEditing', noteInEditing)
+        setNoteInEditing((prevNote) => {
             return ({ ...prevNote, info: { txt: value } })
         })
-        console.log('noteToEdit', noteToEdit)
+        console.log('noteInEditing', noteInEditing)
     }
 
-    return <div onSubmit={onSaveNote} className="edit-container">
+    return <div onSubmit={saveNote} className="edit-container">
         <form action="edit-note-form">
-            <textarea type="text" className="edit-note-txt" value={noteToEdit.info.txt} onChange={handleChange} />
+            <textarea type="text" className="edit-note-txt" value={noteInEditing.info.txt} onChange={handleChange} />
             <button className="btn btn-close-editor">Close</button>
         </form>
 

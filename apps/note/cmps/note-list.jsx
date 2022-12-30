@@ -49,7 +49,7 @@ export function NoteList({
           onMouseOut={handleMouseOut}
         >
           <Pin note={note} onPinNote={onPinNote} />
-          <label htmlFor="edit-btn">
+          <label htmlFor={`edit-btn-${note.id}`}>
             <NotePreview note={note} />
           </label>
           {/* {isHovering && (noteIdHovering===note.id) &&  */}
