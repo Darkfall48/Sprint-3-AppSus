@@ -1,28 +1,32 @@
 .note-list {
-    padding: 15px 30px ;
+    padding: 15px 0 ;
     list-style: none;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     column-gap: 10px;
     row-gap: 30px;
     /* gap: 35px; */
-    margin: 0 30px;
+    margin: 0;
     /* padding: 16px; */
 }
 
 .note-list li {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     background-color: var(--list-bg);
     border: 1px solid transparent;
     border-color: #e0e0e0;
     border-radius: 8px;
-    border-width: 0.5px 0.5px 0.5px 2px;
+    /* border-width: 0.5px 0.5px 0.5px 2px; */
     min-height: 150px;
-    /* padding: 100px 0 0; */
-    box-shadow: inset 1px 2px 0 rgb(0 0 0 / 1%), inset 0 -1px 0 rgb(0 0 0 / 2%);
+    padding: 10px;
+    /* box-shadow: inset 1px 2px 0 rgb(0 0 0 / 1%), inset 0 -1px 0 rgb(0 0 0 / 2%); */
+}
+.note-list li:hover {
+    box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.124), inset 0 -1px 0 rgba(0, 0, 0, 0.082);
+
 }
 
 .note-list li.default{

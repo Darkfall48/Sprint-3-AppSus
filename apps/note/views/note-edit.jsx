@@ -2,8 +2,9 @@ const { useState, useEffect } = React
 const { useNavigate, useParams, Link } = ReactRouterDOM
 
 import { noteService } from "../services/note.service.js"
+import { Pin } from '../cmps/pin.jsx'
 
-export function NoteEdit({ noteToEdit, onSaveEditedNote }) {
+export function NoteEdit({ noteToEdit, onSaveEditedNote, onPinNote }) {
     const [noteInEditing, setNoteInEditing] = useState(noteService.getDefaultNote())
     // const navigate = useNavigate()
     // let { noteId } = useParams()
@@ -50,6 +51,7 @@ export function NoteEdit({ noteToEdit, onSaveEditedNote }) {
     }
 
     return <div onSubmit={saveNote} className="edit-container">
+        <Pin note={noteInEditing} onPinNote={onPinNote} />
         <form action="edit-note-form">
             <textarea type="text" className="edit-note-txt" value={noteInEditing.info.txt} onChange={handleChange} />
             <button className="btn btn-close-editor">Close</button>

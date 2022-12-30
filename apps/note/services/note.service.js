@@ -142,14 +142,14 @@ function _createNotes() {
         type: 'note-txt',
         isPinned: false,
         info: { txt: 'Need to work on my react skill! Finish sprint 3 with new skills and keep practicing util I master it.' },        
-        bgColor: 'default',
+        bgColor: 'purple',
       },
       {
         id: 'n103',
         type: 'note-txt',
         isPinned: false,
         info: { txt: 'Practice. Become a fullstack MASTER!' },
-        bgColor: 'default',
+        bgColor: 'pink',
       },
       // {
       //     "id": "n104",

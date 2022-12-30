@@ -89,8 +89,8 @@ export function NoteIndex() {
 
 
     return <div className="note-index-container">
-        <NoteFilter onSetFilter={onSetFilter} />
         <AddNote onSaveNote={onSaveNote} />
+        <NoteFilter onSetFilter={onSetFilter} />
         <NoteList notes={notes}
             onRemoveNote={onRemoveNote}
             onChangeBackgroundColor={onChangeBackgroundColor}

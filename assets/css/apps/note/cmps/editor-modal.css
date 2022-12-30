@@ -1,6 +1,11 @@
 .edit-container {
-  display: block;
-  position: sticky;
+  /* display:block;
+  margin:auto;
+  position: sticky; */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background-color: var(--modal-bg);
   width: 50vw;
   height: 200px;
@@ -27,4 +32,5 @@
   right: 10px;
   bottom: 10px;
   padding: 10px;
+  border-radius: 25px;
 }
