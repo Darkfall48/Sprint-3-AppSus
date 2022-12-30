@@ -74,6 +74,7 @@ export function NoteIndex() {
         // setEditMode(true)
         console.log('note.id', note.id)
         navigate(`/note/edit/:${note.id}`)
+        // loadNotes()
     }
 
     if (!notes) return <Loader />
@@ -88,7 +89,7 @@ export function NoteIndex() {
             onEditNote={onEditNote}
         />
         {/* {editMode && <NoteEdit/>} */}
-        {/* {editMode && <Link to={`/note/edit/${noteId}`}/> } */}
+        {/* {editMode && <Link to={`/note/edit/${noteToEdit.id}`}/> } */}
 
         {/* <NoteTxt/> */}
     </div>

@@ -7,7 +7,7 @@ export function NoteEdit() {
     const [noteToEdit, setNoteToEdit] = useState(noteService.getDefaultNote())
     const navigate = useNavigate()
     let { noteId } = useParams()
-    noteId= noteId.substring(1)
+    noteId = noteId.substring(1)
     // console.log('noteId', noteId)
 
 
@@ -18,27 +18,31 @@ export function NoteEdit() {
 
     function loadNote() {
         noteService.get(noteId)
-            .then((note) => setNoteToEdit(noteToEdit))
-            // .catch((err) => {
-            //     console.log('Had issues in note details', err)
-            //     navigate('/note')
-            // })
+            .then((noteToEdit) => setNoteToEdit(noteToEdit))
+        // .catch((err) => {
+        //     console.log('Had issues in note details', err)
+        //     navigate('/note')
+        // })
     }
 
     function onSaveNote(ev) {
-        // noteService.save(noteToAdd)
+        console.log('noteToEdit', noteToEdit)
+        noteService.save(noteToEdit)
         // .then(() => {
         //     showSuccessMsg('Note added')
         //     loadNotes()})
         navigate('/note')
     }
 
-    function handleChange(ev){
+    function handleChange(ev) {
         ev.preventDefault()
-        let {value} = ev.target
+        let { value } = ev.target
         console.log('value', value)
         console.log('noteToEdit', noteToEdit)
-        setNoteToEdit((prevNote) =>( {...prevNote, info:{txt: value} } ))
+        setNoteToEdit((prevNote) => {
+            return ({ ...prevNote, info: { txt: value } })
+        })
+        console.log('noteToEdit', noteToEdit)
     }
 
     return <div onSubmit={onSaveNote} className="edit-container">

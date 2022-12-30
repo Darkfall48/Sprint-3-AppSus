@@ -125,14 +125,14 @@ function _createNotes() {
         id: 'n101',
         type: 'note-txt',
         isPinned: false,
-        info: { txt: 'Fullstack Me Baby!' },
+        info: { txt: 'Return books to the library and pick up the book Emma asked for - Good night moon. Then rememeber to call mom at 18:00.' },
         bgColor: 'default',
       },
       {
         id: 'n102',
         type: 'note-txt',
         isPinned: false,
-        info: { txt: 'Need to work on my react skill!' },
+        info: { txt: 'Need to work on my react skill!' },        
         bgColor: 'default',
       },
       {
