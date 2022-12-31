@@ -235,7 +235,7 @@ function _createMails() {
         isRead: false,
         sentAt: 1524062263,
         to: 'user@appsus.com',
-        from: 'kennedyspacecenter@email.delawarenorth.com',
+        from: 'kennedy@email.delawarenorth.com',
         status: 'inbox',
         isRead: false,
         isStared: false,

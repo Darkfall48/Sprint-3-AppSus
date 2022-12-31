@@ -13,6 +13,7 @@
 .team-member-container {
   display: flex;
   flex-direction: row;
+  gap: 10px;
 }
 
 /* Title Section */
