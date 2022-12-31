@@ -38,7 +38,7 @@ function query(queryParams = {}) {
         const regex = new RegExp(queryParams.text, 'i')
         notes = notes.filter((note) => regex.test(note.info.txt))
       }
-      console.log(notes)
+      // console.log(notes)
       return notes
     }
     )
@@ -75,7 +75,8 @@ function getDefaultNote() {
     id: '',
     type: 'note-txt',
     isPinned: false,
-    info: { txt: '' },
+    info: {txt:''},
+    // info:{},
     bgColor: 'default',
   }
 }
@@ -149,7 +150,7 @@ function _createNotes() {
         isPinned: false,
         info: {
           url: "https://www.youtube.com/embed/ncZmUKanfpU" ,
-        style: { backgroundColor: '#00d' }
+        bgColor: 'purple',
       }
     },
       {
@@ -157,14 +158,14 @@ function _createNotes() {
         type: 'note-txt',
         isPinned: false,
         info: { txt: 'Practice. Become a fullstack MASTER!' },
-        bgColor: 'pink',
+        bgColor: 'blue',
       }, {
         id: 'n105',
         type: 'note-video',
         isPinned: false,
         info: {
           url: "https://www.youtube.com/embed/C6UUJ47HCBQ" ,
-        style: { backgroundColor: '#00d' }
+        bgColor: 'default',
       }
     }
       // ,{
