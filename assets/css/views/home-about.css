@@ -25,7 +25,7 @@
 
 /* Member Article */
 .team-member {
-  flex-basis: 50%;
+  flex-basis: 80%;
   display: flex;
   flex-direction: column;
 }
