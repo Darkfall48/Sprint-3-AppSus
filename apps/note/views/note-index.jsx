@@ -88,8 +88,9 @@ export function NoteIndex() {
         .then((updatedNotes) => {setNotes(updatedNotes)})
       }
 
-      function onSetNoteType(noteType){
-        setNoteType(noteType)
+      function onSetNoteType(selectedNoteType){
+        console.log('selectedNoteType', selectedNoteType)
+        setNoteType(selectedNoteType)
       }
 
     if (!notes) return <Loader />

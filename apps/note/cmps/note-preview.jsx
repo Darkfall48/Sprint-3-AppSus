@@ -16,8 +16,8 @@ export function NotePreview({ note, txt, noteType, length }) {
 }
 
 function DynamicCmp(props) {
-  console.log('props.note.type', props.note.type)
-  console.log('props.noteType', props.noteType)
+  // console.log('props.note.type', props.note.type)
+  // console.log('props.noteType', props.noteType)
   // if (props.note.type !== props.noteType) return
   switch (props.note.type) {
     case 'note-txt':
