@@ -4,8 +4,8 @@ const { useState, useEffect, useRef } = React
 import { NotePreview } from './note-preview.jsx'
 import { NoteControls } from './note-controls.jsx'
 import { BgColorSelection } from './bg-color-select.jsx'
-import { Pin } from './pin.jsx'
 import { Loader } from '../../../cmps/loader.jsx'
+import { Pin } from './pin.jsx'
 
 export function NoteList({
   notes,

@@ -10,25 +10,18 @@ export function MailPageNav({ loadMails }) {
   const mailsLength = mailService.getMailsLength()
   const totalPages = Math.ceil(mailsLength / pageSize)
 
-  console.log('Current Page:', currentPage)
-  console.log('Number of pages:', mailsLength)
-  console.log('Total Pages', totalPages)
+  // console.log('Current Page:', currentPage)
+  // console.log('Number of pages:', mailsLength)
+  // console.log('Total Pages', totalPages)
 
   useEffect(() => {
-    if (currentPage >= totalPages) {
-      showErrorMsg('Too big!')
-      setCurrentPage(totalPages - 1)
-      mailService.setPage(currentPage)
-      return
-    }
-    if (currentPage < 0) {
-      showErrorMsg('Too small!')
-      setCurrentPage(0)
-      mailService.setPage(currentPage)
-      return
-    }
-
     mailService.setPage(currentPage)
+    if (currentPage >= totalPages || currentPage < 0) {
+      showErrorMsg('There is nothing there :(')
+      setCurrentPage(Math.max(0, Math.min(currentPage, totalPages - 1)))
+      mailService.setPage(currentPage)
+      return
+    }
     loadMails()
   }, [currentPage])
 

@@ -1,11 +1,7 @@
 // TODO: • Routable component (page)
-// TODO: • show the entire email
-// TODO: • Allow deleting an email (using the service)
+//? DONE: • show the entire email
+//? DONE: • Allow deleting an email (using the service)
 //? DONE: • Allow navigating back to list
-
-import { mailService } from '../services/mail.service.js'
-
-const { Fragment } = React
 
 export function MailDetails({ mail }) {
   return (

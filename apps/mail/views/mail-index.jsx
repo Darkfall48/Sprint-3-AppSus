@@ -4,11 +4,9 @@ import { mailService } from '../services/mail.service.js'
 import { showSuccessMsg } from '../../../services/event-bus.service.js'
 
 import { MailCompose } from '../cmps/mail-compose.jsx'
-import { MailDetails } from '../cmps/mail-details.jsx'
 import { MailFilter } from '../cmps/mail-filter.jsx'
 import { MailFolderList } from '../cmps/mail-folder-list.jsx'
 import { MailList } from '../cmps/mail-list.jsx'
-import { MailPreview } from '../cmps/mail-preview.jsx'
 import { Loader } from '../../../cmps/loader.jsx'
 
 //? DONE: • Gets the right emails from service (async)
@@ -23,9 +21,10 @@ export function MailIndex() {
     loadMails()
   }, [filterBy, isExpanded])
 
-  useEffect(() => {
-    console.log('Changed visibility', isExpanded)
-  }, [isExpanded])
+  //? For Debug
+  // useEffect(() => {
+  //   console.log('Changed visibility', isExpanded)
+  // }, [isExpanded])
 
   //! Not Working
   function onFilterBy(field) {
@@ -41,7 +40,6 @@ export function MailIndex() {
     mailService
       .query(filterBy)
       .then((mails) => {
-        console.log('Mails loaded:', mails)
         setMails((lastMails) => (lastMails = mails))
       })
       .catch((err) => console.log('Error with Mail List:', err))
@@ -56,8 +54,6 @@ export function MailIndex() {
   }
 
   function toggleStarStatus(mailId) {
-    console.log('Hello from Toggle Star', mailId)
-
     mailService
       .get(mailId)
       .then((mail) => {
@@ -69,14 +65,11 @@ export function MailIndex() {
           showSuccessMsg('Mail Starred!')
         }
         mailService.save(mail).then(() => loadMails())
-        //! Known Issue: Mails are reloaded on delay and only on the second click
       })
       .catch(console.log)
   }
 
   function toggleReadStatus(mailId) {
-    console.log('Hello from Toggle Read', mailId)
-
     mailService
       .get(mailId)
       .then((mail) => {
@@ -90,7 +83,6 @@ export function MailIndex() {
           showSuccessMsg('Mail Status set to Unread!')
         }
         mailService.save(mail).then(() => loadMails())
-        //! Known Issue: Mails are reloaded on delay and only on the second click
       })
       .catch(console.log)
   }

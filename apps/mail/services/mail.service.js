@@ -1,6 +1,5 @@
 import { utilService } from '../../../services/util.service.js'
 import { storageService } from '../../../services/async-storage.service.js'
-import { func } from 'prop-types'
 
 const STORAGE_MAIL_KEY = 'mailDB'
 const PAGE_SIZE = 4
@@ -9,13 +8,13 @@ let gMailLength = 0
 
 _createMails()
 
-// TODO: Connect User to Mails
+//* TODO: Connect User to Mails
 const loggedinUser = {
   email: 'user@appsus.com',
   fullname: 'Mahatma Appsus',
 }
 
-// TODO: Connect Criteria to Mails
+//* TODO: Connect Criteria to Mails
 const criteria = {
   status: 'inbox/sent/trash/draft',
   txt: 'puki', // no need to support complex text search
@@ -50,8 +49,7 @@ function getCurrentPage() {
 }
 
 function setPage(pageToSet) {
-  //? In case of, this code can be helpful
-
+  //? In case of bugs with nav-page cmp, this code can be helpful
   // const totalPages = Math.ceil(gMailLength / gPageIdx)
 
   // if (pageToSet * PAGE_SIZE >= totalPages) {
@@ -65,7 +63,7 @@ function setPage(pageToSet) {
   // }
 
   gPageIdx = pageToSet
-  console.log('gPageIdx:', gPageIdx)
+  // console.log('gPageIdx:', gPageIdx)
 }
 
 function query(queryParams = {}) {
@@ -93,7 +91,7 @@ function query(queryParams = {}) {
 
     let pageStartIdx = gPageIdx * PAGE_SIZE
     gMailLength = mails.length
-    console.log('Number of Mails:', gMailLength)
+    // console.log('Number of Mails:', gMailLength)
 
     return mails.slice(pageStartIdx, pageStartIdx + PAGE_SIZE)
   })

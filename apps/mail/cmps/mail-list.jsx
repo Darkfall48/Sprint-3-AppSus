@@ -1,6 +1,4 @@
-// TODO: • Renders a list of <mail-preview> pass down an email prop
-
-import { mailService } from '../services/mail.service.js'
+//? DONE: • Renders a list of <mail-preview> pass down an email prop
 
 import { MailPreview } from './mail-preview.jsx'
 import { MailPageNav } from './mail-page-nav.jsx'
@@ -37,7 +35,7 @@ export function MailList({
             <th title="Mail Sent At" onClick={() => onFilterBy('sentAt')}>
               Date
             </th>
-            <th title="Actions">Actions</th>
+            <th title="Act">Actions</th>
           </tr>
         </thead>
         <tbody className="table-body">

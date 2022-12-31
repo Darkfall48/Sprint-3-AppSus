@@ -1,7 +1,7 @@
 //? DONE: • Has a form with: to, subject and body
 //? DONE: • Use the service to send an email (add email to the list)
 
-const { useState, useEffect } = React
+const { useState } = React
 import { mailService } from '../services/mail.service.js'
 import { showSuccessMsg } from '../../../services/event-bus.service.js'
 
@@ -16,8 +16,8 @@ export function MailCompose({ setIsExpanded }) {
   function handleSubmit(event) {
     event.preventDefault()
 
-    console.log('To:', mail.to)
-    console.log('Sent Mail', mail)
+    // console.log('To:', mail.to)
+    // console.log('Sent Mail', mail)
 
     mailService
       .save(mail)

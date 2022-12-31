@@ -15,7 +15,6 @@ import { Loader } from '../../../cmps/loader.jsx'
 
 export function MailPreview({
   mail,
-  loadMails,
   onRemoveMail,
   toggleStarStatus,
   toggleReadStatus,
