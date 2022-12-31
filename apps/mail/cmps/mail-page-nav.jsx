@@ -17,7 +17,7 @@ export function MailPageNav({ loadMails }) {
   useEffect(() => {
     if (currentPage >= totalPages) {
       showErrorMsg('Too big!')
-      setCurrentPage((lastPage) => lastPage - 1)
+      setCurrentPage(totalPages - 1)
       mailService.setPage(currentPage)
       return
     }
@@ -36,11 +36,23 @@ export function MailPageNav({ loadMails }) {
     setCurrentPage((page) => page + value)
   }
 
+  function changeToFirst() {
+    setCurrentPage(0)
+  }
+
+  function changeToLast() {
+    setCurrentPage(totalPages - 1)
+  }
+
   return (
-    <article>
-      <a onClick={() => changePage(-1)}>{'<'}</a>
-      <h1> {currentPage + 1} </h1>
-      <a onClick={() => changePage(1)}>{'>'}</a>
+    <article className="mail-page-nav-container">
+      <a className="fa-solid fa-angles-left" onClick={changeToFirst}></a>
+      <a className="fa-solid fa-angle-left" onClick={() => changePage(-1)}></a>
+      <h3>
+        Page {currentPage + 1} of {totalPages}
+      </h3>
+      <a className="fa-solid fa-angle-right" onClick={() => changePage(1)}></a>
+      <a className="fa-solid fa-angles-right" onClick={changeToLast}></a>
     </article>
   )
 }
