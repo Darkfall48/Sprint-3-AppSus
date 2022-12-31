@@ -18,8 +18,6 @@ export function NoteIndex() {
 
   const navigate = useNavigate()
 
-  // const [filterBy , setFilterBy] = useState(noteService.getDefaultFilter())
-
   useEffect(() => {
     loadNotes()
   }, [filterBy])
@@ -27,7 +25,6 @@ export function NoteIndex() {
   function loadNotes() {
     noteService
       .query(filterBy)
-      // .then(notes => setNotes((prevNotes) => prevNotes = notes))
       .then(setNotes)
   }
 
@@ -49,10 +46,8 @@ export function NoteIndex() {
         setNotes(updatedNotes)
         showSuccessMsg('Note removed')
       })
-      // .then(notes => setNotes((prevNotes) => prevNotes = notes))
       .catch((err) => {
         console.log('error', err)
-        // showErrorMsg('Could not remove note')
       })
   }
 
@@ -128,22 +123,3 @@ export function NoteIndex() {
   )
 }
 
-//pin note trys
-// .then(() => { noteService.query() })
-// .then(() => {
-//     notes = notes.filter(note => note.isPinned === true)
-//     const unPinnedNotes = notes.filter(note => note.isPinned === false)
-//     notes.push(unPinnedNotes)
-//     console.log(notes)
-//     setNotes(notes)
-// })
-// .then(updatedNotes => setNotes((prevNotes) => prevNotes = updatedNotes))
-
-// showSuccessMsg('Book removed')
-// .then(console.log)
-// .then(()=>{noteService.query()})
-// .then(setNotes)
-//     .catch((err) => {
-//         console.log('error', err)
-//         // showErrorMsg('Could not remove note')
-//     })

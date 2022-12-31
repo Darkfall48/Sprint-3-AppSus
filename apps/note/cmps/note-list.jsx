@@ -20,11 +20,8 @@ export function NoteList({
   const [noteIdHovering, setNoteIdHovering] = useState(null)
   const [noteIdToSetBg, setNoteIdToSetBg] = useState(null)
   const [pinnedNote, setPinnedNote] = useState(null)
-  // const pinned = (note.isPinned)? 'note-pinned':''
-  // const [color, setColor] = useState('default')
-  // useEffect(()=>{
+ 
 
-  // },[editMode])
 
   function onEditBackground(noteId) {
     setHidden(!hidden)
@@ -48,11 +45,14 @@ export function NoteList({
           key={note.id}
           id={note.id}
           className={note.bgColor}
-          onMouseOver={handleMouseOver}
-          onMouseOut={handleMouseOut}
         >
           <Pin note={note} onPinNote={onPinNote} />
-          <label htmlFor={`edit-btn-${note.id}`}>
+          {/* <div
+          onMouseOver={handleMouseOver}
+          onMouseOut={handleMouseOut}
+          > */}
+          <label htmlFor={`edit-btn-${note.id}`}
+          >
             <NotePreview
               note={note}
               txt={note.info.txt}
@@ -60,6 +60,7 @@ export function NoteList({
               length={100}
             />
           </label>
+          {/* </div> */}
           {/* {isHovering && (noteIdHovering===note.id) &&  */}
           <NoteControls
             note={note}
@@ -69,7 +70,7 @@ export function NoteList({
             onEditBackground={onEditBackground}
             onEditNote={onEditNote}
           />
-          {/* } */}
+          {/* }  */}
           {!hidden && noteIdToSetBg === note.id && (
             <BgColorSelection
               note={note}
@@ -83,8 +84,3 @@ export function NoteList({
   )
 }
 
-// function onChangeBackgroundColor(chosenColor) {
-//     console.log('color', chosenColor)
-//     setColor(chosenColor)
-//     // setHidden(true)
-// }

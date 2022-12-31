@@ -1,9 +1,11 @@
 import { NoteTxt } from './note-txt.jsx'
 import { NoteVideo } from './note-video.jsx'
+import { NoteImg } from './note-img.jsx'
 
-export function NotePreview({ note, txt, noteType, length }) {
+export function NotePreview({ note, txt, noteType, length}) {
   return (
-    <article className="note-preview">
+    <article 
+    className="note-preview">
       <DynamicCmp
         name="Note"
         note={note}
@@ -25,6 +27,6 @@ function DynamicCmp(props) {
     case 'note-video':
       return <NoteVideo {...props} />
     case 'note-img':
-      return <NoteImage {...props} />
+      return <NoteImg {...props} />
   }
 }

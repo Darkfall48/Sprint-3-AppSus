@@ -167,7 +167,15 @@ function _createNotes() {
           url: "https://www.youtube.com/embed/C6UUJ47HCBQ" ,
         bgColor: 'default',
       }
-    }
+    }, {
+          id: "n106",
+          type: "note-img",
+          info: {
+              url: "https://images.app.goo.gl/nyShzzfZhYUW4a8E6",
+              title: "Bobi and Me"
+          },
+          bgColor: 'purple',
+      }
       // ,{
       //     "id": "n104",
       //     "type": "note-todos",

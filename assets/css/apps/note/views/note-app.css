@@ -7,6 +7,13 @@
   width: 80%;
 }
 
+@media screen and (max-width: 940px) {
+  .add-note-container {
+    font-size:0.9em;
+    width: 90vw;
+  }
+}
+
 .add-note-container {
   background-color: var(--input-bg);
   border-radius: 10px;
