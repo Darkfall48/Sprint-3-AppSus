@@ -27,10 +27,11 @@ export function MailIndex() {
   // }, [isExpanded])
 
   //! Not Working
+  //? Had no time to finish
   function onFilterBy(field) {
     console.log('field:', field)
     mailService.query().then(() => {
-      const updatedMails = mails.filter((mail) => mail[field])
+      const updatedMails = mails.sort((mail) => mail[field])
       setMails(updatedMails)
       showSuccessMsg('Mail Filtered by: ' + field)
     })
