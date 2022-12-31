@@ -2,7 +2,7 @@
   background-color: rgba(255, 255, 255, 0.5);
   display: grid;
   grid-template-columns: 1fr 10fr;
-  /* grid-template-rows: 1fr 10fr; */
+  grid-template-rows: 1fr 8fr;
   grid-template-areas:
     'compose-btn filter'
     'side-filter inbox';

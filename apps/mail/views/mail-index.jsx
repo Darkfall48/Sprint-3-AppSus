@@ -1,4 +1,4 @@
-const { useState, useEffect } = React
+const { useState, useEffect, Fragment } = React
 
 import { mailService } from '../services/mail.service.js'
 import { showSuccessMsg } from '../../../services/event-bus.service.js'
@@ -99,6 +99,17 @@ export function MailIndex() {
     setFilterBy(filterByFromFilter)
   }
 
+  function ToggleAddValue() {
+    if (!isExpanded)
+      return (
+        <Fragment>
+          <span className="fa-regular fa-plus compose-button-plus"></span>
+          New Mail
+        </Fragment>
+      )
+    return 'Close'
+  }
+
   if (!mails) return <Loader />
 
   return (
@@ -110,8 +121,7 @@ export function MailIndex() {
             setIsExpanded(!isExpanded)
           }}
         >
-          <span className="fa-regular fa-plus compose-button-plus"></span>
-          New Mail
+          <ToggleAddValue />
         </a>
       </article>
 

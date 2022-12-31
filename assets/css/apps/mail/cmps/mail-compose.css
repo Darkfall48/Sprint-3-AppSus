@@ -12,17 +12,22 @@
   background-color: white;
   border-radius: 25px;
   /* width: fit-content; */
-  padding: 10px 40px;
+  padding: 0px 10px;
+  height: 40px;
+  width: 120px;
   justify-self: center;
   place-items: center;
-  text-align: start;
+  text-align: center;
+  justify-content: space-around;
 
   gap: 10px;
 
   border: 1px rgba(127, 125, 125, 0.644) solid;
   box-shadow: 0px 0px 5px -1px rgba(181, 178, 178, 0.71);
-  /* -webkit-box-shadow: 0px 0px 5px -1px rgba(181, 178, 178, 0.71);
-    -moz-box-shadow: 0px 0px 5px -1px rgba(181, 178, 178, 0.71); */
+}
+
+.compose-button:hover {
+  color: var(--compose-button-hover-color);
 }
 
 /** Mail Compose Section **/
@@ -52,16 +57,16 @@
   height: 100%;
 }
 
-.input-container input {
+.input-container input,
+.mail-compose-body {
   background-color: var(--compose-input-bg);
   border: 1px grey solid;
   border-radius: 5px;
-  /* display: block; */
-  /* outline: 1px black solid; */
   margin: 0 auto;
 }
 
-.input-container input:hover {
+.input-container input:hover,
+.mail-compose-body:hover {
   background-color: var(--compose-input-hover-bg);
 }
 
@@ -69,6 +74,9 @@
   font-family: roboto-regular;
   border: 1px grey solid;
   border-radius: 5px;
+  padding: 3px 20px;
+  width: fit-content;
+  margin: auto;
 
   background-color: var(--compose-button-save-bg);
 }

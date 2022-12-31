@@ -73,6 +73,7 @@ export function MailCompose({ setIsExpanded }) {
 
         <label htmlFor="body">Body:</label>
         <textarea
+          className="mail-compose-body"
           name="body"
           id="body"
           value={mail.body}

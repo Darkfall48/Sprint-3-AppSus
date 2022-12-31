@@ -25,11 +25,19 @@ export function MailList({
       <table className="mail-table">
         <thead className="table-head">
           <tr>
-            <th onClick={() => onFilterBy('isStared')}>Starred</th>
-            <th onClick={() => onFilterBy('from')}>Name</th>
-            <th onClick={() => onFilterBy('subject')}>Subject</th>
-            <th onClick={() => onFilterBy('sentAt')}>Date</th>
-            <th>Actions</th>
+            <th title="Important" onClick={() => onFilterBy('isStared')}>
+              Important
+            </th>
+            <th title="From" onClick={() => onFilterBy('from')}>
+              From
+            </th>
+            <th title="Subject" onClick={() => onFilterBy('subject')}>
+              Subject
+            </th>
+            <th title="Mail Sent At" onClick={() => onFilterBy('sentAt')}>
+              Date
+            </th>
+            <th title="Actions">Actions</th>
           </tr>
         </thead>
         <tbody className="table-body">

@@ -4,6 +4,10 @@
   justify-content: center;
 }
 
+.mail-page-nav-container a:hover {
+  color: var(--compose-button-hover-color);
+}
+
 .page-nav-title {
   font-size: 1.2em;
   padding-inline-start: 10px;

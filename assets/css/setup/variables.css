@@ -28,6 +28,7 @@
 
   /* Compose */
   --compose-bg: rgb(247, 242, 247);
+  --compose-button-hover-color: purple;
   --compose-input-bg: white;
   /* --compose-input-bg: rgba(252, 223, 252, 0.26); */
   --compose-input-hover-bg: rgba(253, 204, 253, 0.571);
