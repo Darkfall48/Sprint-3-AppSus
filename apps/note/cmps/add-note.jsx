@@ -33,7 +33,7 @@ export function AddNote({ onSaveNote, onSetNoteType }) {
             <input type="text"
                 id="note-txt"
                 name="note-txt"
-                placeholder="Write your note here..."
+                placeholder="Take a note..."
                 value={note.info.txt}
                 onChange={handleChangeTxt} />
             {/* <button>Submit</button> */}

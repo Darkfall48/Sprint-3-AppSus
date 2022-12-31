@@ -141,7 +141,7 @@ function _createNotes() {
         id: 'n102',
         type: 'note-txt',
         isPinned: false,
-        info: { txt: 'Need to work on my react skill! Finish sprint 3 with new skills and keep practicing util I master it.' },
+        info: { txt: 'Need to work on my react skill! Finish sprint 3 with new skills and keep practicing until I master it.' },
         bgColor: 'purple',
       }, {
         id: 'n104',

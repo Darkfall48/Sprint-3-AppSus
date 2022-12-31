@@ -26,6 +26,17 @@
   flex-direction: column;
 }
 
+/* Display the columns below each other instead of side by side on small screens */
+@media screen and (max-width: 940px) {
+  .team-member-container {
+    flex-direction: column;
+  }
+  .team-member {
+    flex-basis: 100%;
+    margin-top: 30px;
+  }
+}
+
 .general-info {
 }
 
@@ -48,4 +59,9 @@
 }
 
 .about-description {
+  text-align: left;
+}
+
+.social-link:hover{
+color: var(--main-purple)
 }

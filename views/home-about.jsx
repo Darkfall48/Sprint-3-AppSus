@@ -21,27 +21,27 @@ export function HomeAbout() {
             </p>
             <div className="social-links-container">
               <a
-                className="fa fa-instagram"
+                className="fa fa-instagram social-link"
                 href="https://www.instagram.com/darkfall48/"
                 target="_blank"
               ></a>
               <a
-                className="fa fa-youtube-play"
+                className="fa fa-youtube-play social-link"
                 href="https://www.youtube.com/@Darkfall48"
                 target="_blank"
               ></a>
               <a
-                className="fa fa-facebook"
+                className="fa fa-facebook social-link"
                 href="https://www.facebook.com/sidneysebban"
                 target="_blank"
               ></a>
               <a
-                className="fa fa-github"
+                className="fa fa-github social-link"
                 href="https://github.com/Darkfall48"
                 target="_blank"
               ></a>
               <a
-                className="fa fa-linkedin"
+                className="fa fa-linkedin social-link"
                 href="https://www.linkedin.com/in/sidneysebban/"
                 target="_blank"
               ></a>
@@ -70,47 +70,48 @@ export function HomeAbout() {
           <article className="general-info">
             <img
               className="avatar-team-member"
-              src="https://robohash.org/Keren"
+              src="assets/img/home/Team/Keren.png"
               alt="Keren Zilberman"
             />
             <h2 className="name-title">Keren Siebner</h2>
             <p className="job-title">Olympian, Engineer and Mother</p>
             <div className="social-links-container">
               <a
-                className="fa fa-wikipedia-w"
+                className="fa fa-wikipedia-w social-link"
                 href="https://en.wikipedia.org/wiki/Keren_Siebner"
               ></a>
               <a
-                className="fa fa-facebook"
+                className="fa fa-facebook social-link"
                 href="https://www.facebook.com/profile.php?id=100063468005792&paipv=0&eav=AfZc9iwC46CVug6rhX-xysz353TjTeNVxf8NZ2Hy4BanitPzNCeALGkrZDEFEn_sog0&_rdr"
               ></a>
               <a
-                className="fa fa-linkedin"
+                className="fa fa-linkedin social-link"
                 href="https://www.linkedin.com/in/keren-siebner-b589a5a7/"
               ></a>
               <a
-                className="fa fa-instagram"
+                className="fa fa-instagram social-link"
                 href="https://www.instagram.com/kerensiebner/?hl=en&__coig_restricted=1"
               ></a>
             </div>
           </article>
 
           <article className="about-description">
-            I was born and raised in Israel, to parents Miron and Osnat. When I
-            was 9 I discovered a passion for swimming. Dealing with ADHD and
-            social difficulties at school, swimming was my where I found my
-            place. When I was 18, straight after highschool, I moved to the USA
-            to University of Georgia Tech where I got a full scholarship,
-            competed for division 1 conference and graduated with highest honors
-            bachlors in Industrial Engineering. At 2012 I returned to Israel,
-            joined the IDF inteligence force and continued swimming. During
-            those years I broke the national record in 200 fly and 200 back and
-            represented Israel in European and World championships and 2016 Rio
-            Olympic games. In perallel to swimming, I worked at Biopahrmax, from
-            2019 was promoted to COO. At 2017 I married Gilad Zilberman and two
-            years later I became a mother to Emma. And later, 2021, Dani joined
-            our family. Recently I've decided to make a career change of path
-            and persue coding.
+            Born and raised in Israel. I started swimming at age 9.Swimming changed my life and became my career.
+            At age 18, I moved to University of Georgia Tech where I got a scholarship,
+            competed for division 1, and graduated with highest honors B.A. in Industrial Engineering. 
+            <br /> <br />
+
+            At 2012 I joined the IDF inteligence force. During
+            those years I broke the swimming national records and represented Israel in European and World championships and 2016 Rio
+            Olympic games.
+             <br /><br />
+
+            In perallel to swimming, I worked at Biopahrmax group, from
+            2019 was promoted to COO. 
+            <br /><br />
+            At 2017 I married Gilad Zilberman and became a mother to Emma and Dani. 
+            <br /><br />
+            Recently I've decided to make a career change of path and persue  my passion for coding.
           </article>
         </article>
       </section>
