@@ -2,8 +2,11 @@
 .home-links {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
   /* width: 1em; */
+}
+.home-links a {
+  margin: auto;
 }
 
 /* Sections */
@@ -28,10 +31,13 @@
 /* Hero */
 
 .home-links-title {
-  font-size: 1.8em;
+  font-size: 2em;
+  font-family: roboto-regular;
+  margin-bottom: 1em;
 }
 
 .home-links-hero {
+  font-family: roboto-light;
   font-size: 1.4em;
 }
 
@@ -39,15 +45,18 @@
 
 .home-links-email {
   cursor: pointer;
-  width: 100%;
+  width: 100px;
+  height: 100px;
 }
 
 .home-links-notes {
   cursor: pointer;
-  width: 100%;
+  width: 100px;
+  height: 100px;
 }
 
 .home-links-books {
   cursor: pointer;
-  width: 100%;
+  width: 100px;
+  height: 100px;
 }

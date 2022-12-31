@@ -17,7 +17,9 @@
 
 /* Title Section */
 .about-title {
-  margin-bottom:1em;
+  font-size: 2em;
+  font-family: roboto-regular;
+  margin-bottom: 1em;
 }
 
 /* Member Article */
@@ -25,7 +27,6 @@
   flex-basis: 50%;
   display: flex;
   flex-direction: column;
-  margin-right:3em;
 }
 
 /* Display the columns below each other instead of side by side on small screens */
@@ -43,27 +44,37 @@
 }
 
 .avatar-team-member {
-  width: 120px;
-  height: 120px;
+  width: 160px;
+  height: 160px;
   border-radius: 50%;
   margin-bottom: 10px;
   border: #9f31b8a5 5px solid;
 }
 
 .name-title {
+  font-family: roboto-light;
+  font-size: 1.5em;
+  font-weight: 800;
 }
 
 .job-title {
+  font-family: roboto-regular;
+  font-size: 1.4em;
 }
 
 .social-links-container {
-  font-size: 1.8em;
+  font-size: 2em;
+  margin-bottom: 10px;
 }
 
 .about-description {
-  text-align: left;
+  font-family: roboto-light;
+  /* color: grey; */
+  font-weight: 200;
+  font-size: 1.2em;
+  text-align: center;
 }
 
-.social-link:hover{
-color: var(--main-purple)
+.social-link:hover {
+  color: var(--main-purple);
 }

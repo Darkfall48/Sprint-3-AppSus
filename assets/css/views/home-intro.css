@@ -11,20 +11,17 @@
 
 .home-intro-logo {
   font-family: 'Comfortaa';
+  font-weight: 300;
   font-size: 7em;
   align-self: center;
 }
 
-@media screen and (max-width: 940px) {
-  .home-intro-logo {
-    font-family: 'Comfortaa';
-    font-size: 4em;}
-
-}
 .home-intro-hero {
+  font-family: roboto-light;
 }
 
 .home-intro-link {
+  font-family: roboto-light;
   background-color: var(--main-purple);
   width: fit-content;
   height: fit-content;
@@ -43,4 +40,9 @@
   font-size: 1.2em;
 }
 
-
+@media screen and (max-width: 940px) {
+  .home-intro-logo {
+    font-family: 'Comfortaa';
+    font-size: 4em;
+  }
+}

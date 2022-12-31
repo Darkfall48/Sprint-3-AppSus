@@ -1,26 +1,35 @@
 @font-face {
-    font-family: roboto-regular;
-    src: url("../../fonts/Roboto/Roboto-Regular.ttf");
+  font-family: roboto-regular;
+  src: url('../../fonts/Roboto/Roboto-Regular.ttf');
 }
 @font-face {
-    font-family: roboto-light;
-    src: url("../../fonts/Roboto/Roboto-Light.ttf");
-}
-
-@font-face {
-    font-family: Lato;
-    src: url("../../fonts/Lato-Black.ttf");
+  font-family: roboto-light;
+  src: url('../../fonts/Roboto/Roboto-Light.ttf');
 }
 
 @font-face {
-    font-family: fa-brands;
-    src: url("../../fonts/font-awesome/fa-brands-400.ttf");
+  font-family: Lato;
+  src: url('../../fonts/Lato-Black.ttf');
+}
+
+@font-face {
+  font-family: Lato-bold;
+  src: url('../../fonts/Lato-Bold.ttf');
 }
 @font-face {
-    font-family: fa-regular;
-    src: url("../../fonts/font-awesome/fa-regular-400.ttf");
+  font-family: Lato-light;
+  src: url('../../fonts/Lato-Light.ttf');
+}
+
+@font-face {
+  font-family: fa-brands;
+  src: url('../../fonts/font-awesome/fa-brands-400.ttf');
 }
 @font-face {
-    font-family: fa-solid;
-    src: url("../../fonts/font-awesome/fa-solid-900.ttf");
+  font-family: fa-regular;
+  src: url('../../fonts/font-awesome/fa-regular-400.ttf');
+}
+@font-face {
+  font-family: fa-solid;
+  src: url('../../fonts/font-awesome/fa-solid-900.ttf');
 }

@@ -2,7 +2,7 @@ export function HomeAbout() {
   return (
     <article className="home-about">
       <section className="about-title-container">
-        <h1 className="about-title"> About Us</h1>
+        <h1 className="about-title">Our Team</h1>
       </section>
 
       <section className="team-member-container">
@@ -96,22 +96,26 @@ export function HomeAbout() {
           </article>
 
           <article className="about-description">
-            Born and raised in Israel. I started swimming at age 9.
-            At age 18, I moved to University of Georgia Tech where I got a scholarship,
-            competed for division 1, and graduated with highest honors B.A. in Industrial Engineering. 
+            Born and raised in Israel. I started swimming at age 9. At age 18, I
+            moved to University of Georgia Tech where I got a scholarship,
+            competed for division 1, and graduated with highest honors B.A. in
+            Industrial Engineering.
             <br /> <br />
-
-            At 2012 I joined the IDF inteligence force. During
-            those years I broke the swimming national records and represented Israel in European and World championships and 2016 Rio
-            Olympic games.
-             <br /><br />
-
-            In perallel to swimming, I worked at Biopahrmax group, from
-            2019 was promoted to COO. 
-            <br /><br />
-            At 2017 I married Gilad Zilberman and became a mother to Emma and Dani. 
-            <br /><br />
-            Recently I've decided to make a career change of path and persue  my passion for coding.
+            At 2012 I joined the IDF inteligence force. During those years I
+            broke the swimming national records and represented Israel in
+            European and World championships and 2016 Rio Olympic games.
+            <br />
+            <br />
+            In perallel to swimming, I worked at Biopahrmax group, from 2019 was
+            promoted to COO.
+            <br />
+            <br />
+            At 2017 I married Gilad Zilberman and became a mother to Emma and
+            Dani.
+            <br />
+            <br />
+            Recently I've decided to make a career change of path and persue my
+            passion for coding.
           </article>
         </article>
       </section>

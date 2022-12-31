@@ -5,7 +5,9 @@ export function AppHeader() {
     <header className="app-header main-layout full">
       <nav className=" nav-header header-layout">
         <Link to="/">
-          <div className="fa-solid fa-horse logo-header"></div>
+          <div className="fa-solid fa-horse logo-header">
+            <span className="title-header">AppSus</span>
+          </div>
         </Link>
         <div className="links-header">
           <NavLink to="/">Home</NavLink>
