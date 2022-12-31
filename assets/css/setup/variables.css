@@ -26,15 +26,24 @@
   --details-subject-color: rgb(240, 103, 126);
   --details-body-color: rgb(216, 140, 216);
 
+  /* Compose */
+  --compose-bg: rgb(247, 242, 247);
+  --compose-input-bg: white;
+  /* --compose-input-bg: rgba(252, 223, 252, 0.26); */
+  --compose-input-hover-bg: rgba(253, 204, 253, 0.571);
+  --compose-button-save-bg: white;
+  --compose-button-save-hover-bg: rgba(253, 204, 253, 0.571);
+
   /* preview */
   --preview-btn-read-color: green;
   --preview-btn-remove-color: red;
   --preview-btn-reply-color: blue;
-  --preview-btn-hover-color: goldenrod;
+  --preview-btn-hover-color: lightcoral;
 
   /* side filter */
-  --filter-side-color: rgb(214, 200, 42);
-  --filter-side-hover-color: goldenrod;
+  --filter-side-color: pink;
+  /* --filter-side-color: rgb(214, 200, 42); */
+  --filter-side-hover-color: lightcoral;
   --filter-side-bg: rgba(254, 254, 255, 0.858);
 
   /* note */
@@ -45,8 +54,7 @@
   --modal-bg: rgba(209, 183, 234, 0.956);
 
   /** Page Size **/
-  /* Mobile */
-  --s: 80vw;
-  --m: 70vw;
-  --l: 50vw;
+  --s: 600px;
+  --m: 700px;
+  --l: 980px;
 }

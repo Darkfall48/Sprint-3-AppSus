@@ -35,6 +35,7 @@ export function MailCompose({ setIsExpanded }) {
   return (
     <section className="mail-compose-container">
       <form className="input-container" onSubmit={handleSubmit}>
+        <h1 className="mail-compose-title">New Mail</h1>
         <label htmlFor="from">From:</label>
         <input
           required
@@ -80,7 +81,9 @@ export function MailCompose({ setIsExpanded }) {
         />
         <br />
 
-        <button type="submit">Save</button>
+        <button className="mail-compose-save-button" type="submit">
+          Save
+        </button>
       </form>
     </section>
   )

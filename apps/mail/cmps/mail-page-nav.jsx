@@ -56,8 +56,9 @@ export function MailPageNav({ loadMails }) {
         onClick={() => changePage(-1)}
         title="Previous Page"
       ></a>
-      <h3>
-        Page {currentPage + 1} of {totalPages}
+      <h3 className="page-nav-title">
+        Page <span className="page-nav-current">{currentPage + 1}</span> of
+        <span className="page-nav-total"> {totalPages}</span>
       </h3>
       <a
         className="fa-solid fa-angle-right"

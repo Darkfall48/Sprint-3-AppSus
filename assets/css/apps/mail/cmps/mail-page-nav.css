@@ -3,3 +3,18 @@
   align-items: center;
   justify-content: center;
 }
+
+.page-nav-title {
+  font-size: 1.2em;
+  padding-inline-start: 10px;
+  padding-inline-end: 10px;
+  font-family: roboto-light;
+}
+
+.page-nav-current {
+  font-family: roboto-regular;
+}
+
+.page-nav-total {
+  font-family: roboto-regular;
+}

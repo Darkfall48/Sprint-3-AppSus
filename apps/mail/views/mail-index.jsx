@@ -104,13 +104,15 @@ export function MailIndex() {
   return (
     <section className="mail-index">
       <article className="mail-compose-button">
-        <button
+        <a
+          className="compose-button"
           onClick={() => {
             setIsExpanded(!isExpanded)
           }}
         >
-          Add Mail
-        </button>
+          <span className="fa-regular fa-plus compose-button-plus"></span>
+          New Mail
+        </a>
       </article>
 
       <article className="mail-folder-list">

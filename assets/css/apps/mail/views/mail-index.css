@@ -26,6 +26,7 @@
 .mail-filter {
   grid-area: filter;
   justify-self: center;
+  align-self: center;
 }
 
 .mail-folder-list {
