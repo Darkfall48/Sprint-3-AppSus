@@ -45,7 +45,7 @@ export function MailIndex() {
     })
   }
 
-  function toggleStar(mailId) {
+  function toggleStarStatus(mailId) {
     console.log('Hello from Toggle Star', mailId)
 
     mailService
@@ -59,7 +59,28 @@ export function MailIndex() {
           showSuccessMsg('Mail Starred!')
         }
         mailService.save(mail)
-        loadMails() //! Known Issue: Mails are reloaded on delay
+        loadMails() //! Known Issue: Mails are reloaded on delay and only on the second click
+      })
+      .catch(console.log)
+  }
+
+  function toggleReadStatus(mailId) {
+    console.log('Hello from Toggle Read', mailId)
+
+    mailService
+      .get(mailId)
+      .then((mail) => {
+        if (!mail.isRead) {
+          mail.isRead = true
+          mailService.save(mail).catch(console.log)
+          showSuccessMsg('Mail Status set to Read!')
+        } else {
+          mail.isRead = false
+          mailService.save(mail).catch(console.log)
+          showSuccessMsg('Mail Status set to Unread!')
+        }
+        mailService.save(mail)
+        loadMails() //! Known Issue: Mails are reloaded on delay and only on the second click
       })
       .catch(console.log)
   }
@@ -99,7 +120,8 @@ export function MailIndex() {
           mails={mails}
           loadMails={loadMails}
           onRemoveMail={onRemoveMail}
-          toggleStar={toggleStar}
+          toggleStarStatus={toggleStarStatus}
+          toggleReadStatus={toggleReadStatus}
         />
       </article>
     </section>

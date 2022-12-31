@@ -13,7 +13,13 @@ import { Loader } from '../../../cmps/loader.jsx'
 //? DONE: • Gives visual indication for read/unread
 // TODO: • Support hover state
 
-export function MailPreview({ mail, loadMails, onRemoveMail, toggleStar }) {
+export function MailPreview({
+  mail,
+  loadMails,
+  onRemoveMail,
+  toggleStarStatus,
+  toggleReadStatus,
+}) {
   // console.log('Mail from Mail List', mail)
   const [isExpanded, setIsExpanded] = useState(false)
 
@@ -27,24 +33,22 @@ export function MailPreview({ mail, loadMails, onRemoveMail, toggleStar }) {
   }
 
   function setReadStatus() {
-    // console.log(mail.isRead)
-
     if (mail.isRead) return 'read'
 
     return ''
   }
 
-  function toggleReadStatus() {
-    if (!mail.isRead) {
-      mail.isRead = true
-      mailService.save(mail).catch(console.log)
-      showSuccessMsg('Mail Status set to Read!')
-    } else {
-      mail.isRead = false
-      mailService.save(mail).catch(console.log)
-      showSuccessMsg('Mail Status set to Unread!')
-    }
-  }
+  // function toggleReadStatus(mailId) {
+  //   if (!mail.isRead) {
+  //     mail.isRead = true
+  //     mailService.save(mail).catch(console.log)
+  //     showSuccessMsg('Mail Status set to Read!')
+  //   } else {
+  //     mail.isRead = false
+  //     mailService.save(mail).catch(console.log)
+  //     showSuccessMsg('Mail Status set to Unread!')
+  //   }
+  // }
 
   function setStatusToRead() {
     if (!mail.isRead && isExpanded) {
@@ -57,30 +61,17 @@ export function MailPreview({ mail, loadMails, onRemoveMail, toggleStar }) {
   function SetStar() {
     if (mail.isStared)
       return (
-        <a className="star" onClick={() => toggleStar(mail.id)}>
+        <a className="star" onClick={() => toggleStarStatus(mail.id)}>
           ❤️
         </a>
       )
 
     return (
-      <a className="star" onClick={() => toggleStar(mail.id)}>
+      <a className="star" onClick={() => toggleStarStatus(mail.id)}>
         🖤
       </a>
     )
   }
-
-  // function toggleStar(ev) {
-  //   ev.stopPropagation() //! Not Working
-  //   if (mail.isStared) {
-  //     mail.isStared = false
-  //     showSuccessMsg('Mail Un-Starred!')
-  //   } else {
-  //     mail.isStared = true
-  //     showSuccessMsg('Mail Starred!')
-  //   }
-  //   mailService.save(mail).catch(console.log)
-  //   loadMails()
-  // }
 
   function SetName() {
     return <p>{mail.to.split('@', 1)}</p>
@@ -131,7 +122,7 @@ export function MailPreview({ mail, loadMails, onRemoveMail, toggleStar }) {
         <td className="action-btn">
           <a
             className="fa-solid fa-check action-btn-read"
-            onClick={toggleReadStatus}
+            onClick={() => toggleReadStatus(mail.id)}
             title="Toggle Mail Read Status"
           ></a>
           <a
