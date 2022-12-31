@@ -25,9 +25,7 @@
 }
 
 .title-header {
-  font-size: 1em;
-  text-transform: uppercase;
-  font-family: 'Comfortaa';
+  display: none;
 }
 
 nav a {
@@ -46,4 +44,13 @@ nav a.active {
   color: var(--header-links-active-status-color);
   font-weight: bold;
   text-decoration: overline;
+}
+
+@media (min-width: 780px) {
+  .title-header {
+    display: inline;
+    font-size: 1em;
+    text-transform: uppercase;
+    font-family: 'Comfortaa';
+  }
 }
