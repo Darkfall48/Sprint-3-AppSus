@@ -26,6 +26,8 @@
 /* Note */
 @import './apps/note/views/note-app.css';
 
+/* Book */
+@import './apps/book/views/book-index.css';
 /** Cmps **/
 
 @import './cmps/user-msg.css';
@@ -47,3 +49,13 @@
 @import './apps/note/cmps/note-controls.css';
 @import './apps/note/cmps/color-select.css';
 @import './apps/note/cmps/editor-modal.css';
+
+/* Book */
+@import './apps/book/cmps/app-header.css';
+@import './apps/book/cmps/book-details.css';
+@import './apps/book/cmps/book-filter.css';
+@import './apps/book/cmps/book-list.css';
+@import './apps/book/cmps/book-preview.css';
+@import './apps/book/cmps/loader.css';
+@import './apps/book/cmps/long-txt.css';
+@import './apps/book/cmps/user-msg.css';

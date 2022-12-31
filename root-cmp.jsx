@@ -8,7 +8,7 @@ import { HomeAbout } from './views/home-about.jsx'
 import { MailIndex } from './apps/mail/views/mail-index.jsx'
 import { NoteIndex } from './apps/note/views/note-index.jsx'
 import { NoteEdit } from './apps/note/views/note-edit.jsx'
-// import { BookIndex } from './apps/book/views/book-index.jsx'
+import { BookIndex } from './apps/book/views/book-index.jsx'
 
 export function App() {
   return (
@@ -21,7 +21,7 @@ export function App() {
           <Route path="/mail" element={<MailIndex />} />
           <Route path="/note" element={<NoteIndex />} />
           <Route path="/note/edit/:noteId" element={<NoteEdit />} />
-          {/* <Route path="/book" element={<BookIndex />} /> */}
+          <Route path="/book" element={<BookIndex />} />
         </Routes>
       </section>
       <UserMsg />

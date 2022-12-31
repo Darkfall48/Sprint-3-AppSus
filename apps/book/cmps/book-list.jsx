@@ -1,4 +1,4 @@
-import { BookPreview } from './book-preview.jsx'
+import { BookPreview } from './books-preview.jsx'
 
 export function BookList({ books, onRemoveBook }) {
   return (

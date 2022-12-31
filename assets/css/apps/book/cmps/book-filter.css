@@ -1,0 +1,18 @@
+.book-filter {
+  text-align: center;
+  background-color: var(--input-bg);
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+.book-filter-title {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.book-filter-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  /* gap: 20px; */
+  justify-content: right;
+}
