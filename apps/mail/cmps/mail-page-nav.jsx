@@ -46,13 +46,29 @@ export function MailPageNav({ loadMails }) {
 
   return (
     <article className="mail-page-nav-container">
-      <a className="fa-solid fa-angles-left" onClick={changeToFirst}></a>
-      <a className="fa-solid fa-angle-left" onClick={() => changePage(-1)}></a>
+      <a
+        className="fa-solid fa-angles-left"
+        onClick={changeToFirst}
+        title="First Page"
+      ></a>
+      <a
+        className="fa-solid fa-angle-left"
+        onClick={() => changePage(-1)}
+        title="Previous Page"
+      ></a>
       <h3>
         Page {currentPage + 1} of {totalPages}
       </h3>
-      <a className="fa-solid fa-angle-right" onClick={() => changePage(1)}></a>
-      <a className="fa-solid fa-angles-right" onClick={changeToLast}></a>
+      <a
+        className="fa-solid fa-angle-right"
+        onClick={() => changePage(1)}
+        title="Next Page"
+      ></a>
+      <a
+        className="fa-solid fa-angles-right"
+        onClick={changeToLast}
+        title="Last Page"
+      ></a>
     </article>
   )
 }

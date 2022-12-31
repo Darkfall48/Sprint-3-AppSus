@@ -1,7 +1,7 @@
 const { useState } = React
 
 export function MailLongTxt({ txt, length = 50 }) {
-  const [isLongTxtShown, setLongTxtShown] = useState(false)
+  const [isLongTxtShown] = useState(false)
 
   function getTxtToShow(isLongTxtShown, txt, length) {
     return txt.length < length || isLongTxtShown

@@ -156,12 +156,12 @@ function _createMails() {
     mails = [
       {
         id: 'e101',
-        subject: 'Miss you!',
+        subject: `Don't miss the LAST WEEKEND!`,
         body: 'Would love to catch up sometimes',
         isRead: false,
         sentAt: 1672238263,
         to: 'user@appsus.com',
-        from: 'momo@momo.com',
+        from: 'labaiedhudson@enews.thebay.com',
         status: 'inbox',
         isRead: true,
         isStared: true,
@@ -169,27 +169,25 @@ function _createMails() {
       },
       {
         id: 'e102',
-        subject: 'Miss you too!',
-        body: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae at animi vitae! Non consectetur, labore, vero architecto aperiam enim nostrum deleniti consequuntur exercitationem nam tenetur sed animi nemo ratione et.
-        Maiores aspernatur modi molestias quam similique sit, laudantium, dolor repellendus, ratione autem deserunt? Possimus inventore voluptas beatae praesentium officia facere quibusdam quia soluta voluptates sapiente aliquam excepturi, ratione, aut rem!
-        Recusandae officiis ullam vel possimus quam qui quisquam corrupti, laborum delectus deleniti repudiandae doloribus laudantium ratione aut beatae excepturi error hic inventore dicta tempora rerum quo voluptatibus quod. Impedit, ab!
-        Quidem suscipit quis hic, dolore tenetur ipsum soluta odio animi ex laboriosam reprehenderit inventore esse sit similique tempora ducimus repellat doloribus impedit facilis repellendus officiis. Rerum fugit perferendis qui consequatur.
-        Error in tenetur rem, autem laborum incidunt aspernatur, quos harum ea magnam quod labore dolorem. Doloribus perspiciatis, facilis vitae enim expedita, reprehenderit officia libero architecto, maiores tempore ullam accusamus blanditiis.`,
+        subject: 'Upcoming events!',
+        body: `On January 5 at 5 p.m., meet at the Avila slope of the Saint-Sauveur Summit.
+        The first 200 customers will receive a gift! If you're a little rusty, don't panic.
+        There will be coffee, hot chocolate and Red Bull to get you back on track, and even a new Red Bull module to challenge you.`,
         isRead: false,
         sentAt: 1546007863,
         to: 'user@appsus.com',
-        from: 'momo@momo.com',
+        from: 'info@e.sommets.com',
         status: 'inbox',
         labels: ['important', 'romantic'],
       },
       {
         id: 'e103',
-        subject: 'Miss you loulou!',
+        subject: 'Miss you so much babe 💖!',
         body: 'Would love to catch up sometimes',
         isRead: false,
         sentAt: 1524062263,
         to: 'user@appsus.com',
-        from: 'momo@momo.com',
+        from: 'horny@sexy.foryou',
         status: 'inbox',
         isRead: false,
         isStared: false,
@@ -197,12 +195,112 @@ function _createMails() {
       },
       {
         id: 'e104',
-        subject: 'Popi',
-        body: 'Koki',
+        subject: 'Available Sunday, January 1...',
+        body: `The Way of the Apron Season 2 available on Sunday!
+        Our favorite former yakuza is back!
+        Between discount coupons and penny-pinching meals, he takes his role as a househusband very seriously.`,
         isRead: false,
         sentAt: 1524062263,
         to: 'user@appsus.com',
-        from: 'momo@momo.com',
+        from: 'info@mailer.netflix.com',
+        status: 'inbox',
+        isRead: false,
+        isStared: false,
+        labels: ['important', 'romantic'],
+      },
+      {
+        id: 'e105',
+        subject: 'User, try using Uber to go shopping',
+        body: `A ride for all your errands!
+        With Uber, do all your shopping easily, quickly and
+        without stress. Give us your time and address,
+        we'll take you anywhere you want to go.`,
+        isRead: false,
+        sentAt: 1524085263,
+        to: 'user@appsus.com',
+        from: 'uber@uber.com',
+        status: 'inbox',
+        isRead: false,
+        isStared: false,
+        labels: ['important', 'romantic'],
+      },
+      {
+        id: 'e106',
+        subject:
+          'Have fun learning with these typing, language, and meditation games',
+        body: `Making a New Year’s resolution to learn a new language, improve your typing, or start meditating?
+        Unlock real-life achievements—and have a blast in the process—with our brand-new bundle of games!`,
+        isRead: false,
+        sentAt: 1524062263,
+        to: 'user@appsus.com',
+        from: 'contact@mailer.humblebundle.com',
+        status: 'inbox',
+        isRead: false,
+        isStared: false,
+        labels: ['important', 'romantic'],
+      },
+      {
+        id: 'e107',
+        subject: 'Launch Alert | SpaceX Falcon 9 Transporter 6',
+        body: `An Up-Close View of the Next Launch
+
+        SpaceX is set to launch the Transporter 6 rideshare mission as their first launch of the new year.
+        The first stage of the rocket will land at LZ-1 on Cape Canaveral Space Force Station.
+        Launch viewing from the LC-39 Observation Gantry is now available online in addition to admission, or view from two other locations included with admission.
+        Learn more below!`,
+        isRead: false,
+        sentAt: 1524062263,
+        to: 'user@appsus.com',
+        from: 'kennedyspacecenter@email.delawarenorth.com',
+        status: 'inbox',
+        isRead: false,
+        isStared: false,
+        labels: ['important', 'romantic'],
+      },
+      {
+        id: 'e108',
+        subject: `Don't miss this new event of Copper Dragon!`,
+        body: `Hey User!
+ 
+        Copper Dragon just announced a new event and we wanted to make sure you were the first to know!`,
+        isRead: false,
+        sentAt: 1524062263,
+        to: 'user@appsus.com',
+        from: 'noreply@reminder.eventbrite.com',
+        status: 'inbox',
+        isRead: false,
+        isStared: false,
+        labels: ['important', 'romantic'],
+      },
+      {
+        id: 'e109',
+        subject: 'Order 81480807 : delivery confirmed',
+        body: `Delivery made
+        Hello User AppSus,
+        The delivery of your order 81480807 has been confirmed.
+        You can see the details below.`,
+        isRead: false,
+        sentAt: 1524062263,
+        to: 'user@appsus.com',
+        from: 'transaction@notice.aliexpress.com',
+        status: 'inbox',
+        isRead: false,
+        isStared: false,
+        labels: ['important', 'romantic'],
+      },
+      {
+        id: 'e110',
+        subject: 'Last chance for our lowest price on iOS',
+        body: `2023 is almost here, which means our sale is about to expire.
+
+        Automate the things on your to do list and accomplish your resolutions in 2023.
+        Save money, establish new habits, automate your business, and so much more.
+        
+        Get our best deal on Pro+.👇`,
+        isRead: false,
+        sentAt: 1524062263,
+        to: 'user@appsus.com',
+        from: 'mail@ifttt.com',
         status: 'inbox',
         isRead: false,
         isStared: false,

@@ -8,10 +8,10 @@ import { MailDetails } from './mail-details.jsx'
 import { MailLongTxt } from './mail-longtext.jsx'
 import { Loader } from '../../../cmps/loader.jsx'
 
-// TODO: • Present an email preview
 // TODO: • Renders the subject (with text size limit)
+//? DONE: • Present an email preview
 //? DONE: • Gives visual indication for read/unread
-// TODO: • Support hover state
+//? DONE: • Support hover state
 
 export function MailPreview({
   mail,
@@ -37,18 +37,6 @@ export function MailPreview({
 
     return ''
   }
-
-  // function toggleReadStatus(mailId) {
-  //   if (!mail.isRead) {
-  //     mail.isRead = true
-  //     mailService.save(mail).catch(console.log)
-  //     showSuccessMsg('Mail Status set to Read!')
-  //   } else {
-  //     mail.isRead = false
-  //     mailService.save(mail).catch(console.log)
-  //     showSuccessMsg('Mail Status set to Unread!')
-  //   }
-  // }
 
   function setStatusToRead() {
     if (!mail.isRead && isExpanded) {
