@@ -71,7 +71,7 @@ export function HomeAbout() {
             <img
               className="avatar-team-member"
               src="assets/img/home/Team/Keren.png"
-              alt="Keren Zilberman"
+              alt="Keren Siebner"
             />
             <h2 className="name-title">Keren Siebner</h2>
             <p className="job-title">Olympian, Engineer and Mother</p>
