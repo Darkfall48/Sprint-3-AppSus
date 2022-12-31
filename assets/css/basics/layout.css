@@ -43,10 +43,40 @@
   .main-layout > *:not(.full) {
     max-width: var(--m);
   }
+  .header-layout {
+    max-width: var(--m);
+  }
+  .home-links {
+    max-width: var(--m);
+  }
+  .about-title-container {
+    max-width: var(--m);
+  }
+
+  .team-member-container {
+    max-width: var(--m);
+  }
 }
 
 @media (min-width: 1060px) {
   .main-layout > *:not(.full) {
+    max-width: var(--l);
+  }
+
+  .main-layout > *:not(.full) {
+    max-width: var(--l);
+  }
+  .header-layout {
+    max-width: var(--l);
+  }
+  .home-links {
+    max-width: var(--l);
+  }
+  .about-title-container {
+    max-width: var(--l);
+  }
+
+  .team-member-container {
     max-width: var(--l);
   }
 }
