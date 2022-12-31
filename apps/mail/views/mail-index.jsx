@@ -27,6 +27,16 @@ export function MailIndex() {
     console.log('Changed visibility', isExpanded)
   }, [isExpanded])
 
+  //! Not Working
+  function onFilterBy(field) {
+    console.log('field:', field)
+    mailService.query().then(() => {
+      const updatedMails = mails.filter((mail) => mail[field])
+      setMails(updatedMails)
+      showSuccessMsg('Mail Filtered by: ' + field)
+    })
+  }
+
   function loadMails() {
     mailService
       .query(filterBy)
@@ -122,6 +132,7 @@ export function MailIndex() {
           onRemoveMail={onRemoveMail}
           toggleStarStatus={toggleStarStatus}
           toggleReadStatus={toggleReadStatus}
+          onFilterBy={onFilterBy}
         />
       </article>
     </section>

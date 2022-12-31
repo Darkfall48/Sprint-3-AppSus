@@ -62,7 +62,7 @@ export function MailPreview({
   }
 
   function SetName() {
-    return <p>{mail.to.split('@', 1)}</p>
+    return <p>{mail.from.split('@', 1)}</p>
   }
 
   function SetSubject() {

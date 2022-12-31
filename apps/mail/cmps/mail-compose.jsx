@@ -35,8 +35,21 @@ export function MailCompose({ setIsExpanded }) {
   return (
     <section className="mail-compose-container">
       <form className="input-container" onSubmit={handleSubmit}>
+        <label htmlFor="from">From:</label>
+        <input
+          required
+          type="email"
+          id="from"
+          name="from"
+          value={mail.from}
+          onChange={handleChange}
+          placeholder="sad@pando.babu"
+        />
+        <br />
+
         <label htmlFor="to">To:</label>
         <input
+          required
           type="email"
           id="to"
           name="to"

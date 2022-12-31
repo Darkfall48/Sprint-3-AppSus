@@ -70,20 +70,6 @@ function setPage(pageToSet) {
 
 function query(queryParams = {}) {
   return storageService.query(STORAGE_MAIL_KEY).then((mails) => {
-    // TODO: Adapt to mail service
-    // if (filterBy.subject) {
-    //   const regex = new RegExp(filterBy.subject, 'i')
-    //   mails = mails.filter((mail) => regex.test(mail.subject))
-    // }
-
-    // if (filterBy.readStatus) {
-    //   if (filterBy.readStatus === 'unread') {
-    //     mails = mails.filter((mail) => !mail.isRead)
-    //   } else if (filterBy.readStatus === 'read') {
-    //     mails = mails.filter((mail) => mail.isRead)
-    //   }
-    // }
-
     if (queryParams.subject) {
       const regex = new RegExp(queryParams.subject, 'i')
       mails = mails.filter((mail) => regex.test(mail.subject))
@@ -105,13 +91,10 @@ function query(queryParams = {}) {
     //   }
     // }
 
-    // if (filterBy.maxPrice) {
-    //   mails = mails.filter((mail) => mail.listPrice.amount <= filterBy.maxPrice)
-    // }
-
     let pageStartIdx = gPageIdx * PAGE_SIZE
     gMailLength = mails.length
     console.log('Number of Mails:', gMailLength)
+
     return mails.slice(pageStartIdx, pageStartIdx + PAGE_SIZE)
   })
 }
@@ -135,6 +118,7 @@ function save(mail) {
 function getEmptyMail() {
   return {
     to: '',
+    from: '',
     subject: '',
     body: '',
     sentAt: Date.now(),
@@ -187,7 +171,7 @@ function _createMails() {
         isRead: false,
         sentAt: 1524062263,
         to: 'user@appsus.com',
-        from: 'horny@sexy.foryou',
+        from: 'hornygirl@sexy.foryou',
         status: 'inbox',
         isRead: false,
         isStared: false,

@@ -12,6 +12,7 @@ export function MailList({
   onRemoveMail,
   toggleStarStatus,
   toggleReadStatus,
+  onFilterBy,
 }) {
   if (!mails)
     return (
@@ -24,10 +25,10 @@ export function MailList({
       <table className="mail-table">
         <thead className="table-head">
           <tr>
-            <th>Starred</th>
-            <th>Name</th>
-            <th>Subject</th>
-            <th>Date</th>
+            <th onClick={() => onFilterBy('isStared')}>Starred</th>
+            <th onClick={() => onFilterBy('from')}>Name</th>
+            <th onClick={() => onFilterBy('subject')}>Subject</th>
+            <th onClick={() => onFilterBy('sentAt')}>Date</th>
             <th>Actions</th>
           </tr>
         </thead>
