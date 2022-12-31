@@ -1,5 +1,5 @@
-// TODO: • Has a form with: to, subject and body
-// TODO: • Use the service to send an email (add email to the list)
+//? DONE: • Has a form with: to, subject and body
+//? DONE: • Use the service to send an email (add email to the list)
 
 const { useState, useEffect } = React
 import { mailService } from '../services/mail.service.js'
@@ -8,7 +8,6 @@ import { showSuccessMsg } from '../../../services/event-bus.service.js'
 export function MailCompose({ setIsExpanded }) {
   const [mail, setMail] = useState(mailService.getEmptyMail)
 
-
   function handleChange({ target }) {
     const { name, value } = target
     setMail((prevMail) => ({ ...prevMail, [name]: value }))
@@ -16,13 +15,14 @@ export function MailCompose({ setIsExpanded }) {
 
   function handleSubmit(event) {
     event.preventDefault()
+
     console.log('To:', mail.to)
-    // email is valid, proceed with sending the mail
     console.log('Sent Mail', mail)
+
     mailService
       .save(mail)
       .then(() => {
-        setMail((prevMail) => ({ ...prevMail, isSent: true })) // update flag to indicate successful send and save
+        setMail((prevMail) => ({ ...prevMail, isSent: true }))
         setIsExpanded(false)
         setMail(mailService.getEmptyMail)
       })
@@ -33,11 +33,12 @@ export function MailCompose({ setIsExpanded }) {
   }
 
   return (
-    <section className="mail-compose">
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="for">To:</label>
+    <section className="mail-compose-container">
+      <form className="input-container" onSubmit={handleSubmit}>
+        <label htmlFor="to">To:</label>
         <input
           type="email"
+          id="to"
           name="to"
           value={mail.to}
           onChange={handleChange}
@@ -48,6 +49,7 @@ export function MailCompose({ setIsExpanded }) {
         <label htmlFor="subject">Subject:</label>
         <input
           type="text"
+          id="subject"
           name="subject"
           value={mail.subject}
           onChange={handleChange}
@@ -58,6 +60,7 @@ export function MailCompose({ setIsExpanded }) {
         <label htmlFor="body">Body:</label>
         <textarea
           name="body"
+          id="body"
           value={mail.body}
           onChange={handleChange}
           placeholder="Today..."

@@ -26,6 +26,12 @@
   --details-subject-color: rgb(240, 103, 126);
   --details-body-color: rgb(216, 140, 216);
 
+  /* preview */
+  --preview-btn-read-color: green;
+  --preview-btn-remove-color: red;
+  --preview-btn-reply-color: blue;
+  --preview-btn-hover-color: goldenrod;
+
   /* side filter */
   --filter-side-color: rgb(214, 200, 42);
   --filter-side-hover-color: goldenrod;

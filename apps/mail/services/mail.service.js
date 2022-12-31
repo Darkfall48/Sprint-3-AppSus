@@ -1,7 +1,12 @@
 import { utilService } from '../../../services/util.service.js'
 import { storageService } from '../../../services/async-storage.service.js'
+import { func } from 'prop-types'
 
 const STORAGE_MAIL_KEY = 'mailDB'
+const PAGE_SIZE = 4
+let gPageIdx = 0
+let gMailLength = 0
+
 _createMails()
 
 // TODO: Connect User to Mails
@@ -24,8 +29,42 @@ export const mailService = {
   get,
   remove,
   save,
+  setPage,
+  getPageSize,
+  getCurrentPage,
   getDefaultFilter,
   getEmptyMail,
+  getMailsLength,
+}
+
+function getPageSize() {
+  return PAGE_SIZE
+}
+
+function getMailsLength() {
+  return gMailLength
+}
+
+function getCurrentPage() {
+  return gPageIdx
+}
+
+function setPage(pageToSet) {
+  //? In case of, this code can be helpfull
+  // const totalPages = Math.ceil(gMailLength / gPageIdx)
+
+  // if (pageToSet * PAGE_SIZE >= totalPages) {
+  //   console.warn('Page Idx is too big!')
+  //   pageToSet = pageToSet - 1
+  // }
+
+  // if (pageToSet * PAGE_SIZE < 0) {
+  //   console.warn('Page Idx is too low!')
+  //   pageToSet = 0
+  // }
+
+  gPageIdx = pageToSet
+  console.log('gPageIdx:', gPageIdx)
 }
 
 function query(queryParams = {}) {
@@ -69,7 +108,10 @@ function query(queryParams = {}) {
     //   mails = mails.filter((mail) => mail.listPrice.amount <= filterBy.maxPrice)
     // }
 
-    return mails
+    let pageStartIdx = gPageIdx * PAGE_SIZE
+    gMailLength = mails.length
+    console.log('Number of Mails:', gMailLength)
+    return mails.slice(pageStartIdx, pageStartIdx + PAGE_SIZE)
   })
 }
 
@@ -90,7 +132,7 @@ function save(mail) {
 }
 
 function getEmptyMail() {
-  return{
+  return {
     to: '',
     subject: '',
     body: '',

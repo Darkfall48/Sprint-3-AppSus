@@ -17,6 +17,11 @@ export function MailPreview({ mail, loadMails, onRemoveMail }) {
   // console.log('Mail from Mail List', mail)
   const [isExpanded, setIsExpanded] = useState(false)
 
+  function toggleDetails() {
+    setIsExpanded(!isExpanded)
+    setStatusToRead()
+  }
+
   function setReadStatus() {
     // console.log(mail.isRead)
 
@@ -110,32 +115,30 @@ export function MailPreview({ mail, loadMails, onRemoveMail }) {
         <td>
           <SetStar />
         </td>
-        <td>
+        <td onClick={toggleDetails}>
           <SetName />
         </td>
-        <td
-          onClick={() => {
-            setIsExpanded(!isExpanded)
-            setStatusToRead()
-          }}
-        >
+        <td onClick={toggleDetails}>
           <SetSubject />
         </td>
-        <td>
+        <td onClick={toggleDetails}>
           <SetDate />
         </td>
         <td className="action-btn">
           <a
-            className="fa-solid fa-check"
+            className="fa-solid fa-check action-btn-read"
             onClick={toggleReadStatus}
             title="Toggle Mail Read Status"
           ></a>
           <a
-            className="fa-solid fa-xmark"
+            className="fa-solid fa-xmark action-btn-remove"
             onClick={() => onRemoveMail(mail.id)}
             title="Remove Mail"
           ></a>
-          <a className="fa-solid fa-reply" title="Reply to the Mail"></a>
+          <a
+            className="fa-solid fa-reply action-btn-reply"
+            title="Reply to the Mail"
+          ></a>
         </td>
       </tr>
       <tr className="details-tr" hidden={!isExpanded}>

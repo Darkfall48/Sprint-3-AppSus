@@ -3,6 +3,7 @@
 import { mailService } from '../services/mail.service.js'
 
 import { MailPreview } from './mail-preview.jsx'
+import { MailPageNav } from './mail-page-nav.jsx'
 import { Loader } from '../../../cmps/loader.jsx'
 
 export function MailList({ mails, loadMails, onRemoveMail }) {
@@ -13,7 +14,7 @@ export function MailList({ mails, loadMails, onRemoveMail }) {
       </table>
     )
   return (
-    <section className="mail-list">
+    <section className="mail-list-container">
       <table className="mail-table">
         <thead className="table-head">
           <tr>
@@ -34,6 +35,13 @@ export function MailList({ mails, loadMails, onRemoveMail }) {
             />
           ))}
         </tbody>
+        <tfoot>
+          <tr>
+            <td colSpan="5">
+              <MailPageNav loadMails={loadMails} />
+            </td>
+          </tr>
+        </tfoot>
       </table>
     </section>
   )

@@ -4,7 +4,7 @@ const { useState, useEffect } = React
 
 export function MailFolderList({ onSetFilter }) {
   return (
-    <section className="mail-folder-list">
+    <section className="mail-folder-list-container">
       <a className="fa-solid fa-inbox" title="Inbox"></a>
       <a className="fa-solid fa-star" title="Starred Mails"></a>
       <a className="fa-solid fa-arrow-right" title="Sent Mails"></a>

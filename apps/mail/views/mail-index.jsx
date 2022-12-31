@@ -53,28 +53,37 @@ export function MailIndex() {
 
   return (
     <section className="mail-index">
-      <button
-        onClick={() => {
-          setIsExpanded(!isExpanded)
-        }}
-      >
-        Add Mail
-      </button>
-      <MailFilter onSetFilter={onSetFilter} />
-      <MailFolderList onSetFilter={onSetFilter} />
 
-      <section>
-        <article hidden={!isExpanded}>
+        <article className='mail-compose-button'>
+          <button
+            onClick={() => {
+              setIsExpanded(!isExpanded)
+            }}
+          >
+            Add Mail
+          </button>
+        </article>
+
+        <article className="mail-folder-list">
+          <MailFolderList onSetFilter={onSetFilter} />
+        </article>
+
+        <article className="mail-compose" hidden={!isExpanded}>
           <MailCompose setIsExpanded={setIsExpanded} />
         </article>
-        <article hidden={isExpanded}>
+
+        <article className="mail-filter" hidden={isExpanded}>
+          <MailFilter onSetFilter={onSetFilter} />
+        </article>
+
+        <article className="mail-list" hidden={isExpanded}>
           <MailList
             mails={mails}
             loadMails={loadMails}
             onRemoveMail={onRemoveMail}
           />
         </article>
-      </section>
+
     </section>
   )
 }

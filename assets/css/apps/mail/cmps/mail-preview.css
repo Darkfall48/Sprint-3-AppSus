@@ -26,13 +26,23 @@
   font-size: 1.1em;
 }
 
-.action-btn a:active {
-  color: var(--filter-side-active-color);
+.action-btn-read:hover {
+  color: var(--preview-btn-read-color);
+}
+.action-btn-remove:hover {
+  color: var(--preview-btn-remove-color);
+}
+.action-btn-reply:hover {
+  color: var(--preview-btn-reply-color);
 }
 
-.action-btn a:hover {
-  color: var(--filter-side-hover-color);
+.action-btn a:active {
+  color: var(--preview-btn-hover-color);
 }
+
+/* .action-btn a:hover {
+  color: var(--filter-side-hover-color);
+} */
 
 .star {
   cursor: pointer;
