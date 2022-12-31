@@ -96,7 +96,7 @@ export function HomeAbout() {
           </article>
 
           <article className="about-description">
-            Born and raised in Israel. I started swimming at age 9.Swimming changed my life and became my career.
+            Born and raised in Israel. I started swimming at age 9.
             At age 18, I moved to University of Georgia Tech where I got a scholarship,
             competed for division 1, and graduated with highest honors B.A. in Industrial Engineering. 
             <br /> <br />

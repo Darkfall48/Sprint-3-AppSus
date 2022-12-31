@@ -17,6 +17,7 @@
 
 /* Title Section */
 .about-title {
+  margin-bottom:1em;
 }
 
 /* Member Article */
@@ -24,6 +25,7 @@
   flex-basis: 50%;
   display: flex;
   flex-direction: column;
+  margin-right:3em;
 }
 
 /* Display the columns below each other instead of side by side on small screens */
