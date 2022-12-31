@@ -13,9 +13,13 @@ import { Loader } from '../../../cmps/loader.jsx'
 //? DONE: • Gives visual indication for read/unread
 // TODO: • Support hover state
 
-export function MailPreview({ mail, loadMails, onRemoveMail }) {
+export function MailPreview({ mail, loadMails, onRemoveMail, toggleStar }) {
   // console.log('Mail from Mail List', mail)
   const [isExpanded, setIsExpanded] = useState(false)
+
+  // function updateMails() {
+  //   loadMails()
+  // }
 
   function toggleDetails() {
     setIsExpanded(!isExpanded)
@@ -53,30 +57,30 @@ export function MailPreview({ mail, loadMails, onRemoveMail }) {
   function SetStar() {
     if (mail.isStared)
       return (
-        <a className="star" onClick={() => toggleStar(event)}>
+        <a className="star" onClick={() => toggleStar(mail.id)}>
           ❤️
         </a>
       )
 
     return (
-      <a className="star" onClick={() => toggleStar(event)}>
+      <a className="star" onClick={() => toggleStar(mail.id)}>
         🖤
       </a>
     )
   }
 
-  function toggleStar(ev) {
-    ev.stopPropagation() //! Not Working
-    if (mail.isStared) {
-      mail.isStared = false
-      showSuccessMsg('Mail Un-Starred!')
-    } else {
-      mail.isStared = true
-      showSuccessMsg('Mail Starred!')
-    }
-    mailService.save(mail).catch(console.log)
-    loadMails()
-  }
+  // function toggleStar(ev) {
+  //   ev.stopPropagation() //! Not Working
+  //   if (mail.isStared) {
+  //     mail.isStared = false
+  //     showSuccessMsg('Mail Un-Starred!')
+  //   } else {
+  //     mail.isStared = true
+  //     showSuccessMsg('Mail Starred!')
+  //   }
+  //   mailService.save(mail).catch(console.log)
+  //   loadMails()
+  // }
 
   function SetName() {
     return <p>{mail.to.split('@', 1)}</p>

@@ -6,7 +6,7 @@ import { MailPreview } from './mail-preview.jsx'
 import { MailPageNav } from './mail-page-nav.jsx'
 import { Loader } from '../../../cmps/loader.jsx'
 
-export function MailList({ mails, loadMails, onRemoveMail }) {
+export function MailList({ mails, loadMails, onRemoveMail, toggleStar }) {
   if (!mails)
     return (
       <table>
@@ -32,6 +32,7 @@ export function MailList({ mails, loadMails, onRemoveMail }) {
               mail={mail}
               loadMails={loadMails}
               onRemoveMail={onRemoveMail}
+              toggleStar={toggleStar}
             />
           ))}
         </tbody>

@@ -50,7 +50,8 @@ function getCurrentPage() {
 }
 
 function setPage(pageToSet) {
-  //? In case of, this code can be helpfull
+  //? In case of, this code can be helpful
+
   // const totalPages = Math.ceil(gMailLength / gPageIdx)
 
   // if (pageToSet * PAGE_SIZE >= totalPages) {

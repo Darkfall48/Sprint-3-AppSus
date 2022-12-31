@@ -45,6 +45,25 @@ export function MailIndex() {
     })
   }
 
+  function toggleStar(mailId) {
+    console.log('Hello from Toggle Star', mailId)
+
+    mailService
+      .get(mailId)
+      .then((mail) => {
+        if (mail.isStared) {
+          mail.isStared = false
+          showSuccessMsg('Mail Un-Starred!')
+        } else {
+          mail.isStared = true
+          showSuccessMsg('Mail Starred!')
+        }
+        mailService.save(mail)
+        loadMails() //! Known Issue: Mails are reloaded on delay
+      })
+      .catch(console.log)
+  }
+
   function onSetFilter(filterByFromFilter) {
     setFilterBy(filterByFromFilter)
   }
@@ -53,37 +72,36 @@ export function MailIndex() {
 
   return (
     <section className="mail-index">
+      <article className="mail-compose-button">
+        <button
+          onClick={() => {
+            setIsExpanded(!isExpanded)
+          }}
+        >
+          Add Mail
+        </button>
+      </article>
 
-        <article className='mail-compose-button'>
-          <button
-            onClick={() => {
-              setIsExpanded(!isExpanded)
-            }}
-          >
-            Add Mail
-          </button>
-        </article>
+      <article className="mail-folder-list">
+        <MailFolderList onSetFilter={onSetFilter} />
+      </article>
 
-        <article className="mail-folder-list">
-          <MailFolderList onSetFilter={onSetFilter} />
-        </article>
+      <article className="mail-compose" hidden={!isExpanded}>
+        <MailCompose setIsExpanded={setIsExpanded} />
+      </article>
 
-        <article className="mail-compose" hidden={!isExpanded}>
-          <MailCompose setIsExpanded={setIsExpanded} />
-        </article>
+      <article className="mail-filter" hidden={isExpanded}>
+        <MailFilter onSetFilter={onSetFilter} />
+      </article>
 
-        <article className="mail-filter" hidden={isExpanded}>
-          <MailFilter onSetFilter={onSetFilter} />
-        </article>
-
-        <article className="mail-list" hidden={isExpanded}>
-          <MailList
-            mails={mails}
-            loadMails={loadMails}
-            onRemoveMail={onRemoveMail}
-          />
-        </article>
-
+      <article className="mail-list" hidden={isExpanded}>
+        <MailList
+          mails={mails}
+          loadMails={loadMails}
+          onRemoveMail={onRemoveMail}
+          toggleStar={toggleStar}
+        />
+      </article>
     </section>
   )
 }
