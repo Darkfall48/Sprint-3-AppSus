@@ -5,6 +5,7 @@ import { NotePreview } from './note-preview.jsx'
 import { NoteControls } from './note-controls.jsx'
 import { BgColorSelection } from './bg-color-select.jsx'
 import { Pin } from './pin.jsx'
+import { Loader } from '../../../cmps/loader.jsx'
 
 export function NoteList({
   notes,
@@ -12,7 +13,7 @@ export function NoteList({
   onPinNote,
   onEditNote,
   onChangeBackgroundColor,
-  noteType
+  noteType,
 }) {
   const [hidden, setHidden] = useState(true)
   const [isHovering, setIsHovering] = useState(false)
@@ -30,7 +31,6 @@ export function NoteList({
     setNoteIdToSetBg(noteId)
   }
 
-
   function handleMouseOver({ target }) {
     setNoteIdHovering(target.id)
     setIsHovering(true)
@@ -38,6 +38,8 @@ export function NoteList({
   function handleMouseOut() {
     setIsHovering(false)
   }
+
+  if (!notes) return <Loader />
 
   return (
     <ul className="note-list">
@@ -51,7 +53,12 @@ export function NoteList({
         >
           <Pin note={note} onPinNote={onPinNote} />
           <label htmlFor={`edit-btn-${note.id}`}>
-            <NotePreview note={note} txt={note.info.txt} noteType={noteType} length={100} />
+            <NotePreview
+              note={note}
+              txt={note.info.txt}
+              noteType={noteType}
+              length={100}
+            />
           </label>
           {/* {isHovering && (noteIdHovering===note.id) &&  */}
           <NoteControls
