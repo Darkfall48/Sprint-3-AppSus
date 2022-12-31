@@ -47,4 +47,6 @@
   /** Page Size **/
   /* Mobile */
   --s: 80vw;
+  --m: 70vw;
+  --l: 50vw;
 }

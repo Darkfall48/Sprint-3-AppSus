@@ -68,8 +68,8 @@ export function MailIndex() {
           mail.isStared = true
           showSuccessMsg('Mail Starred!')
         }
-        mailService.save(mail)
-        loadMails() //! Known Issue: Mails are reloaded on delay and only on the second click
+        mailService.save(mail).then(() => loadMails())
+        //! Known Issue: Mails are reloaded on delay and only on the second click
       })
       .catch(console.log)
   }
@@ -89,8 +89,8 @@ export function MailIndex() {
           mailService.save(mail).catch(console.log)
           showSuccessMsg('Mail Status set to Unread!')
         }
-        mailService.save(mail)
-        loadMails() //! Known Issue: Mails are reloaded on delay and only on the second click
+        mailService.save(mail).then(() => loadMails())
+        //! Known Issue: Mails are reloaded on delay and only on the second click
       })
       .catch(console.log)
   }

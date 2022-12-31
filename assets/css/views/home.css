@@ -1,3 +1,7 @@
+#root {
+  width: 100vw;
+}
+
 .app {
   background-color: var(--main-bg-color);
   height: 100vh;

@@ -32,10 +32,8 @@ export function MailPreview({
     setStatusToRead()
   }
 
-  function setReadStatus() {
-    if (mail.isRead) return 'read'
-
-    return ''
+  function getReadStatus() {
+    return mail.isRead ? 'read' : ''
   }
 
   function setStatusToRead() {
@@ -94,7 +92,7 @@ export function MailPreview({
 
   return (
     <Fragment>
-      <tr className={setReadStatus()}>
+      <tr className={getReadStatus()}>
         <td>
           <SetStar />
         </td>

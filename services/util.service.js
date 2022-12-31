@@ -110,7 +110,7 @@ function getMonthName(date) {
 }
 
 function getDate(timeInStamp) {
-  var a = new Date(+timeInStamp * 1000)
+  var time = new Date(+timeInStamp)
   var months = [
     'Jan',
     'Feb',
@@ -125,9 +125,9 @@ function getDate(timeInStamp) {
     'Nov',
     'Dec',
   ]
-  var year = a.getFullYear()
-  var month = months[a.getMonth()]
-  var date = a.getDate()
+  var year = time.getFullYear()
+  var month = months[time.getMonth()]
+  var date = time.getDate()
   //   var hour = a.getHours()
   //   var min = a.getMinutes()
   //   var sec = a.getSeconds()
