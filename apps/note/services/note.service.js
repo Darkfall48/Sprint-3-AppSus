@@ -136,7 +136,7 @@ function _createNotes() {
         type: 'note-txt',
         isPinned: false,
         info: { txt: 'Return books to the library and pick up the book Emma asked for - Good night moon. Then remember to call mom at 18:00.' },
-        bgColor: 'default',
+        bgColor: 'pink',
       },
       {
         id: 'n102',
@@ -145,7 +145,7 @@ function _createNotes() {
         info: { txt: 'Need to work on my react skill! Finish sprint 3 with new skills and keep practicing until I master it.' },
         bgColor: 'purple',
       }, {
-        id: 'n104',
+        id: 'n103',
         type: 'note-video',
         isPinned: false,
         info: {
@@ -154,21 +154,26 @@ function _createNotes() {
       }
     },
       {
-        id: 'n103',
+        id: 'n104',
         type: 'note-txt',
         isPinned: false,
         info: { txt: 'Practice. Become a fullstack MASTER!' },
         bgColor: 'blue',
-      }, {
+      },    {
         id: 'n105',
-        type: 'note-video',
+        type: 'note-txt',
         isPinned: false,
-        info: {
-          url: "https://www.youtube.com/embed/C6UUJ47HCBQ" ,
+        info: { txt: 'Bring Dani to school tomoorow morning. Good night moon. Then remember to call mom at 18:00.' },
         bgColor: 'default',
-      }
-    }, {
-          id: "n106",
+      },
+      {
+        id: 'n106',
+        type: 'note-txt',
+        isPinned: false,
+        info: { txt: 'Get some backend work in.. More work requied to get really good... Finish sprint 4 with new skills and keep practicing until I master it.' },
+        bgColor: 'green',
+      }, {
+          id: "n108",
           type: "note-img",
           info: {
               url: "https://images.app.goo.gl/nyShzzfZhYUW4a8E6",
@@ -176,17 +181,25 @@ function _createNotes() {
           },
           bgColor: 'purple',
       },     {
-        id: 'n107',
+        id: 'n109',
         type: 'note-txt',
         isPinned: false,
-        info: { txt: 'Bring Dani to school tomoorow morning. Good night moon. Then remember to call mom at 18:00.' },
+        info: { txt: 'Do include testimonials or reviews from relevant clients who have recently purchased your product.' },
         bgColor: 'default',
-      },
+      },{
+        id: 'n107',
+        type: 'note-video',
+        isPinned: false,
+        info: {
+          url: "https://www.youtube.com/embed/C6UUJ47HCBQ" ,
+        bgColor: 'default',
+      }
+    },
       {
-        id: 'n108',
+        id: 'n110',
         type: 'note-txt',
         isPinned: false,
-        info: { txt: 'Get some backend work in.. More work requied to get really good... Finish sprint 4 with new skills and keep practicing until I master it.' },
+        info: { txt: 'Find out if the customer has any questions or concerns they want to be answered before moving forward.' },
         bgColor: 'green',
       }
       // ,{
