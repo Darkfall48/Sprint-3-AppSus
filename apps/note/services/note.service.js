@@ -175,6 +175,19 @@ function _createNotes() {
               title: "Bobi and Me"
           },
           bgColor: 'purple',
+      },     {
+        id: 'n107',
+        type: 'note-txt',
+        isPinned: false,
+        info: { txt: 'Bring Dani to school tomoorow morning. Good night moon. Then remember to call mom at 18:00.' },
+        bgColor: 'default',
+      },
+      {
+        id: 'n108',
+        type: 'note-txt',
+        isPinned: false,
+        info: { txt: 'Get some backend work in.. More work requied to get really good... Finish sprint 4 with new skills and keep practicing until I master it.' },
+        bgColor: 'green',
       }
       // ,{
       //     "id": "n104",
