@@ -1,7 +1,10 @@
 const { useState, useEffect, Fragment } = React
 
 import { utilService } from '../../../services/util.service.js'
-import { showSuccessMsg } from '../../../services/event-bus.service.js'
+import {
+  showSuccessMsg,
+  showErrorMsg,
+} from '../../../services/event-bus.service.js'
 
 import { mailService } from '../services/mail.service.js'
 import { MailDetails } from './mail-details.jsx'
@@ -116,6 +119,7 @@ export function MailPreview({
             title="Remove Mail"
           ></a>
           <a
+            onClick={() => showErrorMsg('Not implemented yet!:(')}
             className="fa-solid fa-reply action-btn-reply"
             title="Reply to the Mail"
           ></a>
