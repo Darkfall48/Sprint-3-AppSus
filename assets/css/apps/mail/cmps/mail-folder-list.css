@@ -1,9 +1,10 @@
 .mail-folder-list-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   place-content: start;
   place-items: center;
   gap: 20px;
+  justify-content: center;
 }
 
 .mail-folder-list a {
@@ -35,4 +36,11 @@
 
 .mail-folder-list a:hover {
   color: var(--filter-side-hover-color);
+}
+
+@media (min-width: 780px) {
+  .mail-folder-list-container {
+    display: flex;
+    flex-direction: column;
+  }
 }

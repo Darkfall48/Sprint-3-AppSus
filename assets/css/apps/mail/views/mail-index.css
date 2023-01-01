@@ -1,18 +1,20 @@
 .mail-index {
   background-color: rgba(255, 255, 255, 0.5);
   display: grid;
-  grid-template-columns: 1fr 10fr;
-  grid-template-rows: 1fr 8fr;
-  grid-template-areas:
-    'compose-btn filter'
-    'side-filter inbox';
+
   gap: 10px;
   padding: 20px;
   box-shadow: 0px 0px 8px 1px #b7b7b8;
   border-radius: 25px;
-
+  grid-template-areas:
+    'compose-btn filter'
+    'side-filter side-filter'
+    'inbox inbox';
   place-content: center;
   place-items: stretch;
+
+  margin-top: 40px;
+  overflow-x: clip;
 }
 
 .mail-compose {
@@ -35,4 +37,14 @@
 
 .mail-list {
   grid-area: inbox;
+}
+
+@media (min-width: 780px) {
+  .mail-index {
+    grid-template-columns: 1fr 10fr;
+    grid-template-rows: 1fr 8fr;
+    grid-template-areas:
+      'compose-btn filter'
+      'side-filter inbox';
+  }
 }
