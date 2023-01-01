@@ -1,5 +1,5 @@
 import { bookService } from '../services/book.service.js'
-import { showSuccessMsg } from '../services/event-bus.service.js'
+import { showSuccessMsg } from '../../../services/event-bus.service.js'
 
 const { useState, useEffect } = React
 const { useNavigate, useParams, Link } = ReactRouterDOM

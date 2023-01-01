@@ -1,6 +1,6 @@
 const { useState, useEffect } = React
 
-import { bookService } from './../services/book.service.js'
+import { bookService } from '../services/book.service.js'
 
 export function BookFilter({ onSetFilter }) {
   const [filterByToEdit, setFilterByToEdit] = useState(

@@ -1,3 +1,7 @@
 .book-details {
   text-align: center;
 }
+
+.book-details img {
+  width: 250px;
+}

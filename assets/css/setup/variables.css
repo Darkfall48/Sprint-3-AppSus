@@ -47,12 +47,25 @@
   --filter-side-hover-color: lightcoral;
   --filter-side-bg: rgba(254, 254, 255, 0.858);
 
-  /* note */
+  /** note **/
   --purple: #d7aefb;
   --pink: #fdcfe8;
   --blue: #cbf0f8;
   --green: #ccff90;
   --modal-bg: rgba(209, 183, 234, 0.956);
+
+  /** book **/
+  --clr1: rgb(96, 107, 91);
+  --clr2: rgb(120, 99, 110);
+
+  --clr1bg: rgb(153, 166, 149);
+  --clr1bg-light: rgb(205, 221, 200);
+  --clr2bg: rgb(233, 206, 221);
+  --clr2bg-light: rgb(247, 185, 219);
+
+  --gray1: rgb(240, 240, 240);
+  --gray2: rgb(155, 155, 155);
+  --gray3: rgb(44, 44, 44);
 
   /** Page Size **/
   --s: 600px;

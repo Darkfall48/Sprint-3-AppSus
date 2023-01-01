@@ -2,8 +2,8 @@ const { useEffect, useState } = React
 
 const { useParams, useNavigate, Link } = ReactRouterDOM
 
-import { Loader } from '../cmps/loader.jsx'
-import { LongTxt } from '../cmps/long-txt.jsx'
+import { Loader } from '../../../cmps/loader.jsx'
+import { LongTxt } from '../../../cmps/long-txt.jsx'
 
 import { bookService } from '../services/book.service.js'
 
