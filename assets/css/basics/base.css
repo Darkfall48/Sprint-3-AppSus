@@ -42,6 +42,10 @@ img {
   object-fit: cover;
 }
 
+ul {
+  list-style: none;
+}
+
 input {
   background: transparent;
   border: none;

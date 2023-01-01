@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 50px 30px;
+  padding: 0;
 }
 
 .book-preview-img-container {
@@ -58,5 +59,3 @@
   font-weight: 500;
   transition: 0.3s color;
 }
-
-
